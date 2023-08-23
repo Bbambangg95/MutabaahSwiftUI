@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Attendance" representedClassName="Attendance" syncable="YES">
+        <attribute name="additionalInformation" optional="YES" attributeType="String"/>
+        <attribute name="attendStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="classTime" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="userId" optional="YES" attributeType="String"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="attendance" inverseEntity="Student"/>
+    </entity>
+    <entity name="Memorize" representedClassName="Memorize" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="juz" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="memorizeValue" optional="YES" attributeType="String"/>
+        <attribute name="page" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recitationValue" optional="YES" attributeType="String"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="memorize" inverseEntity="Student"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="additionalInformation" optional="YES" attributeType="String"/>
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gender" optional="YES" attributeType="Integer 32" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="startProgram" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="userId" optional="YES" attributeType="String"/>
+        <relationship name="attendance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="origin" inverseEntity="Attendance"/>
+        <relationship name="memorize" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memorize" inverseName="origin" inverseEntity="Memorize"/>
+        <relationship name="studentPreference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentPreference" inverseName="origin" inverseEntity="StudentPreference"/>
+    </entity>
+    <entity name="StudentPreference" representedClassName="StudentPreference" syncable="YES">
+        <attribute name="endSprint" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="memorizeStatus" optional="YES" attributeType="String"/>
+        <attribute name="monthlyTarget" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startSprint" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="yearlyTarget" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="studentPreference" inverseEntity="Student"/>
+    </entity>
+    <entity name="UserPreference" representedClassName="UserPreference" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="UserSchedule" representedClassName="UserSchedule" syncable="YES" codeGenerationType="class">
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timeLabel" optional="YES" attributeType="String"/>
+    </entity>
+</model>

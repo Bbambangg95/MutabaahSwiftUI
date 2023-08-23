@@ -1,0 +1,50 @@
+[
+  {
+    "id": "64aa91c7495d88b616446143",
+    "name": "Caitlin Dyer",
+    "userId": "64aa91c706724bedca8c1df3",
+    "classTime": 1,
+    "attendStatus": false,
+    "additionalInformation": "eu tempor"
+  },
+  {
+    "id": "64aa91c7ca5358447a64b795",
+    "name": "Gretchen Hickman",
+    "userId": "64aa91c71b0fb8edb7dc8885",
+    "classTime": 3,
+    "attendStatus": false,
+    "additionalInformation": "id dolore"
+  },
+  {
+    "id": "64aa91c7ec34fdac69a3de3f",
+    "name": "Della Burton",
+    "userId": "64aa91c7c165cf0e7c63983e",
+    "classTime": 2,
+    "attendStatus": false,
+    "additionalInformation": "incididunt officia"
+  },
+  {
+    "id": "64aa91c7e892cccc6be7df9c",
+    "name": "Willa Everett",
+    "userId": "64aa91c725605057ef6dbc1b",
+    "classTime": 0,
+    "attendStatus": false,
+    "additionalInformation": "consequat ex"
+  },
+  {
+    "id": "64aa91c7ba505518f2ab7bc1",
+    "name": "Castillo Norman",
+    "userId": "64aa91c7ac92d03c6b317762",
+    "classTime": 0,
+    "attendStatus": false,
+    "additionalInformation": "ex laboris"
+  },
+  {
+    "id": "64aa91c759e1efca6720f159",
+    "name": "Rivers Rasmussen",
+    "userId": "64aa91c738761546e1a5778b",
+    "classTime": 3,
+    "attendStatus": false,
+    "additionalInformation": "amet irure"
+  }
+]

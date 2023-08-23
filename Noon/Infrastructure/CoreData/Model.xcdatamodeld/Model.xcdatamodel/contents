@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Attendance" representedClassName="Attendance" syncable="YES">
+        <attribute name="attendStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="reason" optional="YES" attributeType="String"/>
+        <attribute name="timeLabel" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="attendance" inverseEntity="Student"/>
+    </entity>
+    <entity name="CompletedZiyadah" representedClassName="CompletedZiyadah" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="juz" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="completedZiyadah" inverseEntity="Student"/>
+    </entity>
+    <entity name="Murojaah" representedClassName="Murojaah" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="murojaah" inverseEntity="Student"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gender" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="startProgram" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="attendance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="origin" inverseEntity="Attendance"/>
+        <relationship name="completedZiyadah" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CompletedZiyadah" inverseName="origin" inverseEntity="CompletedZiyadah"/>
+        <relationship name="murojaah" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Murojaah" inverseName="origin" inverseEntity="Murojaah"/>
+        <relationship name="studentPreference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentPreference" inverseName="origin" inverseEntity="StudentPreference"/>
+        <relationship name="ziyadah" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ziyadah" inverseName="origin" inverseEntity="Ziyadah"/>
+    </entity>
+    <entity name="StudentPreference" representedClassName="StudentPreference" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endSprint" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="memorizeStatus" optional="YES" attributeType="String"/>
+        <attribute name="monthlyTarget" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startSprint" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="yearlyTarget" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="studentPreference" inverseEntity="Student"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="userSchedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserSchedule" inverseName="origin" inverseEntity="UserSchedule"/>
+    </entity>
+    <entity name="UserSchedule" representedClassName="UserSchedule" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timeLabel" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userSchedule" inverseEntity="User"/>
+    </entity>
+    <entity name="Ziyadah" representedClassName="Ziyadah" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="juz" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="memorizeValue" optional="YES" attributeType="String"/>
+        <attribute name="page" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recitationValue" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="ziyadah" inverseEntity="Student"/>
+    </entity>
+</model>
