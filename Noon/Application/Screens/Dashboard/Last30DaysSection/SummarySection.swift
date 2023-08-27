@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct Last30DaysSection: View {
-    @State private var showFullscreenCover: Bool = false
+    @EnvironmentObject var studentVM: StudentViewModel
     var body: some View {
         Section {
             Last30DaysRowView(
-                destination: EmptyView(),
+                destination: Last30DaysZiyadah(students: studentVM.students),
                 imageName: "z.square.fill",
                 title: "Ziyadah",
                 data: "Based on all student",
