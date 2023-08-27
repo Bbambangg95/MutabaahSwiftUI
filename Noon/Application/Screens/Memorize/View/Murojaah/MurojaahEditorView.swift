@@ -21,6 +21,10 @@ struct MurojaahEditorView: View {
     var body: some View {
         Form {
             MurojaahCategoryPicker(category: $murojaahVM.category)
+                .onChange(of: murojaahVM.category) { newValue in
+                    murojaahVM.key = ""
+                    murojaahVM.value = ""
+                }
             switch murojaahVM.category {
             case MurojaahAmountOptions.perPage.rawValue:
                 MurojaahPerPageForm(key: $murojaahVM.key, value: $murojaahVM.value)
@@ -33,13 +37,27 @@ struct MurojaahEditorView: View {
         .scrollContentBackground(.hidden)
         .toolbar {
             Button {
-                murojaahVM.createMurojaah(studentId: student.id)
-                studentVM.fetchStudent()
-                memorizeVM.fetchMemorize()
+                murojaahVM.isLoading = true
+                murojaahVM.createMurojaah(studentId: student.id) { success in
+                    if success {
+                        studentVM.fetchStudents()
+                        memorizeVM.fetchMemorize()
+                    }
+                }
             } label: {
                 Text("Save")
             }
             .disabled(disableSaveButton)
         }
+        .alert(murojaahVM.alertContent?.title ?? "Untitled", isPresented: $murojaahVM.isLoading) {
+            Button {
+                dismiss()
+            } label: {
+                Text("Done")
+            }
+        } message: {
+            Text(murojaahVM.alertContent?.message ?? "")
+        }
+
     }
 }

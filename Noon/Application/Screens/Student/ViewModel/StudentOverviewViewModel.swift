@@ -10,8 +10,9 @@ import SwiftUI
 import Charts
 
 class StudentOverviewViewModel: ObservableObject {
-    var student: StudentEntity?
     @Published var ziyadahChartData: [ChartData]
+    @Published var presentEditStudentSheet: Bool = false
+    var student: StudentEntity?
     
     init(student: StudentEntity? = nil) {
         self.student = student

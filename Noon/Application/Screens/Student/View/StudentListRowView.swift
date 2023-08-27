@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct StudentListRowView: View {
-    var student: StudentEntity
-    var deleteStudent: () -> Void
+    private let student: StudentEntity
+    private let deleteStudent: () -> Void
+    init(student: StudentEntity, deleteStudent: @escaping () -> Void) {
+        self.student = student
+        self.deleteStudent = deleteStudent
+    }
     var body: some View {
         HStack{
             NavigationLink {

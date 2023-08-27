@@ -11,30 +11,18 @@ struct UserProfileView: View {
     @EnvironmentObject var userVM: UserViewModel
     var body: some View {
         Section {
-        NavigationLink(destination: UserEditorScreen()) {
-            HStack {
-                Image("img")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: 60, maxHeight: 60)
-                    .clipped()
-                    .cornerRadius(10)
-                    .shadow(color: .gray.opacity(0.6), radius: 10)
-                    .clipShape(Circle())
-                
+            NavigationLink(destination: UserEditorScreen()) {
                 VStack(alignment: .leading) {
-                    Text(userVM.name)
+                    Text(userVM.name.isEmpty ? "Name not provided" : userVM.name)
                         .font(.headline)
                         .lineLimit(1)
-                    Text(userVM.address)
+                    Text(userVM.address.isEmpty ? "Address not provided" : userVM.address)
                         .font(.subheadline)
                         .lineLimit(1)
                 }
             }
-            .padding(.vertical, 5)
-        }
         } header: {
-            Text("Personal Information")
+            Text("User Identity")
         }
     }
 }

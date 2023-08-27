@@ -16,6 +16,11 @@ struct AttendanceSectionView: View {
             ForEach(students) { student in
                 AttendanceRowView(student: student)
             }
+            if students.isEmpty {
+                Text("None")
+                    .italic()
+                    .font(.caption)
+            }
         } header: {
             Text(title)
         }

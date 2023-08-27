@@ -7,28 +7,23 @@
 
 import SwiftUI
 
-struct Last30DaysRowView<DestinationView: View>: View {
+struct SummaryRowView<DestinationView: View>: View {
     var destination: DestinationView
     var imageName: String
     var title: String
-    var data: String
     var color: Color
+    
     var body: some View {
-        NavigationLink {
-            destination
-        } label: {
+        NavigationLink(destination: destination) {
             HStack {
                 Image(systemName: imageName)
                     .font(.title)
                     .foregroundColor(color)
-                VStack(alignment: .leading) {
-                    Text(title)
-                        .font(.headline)
-                    Text(data)
-                        .font(.caption)
-                }
-                .foregroundColor(Color.black)
+                Text(title)
+                    .font(.headline)
+                    .foregroundColor(.black)
             }
         }
     }
 }
+

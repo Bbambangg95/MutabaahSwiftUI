@@ -11,6 +11,7 @@ import Foundation
 
 struct StudentOverviewScreen: View {
     @StateObject private var studentOverviewVM: StudentOverviewViewModel
+    @State private var presentProgressSheet: Bool = false
     var student: StudentEntity
     let (dayLeftMessage, color): (String, Color)
     init(student: StudentEntity) {
@@ -34,7 +35,7 @@ struct StudentOverviewScreen: View {
             return juzStrings.joined(separator: ", ")
         }
     }
-
+    
     var body: some View {
         List {
             profileSection
@@ -45,104 +46,132 @@ struct StudentOverviewScreen: View {
         .listStyle(.insetGrouped)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            NavigationLink {
-                StudentEditorScreen(studentEditorVM: StudentEditorViewModel(student: student))
+            Button {
+                studentOverviewVM.presentEditStudentSheet = true
             } label: {
-                Image(systemName: "square.and.pencil")
+                Text("Edit")
+                    .font(.headline)
             }
+        }
+        .sheet(isPresented: $studentOverviewVM.presentEditStudentSheet) {
+            StudentEditorScreen(student: student)
+        }
+        .sheet(isPresented: $presentProgressSheet) {
+            ProgressHistorySheet(
+                ziyadahData: student.ziyadahData,
+                murojaahData: student.murojaahData
+            )
         }
     }
     private var profileSection: some View {
         Section {
             Text(student.name)
+                .font(.title2)
                 .fontWeight(.semibold)
             StudentOverviewRowView(
                 label: "Date of Birth",
-                date: student.birthDate,
-                imageName: "calendar",
-                color: Color.yellow)
+                date: student.birthDate)
             StudentOverviewRowView(
                 label: "Gender",
-                value: "\((student.gender != 0) ? "Female" : "Male")",
-                imageName: "person.fill",
-                color: Color.green)
+                value: "\((student.gender != 0) ? "Female" : "Male")")
             StudentOverviewRowView(
                 label: "Address",
-                value: student.address,
-                imageName: "location.fill",
-                color: Color.blue)
+                value: student.address)
         } header: {
-            Text("Identity")
+            HStack {
+                Image(systemName: "person.crop.circle.fill")
+                Text("Identity")
+                Spacer()
+            }
+            .font(.subheadline)
         }
     }
     private var overviewSection: some View {
         Section {
-            StudentOverviewRowView(
-                label: "Total Memorization",
-                value: "\(student.completedZiyadah.count) Juz",
-                imageName: "text.book.closed.fill",
-                color: Color.green
-            )
-            HStack(alignment: .top) {
-                ImageWithRectangleView(imageName: "info.square.fill", color: Color.gray)
-                Text("Detail Juz")
-                Spacer()
-                Text(completedZiyadah)
+            VStack {
+                StudentOverviewRowView(
+                    label: "Total Memorization",
+                    value: "\(student.completedZiyadah.count) Juz"
+                )
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Text("Detail Juz")
+                    }
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text(completedZiyadah)
+                            .multilineTextAlignment(.trailing)
+                    }
+                }
+                .foregroundColor(Color.secondary)
+                .font(.footnote)
             }
-            StudentOverviewRowView(
-                label: "Program Duration",
-                relativeDate: student.startProgram,
-                imageName: "person.crop.circle.badge.clock.fill",
-                color: Color.orange)
+            VStack {
+                StudentOverviewRowView(
+                    label: "Program Duration",
+                    relativeDate: student.startProgram
+                )
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Text("Start From")
+                    }
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text(student.startProgram, style: .date)
+                    }
+                }
+                .foregroundColor(Color.secondary)
+                .font(.footnote)
+            }
         } header: {
-            Text("Overview")
+            HStack {
+                Image(systemName: "square.stack.3d.up.fill")
+                Text("Overview")
+            }
+            .font(.subheadline)
         }
     }
     private var currentStatusSection: some View {
         Section {
             StudentOverviewRowView(
                 label: "Memorization",
-                value: student.studentPreference?.memorizeStatus ?? "Status not set",
-                imageName: "info.square.fill",
-                color: Color.teal)
-            StudentOverviewRowView(
-                label: "Sprint Duration",
-                value: "\(sprintDaysLeft) Days (\(dayLeftMessage))",
-                imageName: "timer.circle.fill",
-                color: Color.yellow)
-            HStack(alignment: .top) {
-                ImageWithRectangleView(imageName: "calendar.badge.exclamationmark", color: Color.gray)
-                    .hidden()
-                VStack(alignment: .leading) {
-                    Text("Start Sprint")
-                    Text("End Sprint")
+                value: student.studentPreference?.memorizeStatus ?? "Status not set"
+            )
+            VStack {
+                StudentOverviewRowView(
+                    label: "Sprint Duration",
+                    value: "\(sprintDaysLeft) Days (\(dayLeftMessage))"
+                )
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Text("Start Sprint")
+                        Text("End Sprint")
+                    }
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text(student.studentPreference?.startSprint ?? Date(), style: .date)
+                        Text(student.studentPreference?.endSprint ?? Date(), style: .date)
+                    }
                 }
-                Spacer()
-                VStack(alignment: .trailing) {
-                    Text(student.studentPreference?.startSprint ?? Date(), style: .date)
-                    Text(student.studentPreference?.endSprint ?? Date(), style: .date)
-                }
+                .foregroundColor(Color.secondary)
+                .font(.footnote)
             }
-            .foregroundColor(Color.gray)
         } header: {
-            Text("Current Status")
+            HStack {
+                Image(systemName: "info.circle")
+                Text("Current Status")
+            }
+            .font(.subheadline)
         }
     }
     private var ziyadahSection: some View {
         Section {
-            StudentOverviewRowView(
-                label: "Monthly Target",
-                value: "\(student.studentPreference?.monthlyTarget ?? 0) Pages",
-                imageName: "target",
-                color: Color.red)
-            StudentOverviewRowView(
-                label: "Yearly Target",
-                value: "\(student.studentPreference?.yearlyTarget ?? 0) Juz",
-                imageName: "target",
-                color: Color.yellow)
             VStack(alignment: .leading) {
-                Text("Ziyadah History Per Month")
+                Text("Ziyadah Target")
+                    .font(.subheadline)
                     .foregroundColor(Color.gray)
+                Text("\(student.studentPreference?.monthlyTarget ?? 0) Pages/Month")
+                Text("\(student.studentPreference?.yearlyTarget ?? 0) Juz/Year")
                 if studentOverviewVM.ziyadahChartData.count > 0 {
                     ChartView(data: studentOverviewVM.ziyadahChartData)
                 } else {
@@ -150,7 +179,17 @@ struct StudentOverviewScreen: View {
                 }
             }
         } header: {
-            Text("Ziyadah Progress")
+            HStack {
+                Image(systemName: "chart.line.uptrend.xyaxis")
+                Text("Progress")
+                Spacer()
+                Button {
+                    presentProgressSheet.toggle()
+                } label: {
+                    Text("See All")
+                }
+            }
+            .font(.subheadline)
         }
     }
 }

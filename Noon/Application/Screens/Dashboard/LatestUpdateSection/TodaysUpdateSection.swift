@@ -11,24 +11,24 @@ struct TodaysUpdateSection: View {
     @EnvironmentObject var memorizeVM: MemorizeViewModel
     @State private var showFullscreenCover: Bool = false
     var body: some View {
-        VStack{
-            SectionHeaderView(showFullscreenCover: $showFullscreenCover, title: "Todays Update")
-            LazyVStack {
-                ForEach(memorizeVM.memorize.prefix(3)) { memorize in
-                    TodaysUpdateRowView(memorize: memorize)
-                }
+        Section {
+            ForEach(memorizeVM.memorize.prefix(3)) { memorize in
+                TodaysUpdateRowView(memorize: memorize)
             }
+        } header: {
+            headerView
         }
-        .padding(.horizontal)
-        .fullScreenCover(isPresented: $showFullscreenCover) {
-            TodaysUpdateListView(showFullscreenCover: $showFullscreenCover, memorize: memorizeVM.memorize)
+        .sheet(isPresented: $showFullscreenCover) {
+            TodaysUpdateListSheet(
+                showFullscreenCover: $showFullscreenCover,
+                memorize: memorizeVM.memorize
+            )
         }
     }
     private var headerView: some View {
         HStack {
+            Image(systemName: "clock.arrow.circlepath")
             Text("Latest Update")
-                .font(.title2)
-                .fontWeight(.semibold)
             Spacer()
             Button {
                 showFullscreenCover = true
@@ -36,5 +36,7 @@ struct TodaysUpdateSection: View {
                 Text("See All")
             }
         }
+        .font(.headline)
+        .textCase(nil)
     }
 }

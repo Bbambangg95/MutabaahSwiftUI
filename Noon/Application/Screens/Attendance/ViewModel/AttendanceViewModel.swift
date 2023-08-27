@@ -34,4 +34,17 @@ class AttendanceViewModel: ObservableObject {
             attendanceService.updateAttendance(id: id, attendance: newAttendance)
         }
     }
+    
+    func getTodayAttendanceData(attendanceData: [AttendanceEntity], timeLabel: String) -> Bool? {
+        let filteredAttendance = attendanceData.filter { item in
+            Calendar.current.isDateInToday(item.createdAt) &&
+            item.timeLabel == timeLabel
+        }
+        if let existingAttendance = filteredAttendance.first {
+            let attendStatus = existingAttendance.attendStatus
+            return attendStatus
+        } else {
+            return nil
+        }
+    }
 }

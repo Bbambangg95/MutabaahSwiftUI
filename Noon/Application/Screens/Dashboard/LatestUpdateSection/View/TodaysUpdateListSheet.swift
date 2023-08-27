@@ -7,34 +7,20 @@
 
 import SwiftUI
 
-struct TodaysUpdateListView: View {
+struct TodaysUpdateListSheet: View {
     @Binding var showFullscreenCover: Bool
     var memorize: [MemorizeEntity] = []
     var body: some View {
-        VStack {
-            headerView
-            ScrollView {
-                LazyVStack {
-                    ForEach(memorize) { memorize in
-                        TodaysUpdateRowView(memorize: memorize)
-                    }
+        NavigationStack {
+            List {
+                ForEach(memorize.prefix(50)) { memorize in
+                    TodaysUpdateRowView(memorize: memorize)
                 }
             }
-            .scrollIndicators(.hidden)
-            .padding(.horizontal)
+            .listStyle(.inset)
+            .navigationTitle("Latest Update")
+            .navigationBarTitleDisplayMode(.inline)
         }
-    }
-    private var headerView: some View {
-        HStack {
-            Spacer()
-            Button {
-                showFullscreenCover = false
-            } label: {
-                Text("Close")
-                    .font(.headline)
-            }
-        }
-        .padding()
     }
 }
 

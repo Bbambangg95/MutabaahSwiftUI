@@ -7,33 +7,33 @@
 
 import SwiftUI
 
-struct Last30DaysSection: View {
+struct SummarySection: View {
     @EnvironmentObject var studentVM: StudentViewModel
     var body: some View {
         Section {
-            Last30DaysRowView(
-                destination: Last30DaysZiyadah(students: studentVM.students),
+            SummaryRowView(
+                destination: SummaryZiyadah(students: studentVM.students),
                 imageName: "z.square.fill",
                 title: "Ziyadah",
-                data: "Based on all student",
                 color: Color.green)
-            Last30DaysRowView(
-                destination: EmptyView(),
-                imageName: "m.square.fill",
-                title: "Murojaah",
-                data: "Based on all student",
-                color: Color.blue)
-            Last30DaysRowView(
-                destination: EmptyView(),
-                imageName: "list.clipboard.fill",
+            SummaryRowView(
+                destination: SummaryAttendance(students: studentVM.students),
+                imageName: "text.badge.checkmark",
                 title: "Attendance",
-                data: "Based on all student",
                 color: Color.orange)
         } header: {
             headerView
         }
     }
     private var headerView: some View {
-            Text("Last 30 Days")
+        HStack {
+            HStack {
+                Image(systemName: "square.stack.3d.up.fill")
+                Text("Summary")
+            }
+            .font(.headline)
+            .textCase(nil)
+            Spacer()
+        }
     }
 }

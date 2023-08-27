@@ -66,7 +66,7 @@ struct ZiyadahEditorView: View {
         ziyadahVM.createZiyadah(studentId: student.id) { success in
             print(success)
             if success {
-                studentVM.fetchStudent()
+                studentVM.fetchStudents()
                 memorizeVM.fetchMemorize()
             }
         }

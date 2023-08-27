@@ -17,7 +17,7 @@ class UserScheduleViewModel: ObservableObject {
     
     init() {
         self.userSchedule = getUserSchedule()
-        self.selectedClassTime = userSchedule.first?.timeLabel ?? ""
+        self.selectedClassTime = userSchedule.first?.id.uuidString ?? ""
     }
     
     private let userService = UserService(userRepository: UserCoreDataAdapter())

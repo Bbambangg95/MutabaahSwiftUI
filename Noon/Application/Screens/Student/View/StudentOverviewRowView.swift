@@ -8,31 +8,38 @@
 import SwiftUI
 
 struct StudentOverviewRowView: View {
-    var label: String
-    var value: String?
-    var date: Date?
-    var relativeDate: Date?
-    var imageName: String
-    var color: Color
+    private let label: String
+    private let value: String?
+    private let date: Date?
+    private let relativeDate: Date?
+    init(
+        label: String,
+        value: String? = nil,
+        date: Date? = nil,
+        relativeDate: Date? = nil
+    )
+    {
+        self.label = label
+        self.value = value
+        self.date = date
+        self.relativeDate = relativeDate
+    }
     var body: some View {
         HStack {
-            Image(systemName: imageName)
-                .foregroundColor(.white)
-                .padding(5)
-                .background(
-                    RoundedRectangle(cornerRadius: 5)
-                        .fill(color)
-                )
             Text(label)
             Spacer()
             if let stringValue = value {
                 Text(stringValue)
+                    .foregroundColor(Color.secondary)
+                    .multilineTextAlignment(.trailing)
             }
             if let dateValue = date {
                 Text(dateValue, style: .date)
+                    .foregroundColor(Color.secondary)
             }
             if let relativeDate = relativeDate {
                 Text(relativeDate, style: .relative)
+                    .foregroundColor(Color.secondary)
             }
         }
     }

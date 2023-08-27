@@ -36,7 +36,8 @@ struct ToolbarItems {
             NavigationLink {
                 userDetailScreen
             } label: {
-                Image(systemName: "person.circle.fill")
+                Image(systemName: "person.crop.circle.fill")
+                    .foregroundColor(Color.primary)
 //                Image("img")
 //                    .resizable()
 //                    .scaledToFit()

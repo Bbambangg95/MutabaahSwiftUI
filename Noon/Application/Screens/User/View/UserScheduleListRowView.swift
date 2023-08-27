@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct UserScheduleListRowView: View {
-    let item: UserScheduleEntity?
-    let deleteAction: () -> Void
-    let editAction: () -> Void
+    private let item: UserScheduleEntity?
+    private let deleteAction: () -> Void
+    private let editAction: () -> Void
+    
+    init(item: UserScheduleEntity?, deleteAction: @escaping () -> Void, editAction: @escaping () -> Void) {
+        self.item = item
+        self.deleteAction = deleteAction
+        self.editAction = editAction
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,7 +24,7 @@ struct UserScheduleListRowView: View {
                 .font(.headline)
             Text("\(item?.startTime ?? Date(), style: .time) to \(item?.endTime ?? Date(), style: .time)")
                 .font(.subheadline)
-                .foregroundColor(.secondary)
+                .foregroundColor(Color.gray)
         }
         .swipeActions(edge: .trailing) {
             Button(role: .destructive) {

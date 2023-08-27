@@ -11,6 +11,7 @@ struct UserScheduleEditorScreen: View {
     @EnvironmentObject var userScheduleVM: UserScheduleViewModel
     @State private var isAdding: Bool = false
     @State private var isEditing: Bool = false
+    @State private var isDeleting: Bool = false
     @State var editedScheduleId: UUID = UUID()
     var body: some View {
         List {
@@ -18,7 +19,8 @@ struct UserScheduleEditorScreen: View {
                 ForEach(userScheduleVM.userSchedule) { item in
                         UserScheduleListRowView(
                             item: item) {
-                                userScheduleVM.deleteUserSchedule(id: item.id)
+                                isDeleting = true
+                                editedScheduleId = item.id
                             } editAction: {
                                 userScheduleVM.startEditing(schedule: item)
                                 editedScheduleId = item.id
@@ -26,9 +28,21 @@ struct UserScheduleEditorScreen: View {
                                 isEditing = true
                             }
                 }
-            } header: {
-                Text("Latest")
             }
+        }
+        .alert("Delete Schedule", isPresented: $isDeleting) {
+            Button(role: .destructive) {
+                userScheduleVM.deleteUserSchedule(id: editedScheduleId)
+            } label: {
+                Text("Delete")
+            }
+            Button(role: .cancel) {
+                // Do nothing, cancel the deletion process
+            } label: {
+                Text("Cancel")
+            }
+        } message: {
+            Text("By deleting this schedule, all associated data will be permanently removed.")
         }
         .toolbar {
             Button {
@@ -64,9 +78,3 @@ struct UserScheduleEditorScreen: View {
         })
     }
 }
-
-//struct UserScheduleEditorScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserScheduleEditorScreen()
-//    }
-//}

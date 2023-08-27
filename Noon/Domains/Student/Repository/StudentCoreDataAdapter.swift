@@ -10,11 +10,11 @@ import CoreData
 
 class StudentCoreDataAdapter: StudentRepository {
     private let viewContext = PersistenceController.shared.container.viewContext
-    func getStudents() -> [StudentEntity] {
+    func getStudents(completion: @escaping (Result<[StudentEntity], Error>) -> Void) {
         let fetchRequest: NSFetchRequest<Student> = Student.fetchRequest()
         do {
             let students = try viewContext.fetch(fetchRequest)
-            return students.map { student in
+            let studentEntities = students.map { student in
                 StudentEntity(
                     id: student.id ?? UUID(),
                     name: student.name ?? "",
@@ -33,12 +33,17 @@ class StudentCoreDataAdapter: StudentRepository {
                     murojaahData: convertToMurojaahArray(murojaahSet: student.murojaah) ?? []
                 )
             }
-        } catch let error {
-            print("Failed to fetch Students: \(error)")
-            return []
+            completion(.success(studentEntities))
+        } catch {
+            completion(.failure(error))
         }
     }
-    func createStudent(student: StudentEntity, studentPreference: StudentPreferenceEntity) {
+    
+    func createStudent(
+        student: StudentEntity,
+        studentPreference: StudentPreferenceEntity,
+        completion: @escaping CompletionHandler
+    ) {
         let newStudent = Student(context: viewContext)
         newStudent.id = UUID()
         newStudent.name = student.name
@@ -49,18 +54,21 @@ class StudentCoreDataAdapter: StudentRepository {
         newStudent.createdAt = Date()
         newStudent.updatedAt = Date()
         newStudent.studentPreference = createStudentPreference(studentPreference: studentPreference)
+        
         do {
             try viewContext.save()
-            print("New student created succesfully")
-        } catch let error {
-            print("Error saving data: \(error)")
+            completion(.success(true))
+        } catch {
+            completion(.failure(error))
         }
     }
+    
     func updateStudent(
         id: UUID,
         student: StudentEntity,
         preferenceId: UUID,
-        studentPreference: StudentPreferenceEntity
+        studentPreference: StudentPreferenceEntity,
+        completion: @escaping CompletionHandler
     ) {
         let fetchRequest: NSFetchRequest<Student> = Student.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
@@ -75,15 +83,17 @@ class StudentCoreDataAdapter: StudentRepository {
                 fetchedStudent.updatedAt = Date()
                 updateStudentPreference(id: preferenceId, studentPreference: studentPreference)
                 try viewContext.save()
-                print("Student updated successfully")
-            } else {
-                print("Student not found")
+                completion(.success(true))
             }
         } catch let error {
-            print("Error updating student: \(error)")
+            completion(.failure(error))
         }
     }
-    func deleteStudent(id: UUID) {
+    
+    func deleteStudent(
+        id: UUID,
+        completion: @escaping CompletionHandler
+    ) {
         let fetchRequest: NSFetchRequest<Student> = Student.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         do {
@@ -114,15 +124,18 @@ class StudentCoreDataAdapter: StudentRepository {
                 // Delete the student entity itself
                 viewContext.delete(fetchedStudent)
                 try viewContext.save()
-                print("Student and related objects deleted successfully")
-            } else {
-                print("Student not found")
+                completion(.success(true))
             }
         } catch let error {
-            print("Error deleting student: \(error)")
+            completion(.failure(error))
         }
     }
-    func updateCompletedZiyadah(id: UUID, juz: Int) {
+    
+    func updateCompletedZiyadah(
+        id: UUID,
+        juz: Int,
+        completion: @escaping CompletionHandler
+    ) {
         let fetchRequest: NSFetchRequest<Student> = Student.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         do {
@@ -135,12 +148,149 @@ class StudentCoreDataAdapter: StudentRepository {
                 newCompletedZiyadah.updatedAt = Date()
                 fetchedStudent.addToCompletedZiyadah(newCompletedZiyadah)
                 try viewContext.save()
-                print("New Completed Ziyadah Added")
+                completion(.success(true))
             }
         } catch let error {
-            print("Error Adding Completed Ziyadah: \(error)")
+            completion(.failure(error))
         }
     }
+    //    func getStudents() -> [StudentEntity] {
+    //        let fetchRequest: NSFetchRequest<Student> = Student.fetchRequest()
+    //        do {
+    //            let students = try viewContext.fetch(fetchRequest)
+    //            return students.map { student in
+    //                StudentEntity(
+    //                    id: student.id ?? UUID(),
+    //                    name: student.name ?? "",
+    //                    birthDate: student.birthDate ?? Date(),
+    //                    startProgram: student.startProgram ?? Date(),
+    //                    address: student.address ?? "",
+    //                    gender: Int(student.gender),
+    //                    completedZiyadah: convertToCompletedZiyadahArray(
+    //                        completedZiyadahSet: student.completedZiyadah
+    //                    ) ?? [],
+    //                    createdAt: student.createdAt ?? Date(),
+    //                    updatedAt: student.updatedAt ?? Date(),
+    //                    studentPreference: convertToStudentPreferenceEntity(studentPreference: student.studentPreference),
+    //                    attendanceData: convertToAttendanceArray(attendanceSet: student.attendance) ?? [],
+    //                    ziyadahData: convertToZiyadahArray(ziyadahSet: student.ziyadah) ?? [],
+    //                    murojaahData: convertToMurojaahArray(murojaahSet: student.murojaah) ?? []
+    //                )
+    //            }
+    //        } catch let error {
+    //            print("Failed to fetch Students: \(error)")
+    //            return []
+    //        }
+    //    }
+//    func createStudent(
+//        student: StudentEntity,
+//        studentPreference: StudentPreferenceEntity,
+//        completion: @escaping (Bool) -> Void
+//    ) {
+//        let newStudent = Student(context: viewContext)
+//        newStudent.id = UUID()
+//        newStudent.name = student.name
+//        newStudent.address = student.address
+//        newStudent.gender = Int32(student.gender)
+//        newStudent.birthDate = student.birthDate
+//        newStudent.startProgram = student.startProgram
+//        newStudent.createdAt = Date()
+//        newStudent.updatedAt = Date()
+//        newStudent.studentPreference = createStudentPreference(studentPreference: studentPreference)
+//        do {
+//            try viewContext.save()
+//            completion(true)
+//            print("New student created succesfully")
+//        } catch let error {
+//            completion(false)
+//            print("Error saving data: \(error)")
+//        }
+//    }
+//    func updateStudent(
+//        id: UUID,
+//        student: StudentEntity,
+//        preferenceId: UUID,
+//        studentPreference: StudentPreferenceEntity
+//    ) {
+//        let fetchRequest: NSFetchRequest<Student> = Student.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+//        do {
+//            let fetchedStudents = try viewContext.fetch(fetchRequest)
+//            if let fetchedStudent = fetchedStudents.first {
+//                fetchedStudent.name = student.name
+//                fetchedStudent.address = student.address
+//                fetchedStudent.gender = Int32(student.gender)
+//                fetchedStudent.birthDate = student.birthDate
+//                fetchedStudent.startProgram = student.startProgram
+//                fetchedStudent.updatedAt = Date()
+//                updateStudentPreference(id: preferenceId, studentPreference: studentPreference)
+//                try viewContext.save()
+//                print("Student updated successfully")
+//            } else {
+//                print("Student not found")
+//            }
+//        } catch let error {
+//            print("Error updating student: \(error)")
+//        }
+//    }
+//    func deleteStudent(id: UUID) {
+//        let fetchRequest: NSFetchRequest<Student> = Student.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+//        do {
+//            let fetchedStudents = try viewContext.fetch(fetchRequest)
+//            if let fetchedStudent = fetchedStudents.first {
+//                // Delete related studentPreference objects
+//                if let studentPreference = fetchedStudent.studentPreference {
+//                    viewContext.delete(studentPreference)
+//                }
+//                // Delete all related Attendance objects
+//                if let attendances = fetchedStudent.attendance as? Set<Attendance> {
+//                    for attendance in attendances {
+//                        viewContext.delete(attendance)
+//                    }
+//                }
+//                // Delete all related Ziyadah objects
+//                if let ziyadahs = fetchedStudent.ziyadah as? Set<Ziyadah> {
+//                    for ziyadah in ziyadahs {
+//                        viewContext.delete(ziyadah)
+//                    }
+//                }
+//                // Delete all related Murojaah objects
+//                if let murojaahs = fetchedStudent.murojaah as? Set<Murojaah> {
+//                    for murojaah in murojaahs {
+//                        viewContext.delete(murojaah)
+//                    }
+//                }
+//                // Delete the student entity itself
+//                viewContext.delete(fetchedStudent)
+//                try viewContext.save()
+//                print("Student and related objects deleted successfully")
+//            } else {
+//                print("Student not found")
+//            }
+//        } catch let error {
+//            print("Error deleting student: \(error)")
+//        }
+//    }
+//    func updateCompletedZiyadah(id: UUID, juz: Int) {
+//        let fetchRequest: NSFetchRequest<Student> = Student.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+//        do {
+//            let fetchedStudents = try viewContext.fetch(fetchRequest)
+//            if let fetchedStudent = fetchedStudents.first {
+//                let newCompletedZiyadah = CompletedZiyadah(context: viewContext)
+//                newCompletedZiyadah.id = UUID()
+//                newCompletedZiyadah.juz = Int16(juz)
+//                newCompletedZiyadah.createdAt = Date()
+//                newCompletedZiyadah.updatedAt = Date()
+//                fetchedStudent.addToCompletedZiyadah(newCompletedZiyadah)
+//                try viewContext.save()
+//                print("New Completed Ziyadah Added")
+//            }
+//        } catch let error {
+//            print("Error Adding Completed Ziyadah: \(error)")
+//        }
+//    }
 }
 
 extension StudentCoreDataAdapter {

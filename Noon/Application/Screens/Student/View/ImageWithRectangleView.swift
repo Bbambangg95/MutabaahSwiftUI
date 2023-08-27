@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ImageWithRectangleView: View {
-    var imageName: String
-    var color: Color
+    private let imageName: String
+    private let color: Color
+    init(imageName: String, color: Color) {
+        self.imageName = imageName
+        self.color = color
+    }
     var body: some View {
         Image(systemName: imageName)
             .foregroundColor(.white)

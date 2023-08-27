@@ -9,7 +9,7 @@ import CoreData
 
 class MurojaahCDA: MurojaahRepository {
     private let viewContext = PersistenceController.shared.container.viewContext
-    func createMurojaah(studentId: UUID, murojaah: MurojaahEntity) {
+    func createMurojaah(studentId: UUID, murojaah: MurojaahEntity, completion: @escaping (Bool) -> Void) {
         let fetchStudent: NSFetchRequest<Student> = Student.fetchRequest()
         fetchStudent.predicate = NSPredicate(format: "id == %@", studentId as CVarArg)
         do {
@@ -23,11 +23,21 @@ class MurojaahCDA: MurojaahRepository {
                 newMurojaah.createdAt = Date()
                 newMurojaah.updatedAt = Date()
                 student.addToMurojaah(newMurojaah)
-                try viewContext.save()
-                print("New murojaah created succesfully")
+                do {
+                    try viewContext.save()
+                    completion(true)
+                    print("New murojaah created successfully")
+                } catch let error {
+                    print("Error saving data: \(error)")
+                    completion(false)
+                }
+            } else {
+                print("Student not found")
+                completion(false)
             }
         } catch let error {
             print("Error saving data: \(error)")
+            completion(false)
         }
     }
     func getMurojaah() -> [MurojaahEntity] {

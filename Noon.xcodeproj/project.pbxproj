@@ -31,7 +31,6 @@
 		C92CCEC32A834C4A0085681F /* AttendanceIconSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCEC22A834C4A0085681F /* AttendanceIconSign.swift */; };
 		C92CCEC52A834D630085681F /* AttendanceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCEC42A834D630085681F /* AttendanceRowView.swift */; };
 		C92CCF042A85085F0085681F /* NavigationWithIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCF032A85085F0085681F /* NavigationWithIconView.swift */; };
-		C92CCF072A85236E0085681F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCF062A85236E0085681F /* Color.swift */; };
 		C92CCF092A8527160085681F /* ZiyadahViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCF082A8527160085681F /* ZiyadahViewModel.swift */; };
 		C92CCF0B2A8527530085681F /* ZiyadahRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCF0A2A8527530085681F /* ZiyadahRepository.swift */; };
 		C92CCF0D2A8528D90085681F /* ZiyadahCDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCF0C2A8528D90085681F /* ZiyadahCDA.swift */; };
@@ -42,17 +41,17 @@
 		C92CCF172A867BDD0085681F /* MurojaahService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCF162A867BDD0085681F /* MurojaahService.swift */; };
 		C92CCF192A86820D0085681F /* MurojaahViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CCF182A86820D0085681F /* MurojaahViewModel.swift */; };
 		C93241B82A8B49100025C0E0 /* StudentViewModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93241B72A8B49100025C0E0 /* StudentViewModel+Extension.swift */; };
-		C93241BA2A8B8F860025C0E0 /* StudentOverviewSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93241B92A8B8F860025C0E0 /* StudentOverviewSectionView.swift */; };
-		C93241BC2A8BCAAB0025C0E0 /* Last30DaysRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93241BB2A8BCAAB0025C0E0 /* Last30DaysRowView.swift */; };
+		C93241BC2A8BCAAB0025C0E0 /* SummaryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93241BB2A8BCAAB0025C0E0 /* SummaryRowView.swift */; };
+		C93424402A9A224E005B21E3 /* SummaryAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934243F2A9A224E005B21E3 /* SummaryAttendance.swift */; };
+		C93424422A9B3A8F005B21E3 /* ProgressHistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93424412A9B3A8F005B21E3 /* ProgressHistorySheet.swift */; };
 		C93626382A5721470073DB04 /* StudentEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93626372A5721470073DB04 /* StudentEditorScreen.swift */; };
 		C943D85A2A624AEA00FF75F0 /* juzData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943D8592A624AEA00FF75F0 /* juzData.swift */; };
 		C946506B2A66FCDF00BEAC7A /* MemorizeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946506A2A66FCDF00BEAC7A /* MemorizeCategory.swift */; };
 		C94650742A682F8F00BEAC7A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94650722A682F8F00BEAC7A /* Model.xcdatamodeld */; };
-		C953B3F02A8A14EA0042296F /* TodaysUpdateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3EF2A8A14EA0042296F /* TodaysUpdateListView.swift */; };
+		C953B3F02A8A14EA0042296F /* TodaysUpdateListSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3EF2A8A14EA0042296F /* TodaysUpdateListSheet.swift */; };
 		C953B3F22A8A150E0042296F /* TodaysUpdateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3F12A8A150E0042296F /* TodaysUpdateRowView.swift */; };
 		C953B3FC2A8A35C50042296F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3FB2A8A35C50042296F /* CardView.swift */; };
-		C953B3FF2A8A372C0042296F /* Last30DaysSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3FE2A8A372C0042296F /* Last30DaysSection.swift */; };
-		C953B4012A8A376D0042296F /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B4002A8A376D0042296F /* SectionHeaderView.swift */; };
+		C953B3FF2A8A372C0042296F /* SummarySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3FE2A8A372C0042296F /* SummarySection.swift */; };
 		C953B4032A8A51140042296F /* AttendanceSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B4022A8A51140042296F /* AttendanceSectionView.swift */; };
 		C954FE112A7D4D49008CB77F /* StudentListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954FE102A7D4D49008CB77F /* StudentListRowView.swift */; };
 		C954FE152A7E235E008CB77F /* MemorizeListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954FE142A7E235E008CB77F /* MemorizeListRowView.swift */; };
@@ -77,6 +76,7 @@
 		C97A064D2A96150900797B15 /* MurojaahCategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A064C2A96150900797B15 /* MurojaahCategoryPicker.swift */; };
 		C97A064F2A96158000797B15 /* MurojaahPerPageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A064E2A96158000797B15 /* MurojaahPerPageForm.swift */; };
 		C97A06512A96164900797B15 /* MurojaahPerJuzForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A06502A96164900797B15 /* MurojaahPerJuzForm.swift */; };
+		C97A06552A96562600797B15 /* SummaryZiyadah.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A06542A96562600797B15 /* SummaryZiyadah.swift */; };
 		C97DC47E2A926290006D756F /* CompletedZiyadah+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC47C2A926290006D756F /* CompletedZiyadah+CoreDataClass.swift */; };
 		C97DC47F2A926290006D756F /* CompletedZiyadah+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC47D2A926290006D756F /* CompletedZiyadah+CoreDataProperties.swift */; };
 		C97DC4812A9262C8006D756F /* CompletedZiyadahExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC4802A9262C8006D756F /* CompletedZiyadahExtension.swift */; };
@@ -84,6 +84,7 @@
 		C97DC49E2A94EF3F006D756F /* ZiyadahEditorDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC49D2A94EF3F006D756F /* ZiyadahEditorDetailSection.swift */; };
 		C97DC4A02A94F0D3006D756F /* ZiyadahEditorValueSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC49F2A94F0D3006D756F /* ZiyadahEditorValueSection.swift */; };
 		C97DC4A22A94F19A006D756F /* ZiyadahEditorDateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC4A12A94F19A006D756F /* ZiyadahEditorDateSection.swift */; };
+		C98BE2FD2A991BF500500B55 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */; };
 		C9904FC92A591B29009C7AD8 /* UserEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9904FC82A591B29009C7AD8 /* UserEditorScreen.swift */; };
 		C9B067622A555AB500E87449 /* MemorizeEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B067612A555AB500E87449 /* MemorizeEditorScreen.swift */; };
 		C9B13AE32A4FB9930062EC30 /* NoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B13AE22A4FB9930062EC30 /* NoonApp.swift */; };
@@ -143,7 +144,6 @@
 		C92CCEC22A834C4A0085681F /* AttendanceIconSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceIconSign.swift; sourceTree = "<group>"; };
 		C92CCEC42A834D630085681F /* AttendanceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRowView.swift; sourceTree = "<group>"; };
 		C92CCF032A85085F0085681F /* NavigationWithIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationWithIconView.swift; sourceTree = "<group>"; };
-		C92CCF062A85236E0085681F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C92CCF082A8527160085681F /* ZiyadahViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiyadahViewModel.swift; sourceTree = "<group>"; };
 		C92CCF0A2A8527530085681F /* ZiyadahRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiyadahRepository.swift; sourceTree = "<group>"; };
 		C92CCF0C2A8528D90085681F /* ZiyadahCDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiyadahCDA.swift; sourceTree = "<group>"; };
@@ -154,17 +154,18 @@
 		C92CCF162A867BDD0085681F /* MurojaahService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurojaahService.swift; sourceTree = "<group>"; };
 		C92CCF182A86820D0085681F /* MurojaahViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurojaahViewModel.swift; sourceTree = "<group>"; };
 		C93241B72A8B49100025C0E0 /* StudentViewModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudentViewModel+Extension.swift"; sourceTree = "<group>"; };
-		C93241B92A8B8F860025C0E0 /* StudentOverviewSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentOverviewSectionView.swift; sourceTree = "<group>"; };
-		C93241BB2A8BCAAB0025C0E0 /* Last30DaysRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Last30DaysRowView.swift; sourceTree = "<group>"; };
+		C93241BB2A8BCAAB0025C0E0 /* SummaryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRowView.swift; sourceTree = "<group>"; };
+		C934243F2A9A224E005B21E3 /* SummaryAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryAttendance.swift; sourceTree = "<group>"; };
+		C93424412A9B3A8F005B21E3 /* ProgressHistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHistorySheet.swift; sourceTree = "<group>"; };
+		C93424442A9B5789005B21E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C93626372A5721470073DB04 /* StudentEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditorScreen.swift; sourceTree = "<group>"; };
 		C943D8592A624AEA00FF75F0 /* juzData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = juzData.swift; sourceTree = "<group>"; };
 		C946506A2A66FCDF00BEAC7A /* MemorizeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeCategory.swift; sourceTree = "<group>"; };
 		C94650732A682F8F00BEAC7A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		C953B3EF2A8A14EA0042296F /* TodaysUpdateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysUpdateListView.swift; sourceTree = "<group>"; };
+		C953B3EF2A8A14EA0042296F /* TodaysUpdateListSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysUpdateListSheet.swift; sourceTree = "<group>"; };
 		C953B3F12A8A150E0042296F /* TodaysUpdateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysUpdateRowView.swift; sourceTree = "<group>"; };
 		C953B3FB2A8A35C50042296F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		C953B3FE2A8A372C0042296F /* Last30DaysSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Last30DaysSection.swift; sourceTree = "<group>"; };
-		C953B4002A8A376D0042296F /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		C953B3FE2A8A372C0042296F /* SummarySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySection.swift; sourceTree = "<group>"; };
 		C953B4022A8A51140042296F /* AttendanceSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceSectionView.swift; sourceTree = "<group>"; };
 		C954FE102A7D4D49008CB77F /* StudentListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListRowView.swift; sourceTree = "<group>"; };
 		C954FE142A7E235E008CB77F /* MemorizeListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeListRowView.swift; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 		C97A064C2A96150900797B15 /* MurojaahCategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurojaahCategoryPicker.swift; sourceTree = "<group>"; };
 		C97A064E2A96158000797B15 /* MurojaahPerPageForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurojaahPerPageForm.swift; sourceTree = "<group>"; };
 		C97A06502A96164900797B15 /* MurojaahPerJuzForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurojaahPerJuzForm.swift; sourceTree = "<group>"; };
+		C97A06542A96562600797B15 /* SummaryZiyadah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryZiyadah.swift; sourceTree = "<group>"; };
 		C97DC47C2A926290006D756F /* CompletedZiyadah+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompletedZiyadah+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C97DC47D2A926290006D756F /* CompletedZiyadah+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompletedZiyadah+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C97DC4802A9262C8006D756F /* CompletedZiyadahExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedZiyadahExtension.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		C97DC49D2A94EF3F006D756F /* ZiyadahEditorDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiyadahEditorDetailSection.swift; sourceTree = "<group>"; };
 		C97DC49F2A94F0D3006D756F /* ZiyadahEditorValueSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiyadahEditorValueSection.swift; sourceTree = "<group>"; };
 		C97DC4A12A94F19A006D756F /* ZiyadahEditorDateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiyadahEditorDateSection.swift; sourceTree = "<group>"; };
+		C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		C9904FC82A591B29009C7AD8 /* UserEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditorScreen.swift; sourceTree = "<group>"; };
 		C9B067612A555AB500E87449 /* MemorizeEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeEditorScreen.swift; sourceTree = "<group>"; };
 		C9B13ADF2A4FB9930062EC30 /* Noon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,10 +265,17 @@
 		C92CCF052A8523570085681F /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				C92CCF062A85236E0085681F /* Color.swift */,
 				C9D5F9FB2A90409600755CD5 /* ChartView.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		C93424432A9B5788005B21E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C93424442A9B5789005B21E3 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C953B3EB2A8A141B0042296F /* LatestUpdateSection */ = {
@@ -280,7 +290,7 @@
 		C953B3EC2A8A14500042296F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C953B3EF2A8A14EA0042296F /* TodaysUpdateListView.swift */,
+				C953B3EF2A8A14EA0042296F /* TodaysUpdateListSheet.swift */,
 				C953B3F12A8A150E0042296F /* TodaysUpdateRowView.swift */,
 			);
 			path = View;
@@ -323,7 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				C953B3FD2A8A370D0042296F /* View */,
-				C953B3FE2A8A372C0042296F /* Last30DaysSection.swift */,
+				C953B3FE2A8A372C0042296F /* SummarySection.swift */,
 			);
 			path = Last30DaysSection;
 			sourceTree = "<group>";
@@ -339,7 +349,9 @@
 		C953B3FD2A8A370D0042296F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C93241BB2A8BCAAB0025C0E0 /* Last30DaysRowView.swift */,
+				C93241BB2A8BCAAB0025C0E0 /* SummaryRowView.swift */,
+				C97A06542A96562600797B15 /* SummaryZiyadah.swift */,
+				C934243F2A9A224E005B21E3 /* SummaryAttendance.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -627,7 +639,6 @@
 			isa = PBXGroup;
 			children = (
 				C90A839D2A7F9B8000BE477C /* ToolbarItems.swift */,
-				C953B4002A8A376D0042296F /* SectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -670,9 +681,9 @@
 			isa = PBXGroup;
 			children = (
 				C954FE102A7D4D49008CB77F /* StudentListRowView.swift */,
-				C93241B92A8B8F860025C0E0 /* StudentOverviewSectionView.swift */,
 				C9D5F9FD2A90467200755CD5 /* StudentOverviewRowView.swift */,
 				C9D5F9F92A8FC48A00755CD5 /* ImageWithRectangleView.swift */,
+				C93424412A9B3A8F005B21E3 /* ProgressHistorySheet.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -716,6 +727,7 @@
 			children = (
 				C9B13AE12A4FB9930062EC30 /* Noon */,
 				C9B13AE02A4FB9930062EC30 /* Products */,
+				C93424432A9B5788005B21E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -730,8 +742,8 @@
 		C9B13AE12A4FB9930062EC30 /* Noon */ = {
 			isa = PBXGroup;
 			children = (
-				C953B3F42A8A1B6A0042296F /* Shared */,
 				C9B13AE22A4FB9930062EC30 /* NoonApp.swift */,
+				C953B3F42A8A1B6A0042296F /* Shared */,
 				C954FE222A7E85CF008CB77F /* Application */,
 				C954FE212A7E85C0008CB77F /* Domains */,
 				C954FE232A7E85FA008CB77F /* Infrastructure */,
@@ -785,6 +797,7 @@
 			isa = PBXGroup;
 			children = (
 				C9FF1F0E2A8914DA00C7D04F /* DateUtils.swift */,
+				C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -870,9 +883,8 @@
 			files = (
 				C9DC1D562A5C479C003D3BA1 /* PersistenceController.swift in Sources */,
 				C954FE192A7E3855008CB77F /* MemorizeValue.swift in Sources */,
-				C93241BA2A8B8F860025C0E0 /* StudentOverviewSectionView.swift in Sources */,
 				C92CCF172A867BDD0085681F /* MurojaahService.swift in Sources */,
-				C93241BC2A8BCAAB0025C0E0 /* Last30DaysRowView.swift in Sources */,
+				C93241BC2A8BCAAB0025C0E0 /* SummaryRowView.swift in Sources */,
 				C92CCF112A8676A90085681F /* MemorizeEntity.swift in Sources */,
 				C9D5FA372A9260EA00755CD5 /* Attendance+CoreDataProperties.swift in Sources */,
 				C97DC47F2A926290006D756F /* CompletedZiyadah+CoreDataProperties.swift in Sources */,
@@ -890,8 +902,9 @@
 				C9B13AE32A4FB9930062EC30 /* NoonApp.swift in Sources */,
 				C9D5FA3A2A9260EA00755CD5 /* Student+CoreDataClass.swift in Sources */,
 				C9D5F9F82A8FBC7E00755CD5 /* StudentOverviewViewModel.swift in Sources */,
-				C953B3FF2A8A372C0042296F /* Last30DaysSection.swift in Sources */,
+				C953B3FF2A8A372C0042296F /* SummarySection.swift in Sources */,
 				C92CCF132A8677970085681F /* MurojaahRepository.swift in Sources */,
+				C93424402A9A224E005B21E3 /* SummaryAttendance.swift in Sources */,
 				C92CCF0B2A8527530085681F /* ZiyadahRepository.swift in Sources */,
 				C96355F42A6D78E900FA260D /* TodaysOverview.swift in Sources */,
 				C97DC4A22A94F19A006D756F /* ZiyadahEditorDateSection.swift in Sources */,
@@ -901,6 +914,7 @@
 				C922582E2A618ACD00443E0C /* MemorizeListScreen.swift in Sources */,
 				C90A83C22A80A6BB00BE477C /* UserExtension.swift in Sources */,
 				C92CCF192A86820D0085681F /* MurojaahViewModel.swift in Sources */,
+				C93424422A9B3A8F005B21E3 /* ProgressHistorySheet.swift in Sources */,
 				C9D5FA322A9260EA00755CD5 /* Ziyadah+CoreDataClass.swift in Sources */,
 				C96355EE2A6D77DD00FA260D /* DashboardScreen.swift in Sources */,
 				C954FE172A7E2B90008CB77F /* ZiyadahEditorView.swift in Sources */,
@@ -908,10 +922,10 @@
 				C92CCF0F2A8535B90085681F /* ZiyadahService.swift in Sources */,
 				C90A83982A7F921F00BE477C /* UserScheduleEditorScreen.swift in Sources */,
 				C90053522A6604A400333854 /* MemorizeViewModel.swift in Sources */,
-				C92CCF072A85236E0085681F /* Color.swift in Sources */,
 				C9D5FA2F2A9260EA00755CD5 /* StudentPreference+CoreDataProperties.swift in Sources */,
 				C90A839C2A7F96E000BE477C /* UserViewModel.swift in Sources */,
 				C9D5FA312A9260EA00755CD5 /* User+CoreDataProperties.swift in Sources */,
+				C97A06552A96562600797B15 /* SummaryZiyadah.swift in Sources */,
 				C9FF1F0F2A8914DA00C7D04F /* DateUtils.swift in Sources */,
 				C9D5FA2E2A9260EA00755CD5 /* StudentPreference+CoreDataClass.swift in Sources */,
 				C9D5F9FA2A8FC48A00755CD5 /* ImageWithRectangleView.swift in Sources */,
@@ -943,12 +957,11 @@
 				C97DC4A02A94F0D3006D756F /* ZiyadahEditorValueSection.swift in Sources */,
 				C953B3FC2A8A35C50042296F /* CardView.swift in Sources */,
 				C92CCF0D2A8528D90085681F /* ZiyadahCDA.swift in Sources */,
-				C953B3F02A8A14EA0042296F /* TodaysUpdateListView.swift in Sources */,
+				C953B3F02A8A14EA0042296F /* TodaysUpdateListSheet.swift in Sources */,
 				C9D5FA2C2A9260EA00755CD5 /* Murojaah+CoreDataClass.swift in Sources */,
 				C92CCEC52A834D630085681F /* AttendanceRowView.swift in Sources */,
 				C9B13AF52A5017C30062EC30 /* StudentListScreen.swift in Sources */,
 				C9B783312A57048400F9C85A /* AttendanceEditorScreen.swift in Sources */,
-				C953B4012A8A376D0042296F /* SectionHeaderView.swift in Sources */,
 				C92CCEBF2A834AA10085681F /* AttendanceService.swift in Sources */,
 				C90A83A22A7FA84100BE477C /* UserCoreDataAdapter.swift in Sources */,
 				C954FE602A7E94A8008CB77F /* AttendanceEntity.swift in Sources */,
@@ -967,6 +980,7 @@
 				C954FE1F2A7E678F008CB77F /* MurojaahAmountOptions.swift in Sources */,
 				C954FE1B2A7E5CCA008CB77F /* MurojaahEditorView.swift in Sources */,
 				C90053542A669E6D00333854 /* AttendanceViewModel.swift in Sources */,
+				C98BE2FD2A991BF500500B55 /* ResponseHandler.swift in Sources */,
 				C9D5FA392A9260EA00755CD5 /* UserSchedule+CoreDataProperties.swift in Sources */,
 				C91B88F12A7C0F8C008D4260 /* MemorizeExtension.swift in Sources */,
 				C9D5F9FE2A90467200755CD5 /* StudentOverviewRowView.swift in Sources */,
@@ -1106,17 +1120,19 @@
 				DEVELOPMENT_TEAM = 42BZUPKLGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Mutabaah;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bams.Noon;
+				PRODUCT_BUNDLE_IDENTIFIER = bambang.mutabaah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1135,17 +1151,19 @@
 				DEVELOPMENT_TEAM = 42BZUPKLGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Mutabaah;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bams.Noon;
+				PRODUCT_BUNDLE_IDENTIFIER = bambang.mutabaah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

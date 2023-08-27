@@ -27,4 +27,15 @@ class DateUtils {
             return ("\(daysLeft) day\(daysLeft == 1 ? "" : "s") left", .orange)
         }
     }
+    static func getDateFromMonth(month: Int, year: Int) -> Date {
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = 15
+        if let date = Calendar.current.date(from: dateComponents) {
+            return date
+        } else {
+            fatalError("Invalid date components")
+        }
+    }
 }

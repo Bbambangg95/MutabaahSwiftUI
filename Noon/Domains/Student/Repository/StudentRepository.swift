@@ -8,14 +8,27 @@
 import Foundation
 
 protocol StudentRepository {
-    func getStudents() -> [StudentEntity]
-    func createStudent(student: StudentEntity, studentPreference: StudentPreferenceEntity)
-    func updateStudent(id: UUID, student: StudentEntity, preferenceId: UUID, studentPreference: StudentPreferenceEntity)
-    func deleteStudent(id: UUID)
-    func updateCompletedZiyadah(id: UUID, juz: Int)
-    
-//    func createStudentPreference(studentPreference: StudentPreferenceEntity)
-//    func updateStudentPreference(id: UUID, studentPreference: StudentPreferenceEntity)
-//    func deleteStudentPreference(id: UUID)
-    
+    typealias CompletionHandler = (Result<Bool, Error>) -> Void
+    func getStudents(completion: @escaping (Result<[StudentEntity], Error>) -> Void)
+    func createStudent(
+        student: StudentEntity,
+        studentPreference: StudentPreferenceEntity,
+        completion: @escaping CompletionHandler
+    )
+    func updateStudent(
+        id: UUID,
+        student: StudentEntity,
+        preferenceId: UUID,
+        studentPreference: StudentPreferenceEntity,
+        completion: @escaping CompletionHandler
+    )
+    func deleteStudent(
+        id: UUID,
+        completion: @escaping CompletionHandler
+    )
+    func updateCompletedZiyadah(
+        id: UUID,
+        juz: Int,
+        completion: @escaping CompletionHandler
+    )
 }

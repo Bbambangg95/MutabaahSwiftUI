@@ -14,7 +14,6 @@ struct TodaysUpdateRowView: View {
     }
     var body: some View {
         HStack{
-            imageView
             switch memorize.memorizeCategory {
             case MemorizeCategory.ziyadah.rawValue:
                 ziyadahRowView
@@ -31,68 +30,72 @@ struct TodaysUpdateRowView: View {
                 EmptyView()
             }
         }
-        .padding()
-        .background(color.opacity(0.1))
-        .cornerRadius(10)
-        .padding(.vertical, 1)
-    }
-    private var imageView: some View {
-        Image(systemName: memorize.memorizeCategory == MemorizeCategory.ziyadah.rawValue ? "bookmark.square" : "arrow.2.squarepath")
-            .font(.title2)
-            .scaledToFill()
-            .foregroundColor(color)
     }
     private var ziyadahRowView: some View {
-        HStack {
+        HStack(alignment: .bottom) {
             VStack(alignment: .leading) {
                 Text("\(memorize.studentName)")
                     .font(.headline)
                     .lineLimit(1)
-                Text("Juz \(memorize.key), Page \(memorize.value)")
-                    .font(.footnote)
+                dateAndTimeView
             }
             Spacer()
             VStack(alignment: .trailing) {
                 Text("\(memorize.memorizeCategory)")
-                dateAndTimeView
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.gray)
+                    .font(.caption)
+                    .textCase(.uppercase)
+                Text("Juz \(memorize.key), Page \(memorize.value)")
+                    .font(.footnote)
+                    .foregroundColor(Color.gray)
             }
         }
     }
     private var murojaahPerPageRowView: some View {
-        HStack (alignment: .top) {
+        HStack (alignment: .bottom) {
             VStack (alignment: .leading) {
                 Text("\(memorize.studentName)")
                     .font(.headline)
                     .lineLimit(1)
-                Text("Juz \(memorize.key), Page \(memorize.value)")
-                    .font(.footnote)
+                dateAndTimeView
             }
             Spacer()
             VStack(alignment: .trailing) {
                 Text("\(memorize.memorizeCategory) | \(memorize.murojaahCategory)")
-                dateAndTimeView
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.gray)
+                    .font(.caption)
+                    .textCase(.uppercase)
+                Text("Juz \(memorize.key), Page \(memorize.value)")
+                    .font(.footnote)
+                    .foregroundColor(Color.gray)
             }
         }
     }
     private var murojaahPerJuzRowView: some View {
-        HStack (alignment: .top) {
+        HStack (alignment: .bottom) {
             VStack (alignment: .leading) {
                 Text("\(memorize.studentName)")
                     .font(.headline)
                     .lineLimit(1)
-                Text("\(memorize.key), Juz : \(memorize.value)")
-                    .font(.footnote)
+                dateAndTimeView
             }
             Spacer()
             VStack(alignment: .trailing) {
                 Text("\(memorize.memorizeCategory) | \(memorize.murojaahCategory)")
-                dateAndTimeView
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.gray)
+                    .font(.caption)
+                    .textCase(.uppercase)
+                Text("\(memorize.key), Juz : \(memorize.value)")
+                    .font(.footnote)
+                    .foregroundColor(Color.gray)
             }
         }
     }
     private var dateAndTimeView: some View {
         HStack (alignment: .top) {
-            Spacer()
             Text(memorize.createdAt , style: .date)
                 .font(.footnote)
                 .opacity(0.5)

@@ -26,6 +26,10 @@ struct AttendanceEditorScreen: View {
                     setupScheduleSection
                 } else {
                     picker
+                    Label("Swipe to the right to update.", systemImage: "info.circle")
+                        .font(.footnote)
+                        .foregroundColor(Color.gray)
+                        .italic()
                     attendanceList
                 }
             }
@@ -45,8 +49,8 @@ struct AttendanceEditorScreen: View {
     }
     private var picker: some View {
         Picker("", selection: $userScheduleVM.selectedClassTime) {
-            ForEach(userScheduleVM.userSchedule, id: \.timeLabel) { item in
-                Text(item.timeLabel).tag(item.timeLabel)
+            ForEach(userScheduleVM.userSchedule, id: \.id) { item in
+                Text(item.timeLabel).tag(item.id.uuidString)
             }
         }
         .pickerStyle(.segmented)

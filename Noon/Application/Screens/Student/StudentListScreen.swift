@@ -8,11 +8,14 @@ import SwiftUI
 
 struct StudentListScreen: View {
     @EnvironmentObject var studentVM: StudentViewModel
+    @State private var alertDeleteStudent: Bool = false
+    @State private var studentToDelete: StudentEntity?
     var body: some View {
         List {
             ForEach(studentVM.students) { student in
                 StudentListRowView(student: student) {
-                    studentVM.deleteStudent(id: student.id)
+                    studentToDelete = student
+                    alertDeleteStudent.toggle()
                 }
             }
         }
@@ -20,11 +23,35 @@ struct StudentListScreen: View {
         .navigationTitle("Students")
         .navigationBarTitleDisplayMode(.large)
         .toolbar {
-            NavigationLink {
-                StudentEditorScreen(studentEditorVM: StudentEditorViewModel())
+            Button {
+                studentVM.presentNewStudentSheet = true
             } label: {
-                Image(systemName: "plus")
+                Text("Add")
+                    .font(.headline)
             }
+        }
+        .sheet(isPresented: $studentVM.presentNewStudentSheet) {
+            StudentEditorScreen()
+        }
+        .alert("Delete", isPresented: $alertDeleteStudent) {
+            Button(role: .destructive) {
+                if let student = studentToDelete {
+                    studentVM.deleteStudent(id: student.id) { result in
+                        // Handle delete completion if needed
+                    }
+                }
+                studentToDelete = nil
+            } label: {
+                Text("Delete")
+            }
+            Button(role: .cancel) {
+                studentToDelete = nil
+            } label: {
+                Text("Cancel")
+            }
+        } message: {
+                Text("All data related to \(studentToDelete?.name ?? "") will be permanently deleted. Are you sure you want to proceed?")
         }
     }
 }
+

@@ -41,7 +41,7 @@ struct TodaysOverview: View {
             Spacer()
             Picker("", selection: $userScheduleVM.selectedClassTime) {
                 ForEach(userScheduleVM.userSchedule) { schedule in
-                    Text(schedule.timeLabel).tag(schedule.timeLabel)
+                    Text(schedule.timeLabel).tag(schedule.id.uuidString)
                         .textCase(nil)
                 }
             }

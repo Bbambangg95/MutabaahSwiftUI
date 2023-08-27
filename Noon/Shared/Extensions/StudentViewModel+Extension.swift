@@ -18,7 +18,7 @@ extension StudentViewModel {
                 acc[key, default: 0] += 1
             }
             .map { ChartData(xValue: $0.key, yValue: $0.value) }
-            .sorted { dateFormatter.date(from: $0.xValue)! > dateFormatter.date(from: $1.xValue)! }
+            .sorted { dateFormatter.date(from: $0.xValue)! < dateFormatter.date(from: $1.xValue)! }
     }
     static func getFilteredStudent(
         students: [StudentEntity],
@@ -33,8 +33,19 @@ extension StudentViewModel {
             }.isEmpty)
         }
     }
-    static func updateCompletedZiyadah(id: UUID, juz: Int) {
+    static func updateCompletedZiyadah(
+        id: UUID,
+        juz: Int,
+        completion: @escaping CompletionHandler
+    ) {
         let studentService = StudentService(studentRepository: StudentCoreDataAdapter())
-        studentService.updateCompletedZiyadah(id: id, juz: juz)
+        studentService.updateCompletedZiyadah(id: id, juz: juz) { result in
+            switch result {
+            case .success:
+                completion(.success(true))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

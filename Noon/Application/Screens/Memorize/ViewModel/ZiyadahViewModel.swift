@@ -70,21 +70,37 @@ class ZiyadahViewModel: ObservableObject {
         let isLatestPage = juzData.isLastPageInJuz(juzNumber: juz, pageNumber: page)
         
         if isDuplicate {
-            completion(false)
             alertContent = AlertContent(
                 title: "Failed",
                 message: isLatestPage ? "Juz \(juz) has already been completed." : "Juz \(juz) Page \(page) has already been filled out."
             )
+            completion(false)
         } else {
             if isLatestPage {
-                StudentViewModel.updateCompletedZiyadah(id: student.id, juz: juz)
+                StudentViewModel.updateCompletedZiyadah(id: student.id, juz: juz) { result in
+                    switch result {
+                    case .success:
+                        self.alertContent = AlertContent(
+                            title: "Success",
+                            message: "Juz \(self.juz) has been marked as completed. Juz \(self.juz) Page \(self.page) saved successfully."
+                        )
+                    case .failure(let error):
+                        self.alertContent = AlertContent(
+                            title: "Failed",
+                            message: "\(error)"
+                        )
+                    }
+                    
+                }
             }
-            alertContent = AlertContent(
-                title: "Success",
-                message: isLatestPage ? "Juz \(juz) has been marked as completed." : "Juz \(juz) Page \(page) saved successfully."
-            )
             ziyadahService.createZiyadah(studentId: studentId, ziyadah: newZiyadah) { success in
-                completion(success)
+                if success {
+                    self.alertContent = AlertContent(
+                        title: "Success",
+                        message: "Juz \(self.juz) Page \(self.page) saved successfully."
+                    )
+                    completion(success)
+                }
             }
         }
     }

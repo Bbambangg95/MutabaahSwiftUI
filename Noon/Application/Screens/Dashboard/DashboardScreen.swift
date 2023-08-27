@@ -14,7 +14,8 @@ struct DashboardScreen: View {
         NavigationStack {
             List {
                 TodaysOverview()
-                Last30DaysSection()
+                SummarySection()
+                TodaysUpdateSection()
             }
             .background(Color(uiColor: .systemGroupedBackground))
             .toolbar {
@@ -28,8 +29,6 @@ struct DashboardScreen: View {
                     isAttendModalPresented: $isAttendModalPresented
                 )
             }
-            .navigationTitle("Today's Overview")
-            .navigationBarTitleDisplayMode(.automatic)
         }
         .sheet(isPresented: $isMemoModalPresented) {
             MemorizeListScreen()

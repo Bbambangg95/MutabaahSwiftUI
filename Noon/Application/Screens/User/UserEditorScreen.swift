@@ -12,7 +12,7 @@ struct UserEditorScreen: View {
     @EnvironmentObject var userVM: UserViewModel
     var body: some View {
         Form {
-            Section ("Identity") {
+            Section ("User Identity") {
                 TextField("Full Name", text: $userVM.name)
                     .textInputAutocapitalization(.words)
                 TextField("Address", text: $userVM.address)

@@ -15,8 +15,8 @@ class MurojaahService {
     func getMurojaah() -> [MurojaahEntity] {
         return murojaahRepository.getMurojaah()
     }
-    func createMurojaah(studentId: UUID, murojaah: MurojaahEntity) {
-        return murojaahRepository.createMurojaah(studentId: studentId, murojaah: murojaah)
+    func createMurojaah(studentId: UUID, murojaah: MurojaahEntity, completion: @escaping (Bool) -> Void) {
+        return murojaahRepository.createMurojaah(studentId: studentId, murojaah: murojaah, completion: completion)
     }
     func deleteMurojaah(id: UUID) {
         murojaahRepository.deleteMurojaah(id: id)

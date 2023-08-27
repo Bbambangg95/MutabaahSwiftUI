@@ -12,31 +12,38 @@ struct AttendanceRowView: View {
     @StateObject private var attendanceVM = AttendanceViewModel()
     @EnvironmentObject var userScheduleVM: UserScheduleViewModel
     var student: StudentEntity
+    var todayAttendance: Bool? {
+        attendanceVM.getTodayAttendanceData(attendanceData: student.attendanceData, timeLabel: userScheduleVM.selectedClassTime)
+    }
     var body: some View {
         HStack {
             Text(student.name)
                 .font(.headline)
                 .lineLimit(1)
             Spacer()
-            switch getTodayAttendanceData(attendanceData: student.attendanceData) {
+            switch todayAttendance {
             case true:
                 Image(systemName: AttendanceIconSign.present.rawValue)
+                    .foregroundColor(Color.green)
             case false:
                 Image(systemName: AttendanceIconSign.absent.rawValue)
+                    .foregroundColor(Color.red)
             case nil:
                 Image(systemName: AttendanceIconSign.notUpdated.rawValue)
+                    .foregroundColor(Color.gray)
             default:
                 EmptyView()
             }
         }
         .swipeActions(edge: .trailing) {
-            Button(role: .destructive) {
+            Button {
                 withAnimation {
                     attendanceAction(student: student, attendStatus: false)
                 }
             } label: {
                 Image(systemName: AttendanceIconSign.absent.rawValue)
             }
+            .tint(Color.red)
             Button {
                 withAnimation {
                     attendanceAction(student: student, attendStatus: true)
@@ -44,19 +51,7 @@ struct AttendanceRowView: View {
             } label: {
                 Image(systemName: AttendanceIconSign.present.rawValue)
             }
-            .tint(.green)
-        }
-    }
-    private func getTodayAttendanceData(attendanceData: [AttendanceEntity]) -> Bool? {
-        let filteredAttendance = attendanceData.filter { item in
-            Calendar.current.isDateInToday(item.createdAt) &&
-            item.timeLabel == userScheduleVM.selectedClassTime
-        }
-        if let existingAttendance = filteredAttendance.first {
-            let attendStatus = existingAttendance.attendStatus
-            return attendStatus
-        } else {
-            return nil
+            .tint(Color.green)
         }
     }
     private func attendanceAction(student: StudentEntity, attendStatus: Bool) {
@@ -65,6 +60,6 @@ struct AttendanceRowView: View {
             timeLabel: userScheduleVM.selectedClassTime,
             attendStatus: attendStatus
         )
-        studentVM.fetchStudent()
+        studentVM.fetchStudents()
     }
 }
