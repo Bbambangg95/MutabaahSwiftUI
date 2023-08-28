@@ -16,8 +16,7 @@ class UserScheduleViewModel: ObservableObject {
     @Published var endTime: Date = Date()
     
     init() {
-        self.userSchedule = getUserSchedule()
-        self.selectedClassTime = userSchedule.first?.id.uuidString ?? ""
+        fetchSchedule()
     }
     
     private let userService = UserService(userRepository: UserCoreDataAdapter())
@@ -26,6 +25,11 @@ class UserScheduleViewModel: ObservableObject {
         self.timeLabel = schedule?.timeLabel ?? ""
         self.startTime = schedule?.startTime ?? Date()
         self.endTime = schedule?.endTime ?? Date()
+    }
+    
+    func fetchSchedule() {
+        self.userSchedule = getUserSchedule()
+        self.selectedClassTime = userSchedule.first?.id.uuidString ?? ""
     }
     
     func getUserSchedule() -> [UserScheduleEntity] {
@@ -40,7 +44,7 @@ class UserScheduleViewModel: ObservableObject {
         newSchedule.endTime = self.endTime
         
         userService.createUserSchedule(schedule: newSchedule)
-        self.userSchedule = getUserSchedule()
+        fetchSchedule()
     }
     
     func updateUserSchedule(id: UUID) {
@@ -50,11 +54,11 @@ class UserScheduleViewModel: ObservableObject {
         newSchedule.endTime = self.endTime
         
         userService.updateUserSchedule(id: id, schedule: newSchedule)
-        self.userSchedule = getUserSchedule()
+        fetchSchedule()
     }
     
     func deleteUserSchedule(id: UUID) {
         userService.deleteUserSchedule(id: id)
-        self.userSchedule = getUserSchedule()
+        fetchSchedule()
     }
 }

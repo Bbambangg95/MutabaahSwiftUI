@@ -8,21 +8,15 @@
 import SwiftUI
 
 struct TodaysUpdateSection: View {
-    @EnvironmentObject var memorizeVM: MemorizeViewModel
-    @State private var showFullscreenCover: Bool = false
+    @Binding var presentTodaysUpdateSheet: Bool
+    var memorize: [MemorizeEntity]
     var body: some View {
         Section {
-            ForEach(memorizeVM.memorize.prefix(3)) { memorize in
+            ForEach(memorize.prefix(5)) { memorize in
                 TodaysUpdateRowView(memorize: memorize)
             }
         } header: {
             headerView
-        }
-        .sheet(isPresented: $showFullscreenCover) {
-            TodaysUpdateListSheet(
-                showFullscreenCover: $showFullscreenCover,
-                memorize: memorizeVM.memorize
-            )
         }
     }
     private var headerView: some View {
@@ -31,7 +25,7 @@ struct TodaysUpdateSection: View {
             Text("Latest Update")
             Spacer()
             Button {
-                showFullscreenCover = true
+                presentTodaysUpdateSheet = true
             } label: {
                 Text("See All")
             }

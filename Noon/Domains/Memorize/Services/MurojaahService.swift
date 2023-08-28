@@ -8,6 +8,7 @@
 import Foundation
 
 class MurojaahService {
+    typealias CompletionHandler = (Result<Bool, Error>) -> Void
     private let murojaahRepository: MurojaahRepository
     init(murojaahRepository: MurojaahRepository) {
         self.murojaahRepository = murojaahRepository
@@ -18,7 +19,7 @@ class MurojaahService {
     func createMurojaah(studentId: UUID, murojaah: MurojaahEntity, completion: @escaping (Bool) -> Void) {
         return murojaahRepository.createMurojaah(studentId: studentId, murojaah: murojaah, completion: completion)
     }
-    func deleteMurojaah(id: UUID) {
-        murojaahRepository.deleteMurojaah(id: id)
+    func deleteMurojaah(id: UUID, completion: CompletionHandler) {
+        murojaahRepository.deleteMurojaah(id: id, completion: completion)
     }
 }

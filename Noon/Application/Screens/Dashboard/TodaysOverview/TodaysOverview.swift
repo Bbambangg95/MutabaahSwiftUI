@@ -53,7 +53,7 @@ struct TodaysOverview: View {
             VStack {
                 CardView(
                     number: studentVM.students.count,
-                    title: "Total",
+                    title: "Students",
                     color: Color.blue,
                     imageName: "person.2.circle.fill"
                 )

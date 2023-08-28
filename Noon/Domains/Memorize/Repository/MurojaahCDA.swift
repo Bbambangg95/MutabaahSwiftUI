@@ -59,7 +59,7 @@ class MurojaahCDA: MurojaahRepository {
             return []
         }
     }
-    func deleteMurojaah(id: UUID) {
+    func deleteMurojaah(id: UUID, completion: CompletionHandler) {
         let fetchRequest: NSFetchRequest<Murojaah> = Murojaah.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         do {
@@ -67,9 +67,11 @@ class MurojaahCDA: MurojaahRepository {
             if let murojaah = fetchedMurojaah.first {
                 viewContext.delete(murojaah)
                 try viewContext.save()
+                completion(.success(true))
                 print("Murojaah deleted succesfully")
             }
         } catch let error {
+            completion(.failure(error))
             print("Error delete murojaah \(error)")
         }
     }

@@ -61,7 +61,7 @@ class ZiyadahCDA: ZiyadahRepository {
             return []
         }
     }
-    func deleteZiyadah(id: UUID) {
+    func deleteZiyadah(id: UUID, completion: CompletionHandler) {
         let fetchRequest: NSFetchRequest<Ziyadah> = Ziyadah.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         do {
@@ -69,10 +69,10 @@ class ZiyadahCDA: ZiyadahRepository {
             if let ziyadah = fetchedZiyadah.first {
                 viewContext.delete(ziyadah)
                 try viewContext.save()
-                print("Ziyadah deleted succesfully")
+                completion(.success(true))
             }
         } catch let error {
-            print("Error delete ziyadah \(error)")
+            completion(.failure(error))
         }
     }
 }

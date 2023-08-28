@@ -7,8 +7,41 @@
 
 import Foundation
 
+protocol DateCreatableEntity {
+    var createdAt: Date { get }
+}
+
 extension StudentViewModel {
-    static func countDataForLastSixMonths(data: [ZiyadahEntity]) -> [ChartData] {
+    static func createChartData<T: DateCreatableEntity>(data: [T]) -> [ChartData] {
+        let sixMonthsAgo = Calendar.current.date(byAdding: .month, value: -11, to: Date())!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M/yy"
+        
+        let filteredData = data.filter { $0.createdAt >= sixMonthsAgo }
+        let groupedData = Dictionary(grouping: filteredData) { dateFormatter.string(from: $0.createdAt) }
+        
+        let chartData = groupedData.map { (key, value) in
+            ChartData(xValue: key, yValue: value.count)
+        }.sorted { (data1, data2) in
+            return dateFormatter.date(from: data1.xValue)! < dateFormatter.date(from: data2.xValue)!
+        }
+        
+        return chartData
+    }
+
+    static func createZiyadahChartData(data: [ZiyadahEntity]) -> [ChartData] {
+        let sixMonthsAgo = Calendar.current.date(byAdding: .month, value: -11, to: Date())!
+        let dateFormatter = Foundation.DateFormatter()
+        dateFormatter.dateFormat = "M/yy"
+        return data.filter { $0.createdAt >= sixMonthsAgo }
+            .reduce(into: [String: Int]()) { acc, next in
+                let key = dateFormatter.string(from: next.createdAt)
+                acc[key, default: 0] += 1
+            }
+            .map { ChartData(xValue: $0.key, yValue: $0.value) }
+            .sorted { dateFormatter.date(from: $0.xValue)! < dateFormatter.date(from: $1.xValue)! }
+    }
+    static func createAttendanceChartData(data: [AttendanceEntity]) -> [ChartData] {
         let sixMonthsAgo = Calendar.current.date(byAdding: .month, value: -11, to: Date())!
         let dateFormatter = Foundation.DateFormatter()
         dateFormatter.dateFormat = "M/yy"

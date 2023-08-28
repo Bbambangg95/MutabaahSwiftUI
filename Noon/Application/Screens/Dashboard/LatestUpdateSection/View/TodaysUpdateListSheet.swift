@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TodaysUpdateListSheet: View {
-    @Binding var showFullscreenCover: Bool
     var memorize: [MemorizeEntity] = []
     var body: some View {
         NavigationStack {

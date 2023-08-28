@@ -12,6 +12,7 @@ import Foundation
 struct StudentOverviewScreen: View {
     @StateObject private var studentOverviewVM: StudentOverviewViewModel
     @State private var presentProgressSheet: Bool = false
+    @State private var presentAttendanceSheet: Bool = false
     var student: StudentEntity
     let (dayLeftMessage, color): (String, Color)
     init(student: StudentEntity) {
@@ -42,6 +43,7 @@ struct StudentOverviewScreen: View {
             overviewSection
             currentStatusSection
             ziyadahSection
+            attendanceSection
         }
         .listStyle(.insetGrouped)
         .navigationBarTitleDisplayMode(.inline)
@@ -60,6 +62,11 @@ struct StudentOverviewScreen: View {
             ProgressHistorySheet(
                 ziyadahData: student.ziyadahData,
                 murojaahData: student.murojaahData
+            )
+        }
+        .sheet(isPresented: $presentAttendanceSheet) {
+            AttendanceHistorySheet(
+                attendanceData: student.attendanceData
             )
         }
     }
@@ -172,6 +179,10 @@ struct StudentOverviewScreen: View {
                     .foregroundColor(Color.gray)
                 Text("\(student.studentPreference?.monthlyTarget ?? 0) Pages/Month")
                 Text("\(student.studentPreference?.yearlyTarget ?? 0) Juz/Year")
+                Text("Target Achievement")
+                    .font(.subheadline)
+                    .foregroundColor(Color.gray)
+                    .padding(.top, 1)
                 if studentOverviewVM.ziyadahChartData.count > 0 {
                     ChartView(data: studentOverviewVM.ziyadahChartData)
                 } else {
@@ -183,11 +194,37 @@ struct StudentOverviewScreen: View {
                 Image(systemName: "chart.line.uptrend.xyaxis")
                 Text("Progress")
                 Spacer()
-                Button {
-                    presentProgressSheet.toggle()
-                } label: {
-                    Text("See All")
+            }
+            .font(.subheadline)
+        }
+    }
+    private var attendanceSection: some View {
+        Section {
+            Button {
+                presentAttendanceSheet.toggle()
+            } label: {
+                HStack {
+                    Text("Attendance History")
+                    Spacer()
+                    Image(systemName: "chevron.right")
                 }
+            }
+            .tint(Color.black)
+            Button {
+                presentProgressSheet.toggle()
+            } label: {
+                HStack {
+                    Text("Memorize History")
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }
+            }
+            .tint(Color.black)
+        } header: {
+            HStack {
+                Image(systemName: "calendar.badge.clock")
+                Text("History")
+                Spacer()
             }
             .font(.subheadline)
         }

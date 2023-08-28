@@ -44,6 +44,7 @@
 		C93241BC2A8BCAAB0025C0E0 /* SummaryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93241BB2A8BCAAB0025C0E0 /* SummaryRowView.swift */; };
 		C93424402A9A224E005B21E3 /* SummaryAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934243F2A9A224E005B21E3 /* SummaryAttendance.swift */; };
 		C93424422A9B3A8F005B21E3 /* ProgressHistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93424412A9B3A8F005B21E3 /* ProgressHistorySheet.swift */; };
+		C93424472A9CD1FA005B21E3 /* AttendanceHistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93424462A9CD1FA005B21E3 /* AttendanceHistorySheet.swift */; };
 		C93626382A5721470073DB04 /* StudentEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93626372A5721470073DB04 /* StudentEditorScreen.swift */; };
 		C943D85A2A624AEA00FF75F0 /* juzData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943D8592A624AEA00FF75F0 /* juzData.swift */; };
 		C946506B2A66FCDF00BEAC7A /* MemorizeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946506A2A66FCDF00BEAC7A /* MemorizeCategory.swift */; };
@@ -158,6 +159,7 @@
 		C934243F2A9A224E005B21E3 /* SummaryAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryAttendance.swift; sourceTree = "<group>"; };
 		C93424412A9B3A8F005B21E3 /* ProgressHistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHistorySheet.swift; sourceTree = "<group>"; };
 		C93424442A9B5789005B21E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C93424462A9CD1FA005B21E3 /* AttendanceHistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistorySheet.swift; sourceTree = "<group>"; };
 		C93626372A5721470073DB04 /* StudentEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditorScreen.swift; sourceTree = "<group>"; };
 		C943D8592A624AEA00FF75F0 /* juzData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = juzData.swift; sourceTree = "<group>"; };
 		C946506A2A66FCDF00BEAC7A /* MemorizeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeCategory.swift; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 				C9D5F9FD2A90467200755CD5 /* StudentOverviewRowView.swift */,
 				C9D5F9F92A8FC48A00755CD5 /* ImageWithRectangleView.swift */,
 				C93424412A9B3A8F005B21E3 /* ProgressHistorySheet.swift */,
+				C93424462A9CD1FA005B21E3 /* AttendanceHistorySheet.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -978,6 +981,7 @@
 				C9D5FA302A9260EA00755CD5 /* User+CoreDataClass.swift in Sources */,
 				C9D5FA382A9260EA00755CD5 /* UserSchedule+CoreDataClass.swift in Sources */,
 				C954FE1F2A7E678F008CB77F /* MurojaahAmountOptions.swift in Sources */,
+				C93424472A9CD1FA005B21E3 /* AttendanceHistorySheet.swift in Sources */,
 				C954FE1B2A7E5CCA008CB77F /* MurojaahEditorView.swift in Sources */,
 				C90053542A669E6D00333854 /* AttendanceViewModel.swift in Sources */,
 				C98BE2FD2A991BF500500B55 /* ResponseHandler.swift in Sources */,
@@ -1114,6 +1118,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Noon/Preview Content\"";
@@ -1125,14 +1130,15 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bambang.mutabaah;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noon.mutabaah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1145,6 +1151,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Noon/Preview Content\"";
@@ -1156,14 +1163,15 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bambang.mutabaah;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noon.mutabaah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

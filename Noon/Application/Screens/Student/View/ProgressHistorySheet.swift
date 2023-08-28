@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ProgressHistorySheet: View {
+    @EnvironmentObject var studentVM: StudentViewModel
     @State private var selectedCategory: String = MemorizeCategory.ziyadah.rawValue
+    @State private var isDelete: Bool = false
+    @State private var itemToDelete: ZiyadahEntity?
     var ziyadahData: [ZiyadahEntity]
     var murojaahData: [MurojaahEntity]
     var body: some View {
@@ -36,6 +39,21 @@ struct ProgressHistorySheet: View {
             .padding(.horizontal)
             .navigationTitle("Progress History")
             .navigationBarTitleDisplayMode(.inline)
+            .alert("Delete", isPresented: $isDelete) {
+                Button(role: .destructive) {
+                    withAnimation {
+                        ZiyadahViewModel.deleteZiyadah(
+                            id: itemToDelete?.id ?? UUID(),
+                            ziyadahData: ziyadahData
+                        )
+                    }
+                    studentVM.fetchStudents()
+                } label: {
+                    Text("Delete")
+                }
+            } message: {
+                Text("You are about to delete Page \(itemToDelete?.page ?? 0) and all pages after it in the same Juz. Are you sure you want to proceed?")
+            }
         }
         .background(Color(UIColor.systemGray6))
     }
@@ -66,6 +84,15 @@ struct ProgressHistorySheet: View {
                 }
                 .font(.subheadline)
             }
+            .swipeActions(edge: .trailing) {
+                Button {
+                    isDelete.toggle()
+                    itemToDelete = item
+                } label: {
+                    Image(systemName: "trash")
+                }
+                .tint(Color.red)
+            }
         }
     }
     private var murojaahRowView: some View {
@@ -90,6 +117,17 @@ struct ProgressHistorySheet: View {
                     }
                     .font(.subheadline)
                 }
+                .swipeActions(edge: .trailing) {
+                    Button(role: .destructive) {
+                        withAnimation {
+                            MurojaahViewModel.deleteMurojaah(id: item.id)
+                            studentVM.fetchStudents()
+                        }
+                    } label: {
+                        Image(systemName: "trash")
+                    }
+                    .tint(Color.red)
+                }
             case MurojaahAmountOptions.perJuz.rawValue:
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
@@ -108,6 +146,17 @@ struct ProgressHistorySheet: View {
                             Text("\(item.category)")
                     }
                     .font(.subheadline)
+                }
+                .swipeActions(edge: .trailing) {
+                    Button(role: .destructive) {
+                        withAnimation {
+                            MurojaahViewModel.deleteMurojaah(id: item.id)
+                            studentVM.fetchStudents()
+                        }
+                    } label: {
+                        Image(systemName: "trash")
+                    }
+                    .tint(Color.red)
                 }
             default:
                 EmptyView()
