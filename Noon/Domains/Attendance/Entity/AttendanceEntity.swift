@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AttendanceEntity: Identifiable {
+struct AttendanceEntity: Identifiable, DateCreatableEntity, Hashable {
     var id: UUID = UUID()
     var attendStatus: Bool = false
     var timeLabel: String = ""

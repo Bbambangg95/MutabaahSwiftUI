@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PersistenceController {
     static let shared = PersistenceController()
-
+    
     private func seedUser(context: NSManagedObjectContext) {
         let request: NSFetchRequest<User> = User.fetchRequest()
         var userCount: Int
@@ -38,9 +38,9 @@ struct PersistenceController {
             print("Failed to save user: \(error)")
         }
     }
-
+    
     let container: NSPersistentCloudKitContainer
-
+    
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Model")
         if inMemory {

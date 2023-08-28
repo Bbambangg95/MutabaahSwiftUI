@@ -12,6 +12,7 @@ import Foundation
 struct StudentOverviewScreen: View {
     @StateObject private var studentOverviewVM: StudentOverviewViewModel
     @State private var presentProgressSheet: Bool = false
+    @State private var presentAttendanceSheet: Bool = false
     var student: StudentEntity
     let (dayLeftMessage, color): (String, Color)
     init(student: StudentEntity) {
@@ -42,6 +43,7 @@ struct StudentOverviewScreen: View {
             overviewSection
             currentStatusSection
             ziyadahSection
+            attendanceSection
         }
         .listStyle(.insetGrouped)
         .navigationBarTitleDisplayMode(.inline)
@@ -60,6 +62,11 @@ struct StudentOverviewScreen: View {
             ProgressHistorySheet(
                 ziyadahData: student.ziyadahData,
                 murojaahData: student.murojaahData
+            )
+        }
+        .sheet(isPresented: $presentAttendanceSheet) {
+            AttendanceHistorySheet(
+                attendanceData: student.attendanceData
             )
         }
     }
@@ -185,6 +192,27 @@ struct StudentOverviewScreen: View {
                 Spacer()
                 Button {
                     presentProgressSheet.toggle()
+                } label: {
+                    Text("See All")
+                }
+            }
+            .font(.subheadline)
+        }
+    }
+    private var attendanceSection: some View {
+        Section {
+            if studentOverviewVM.attendanceChartData.count > 0 {
+                ChartView(data: studentOverviewVM.attendanceChartData)
+            } else {
+                Text("No Data Available")
+            }
+        } header: {
+            HStack {
+                Image(systemName: "calendar.badge.clock")
+                Text("Attendance")
+                Spacer()
+                Button {
+                    presentAttendanceSheet.toggle()
                 } label: {
                     Text("See All")
                 }

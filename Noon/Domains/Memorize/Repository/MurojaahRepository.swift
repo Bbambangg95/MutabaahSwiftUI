@@ -8,7 +8,8 @@
 import Foundation
 
 protocol MurojaahRepository {
+    typealias CompletionHandler = (Result<Bool, Error>) -> Void
     func createMurojaah(studentId: UUID, murojaah: MurojaahEntity, completion: @escaping (Bool) -> Void)
     func getMurojaah() -> [MurojaahEntity]
-    func deleteMurojaah(id: UUID)
+    func deleteMurojaah(id: UUID, completion: CompletionHandler)
 }

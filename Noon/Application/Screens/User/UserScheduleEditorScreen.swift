@@ -48,17 +48,16 @@ struct UserScheduleEditorScreen: View {
             Button {
                 withAnimation {
                     userScheduleVM.startEditing(schedule: nil)
-                    isAdding = true
+                    isAdding.toggle()
                 }
             } label: {
                 Image(systemName: "plus")
             }
         }
         .listStyle(.insetGrouped)
-        .toolbarRole(.editor)
         .navigationTitle("Schedule")
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $isAdding, content: {
+        .sheet(isPresented: $isAdding, onDismiss: hideSheet , content: {
             UserScheduleEditorView(
                 newTimeLabel: $userScheduleVM.timeLabel,
                 newStartTime: $userScheduleVM.startTime,
@@ -76,5 +75,8 @@ struct UserScheduleEditorScreen: View {
                     isEditing = false
                 })
         })
+    }
+    private func hideSheet() {
+        isAdding = false
     }
 }

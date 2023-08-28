@@ -8,6 +8,7 @@
 import Foundation
 
 class ZiyadahService {
+    typealias CompletionHandler = (Result<Bool, Error>) -> Void
     private let ziyadahRepository: ZiyadahRepository
     init(ziyadahRepository: ZiyadahRepository) {
         self.ziyadahRepository = ziyadahRepository
@@ -18,7 +19,10 @@ class ZiyadahService {
     func createZiyadah(studentId: UUID, ziyadah: ZiyadahEntity, completion: @escaping (Bool) -> Void) {
         return ziyadahRepository.createZiyadah(studentId: studentId, ziyadah: ziyadah, completion: completion)
     }
-    func deleteZiyadah(id: UUID) {
-        ziyadahRepository.deleteZiyadah(id: id)
+    func deleteZiyadah(
+        id: UUID,
+        completion: @escaping CompletionHandler
+    ) {
+        ziyadahRepository.deleteZiyadah(id: id, completion: completion)
     }
 }

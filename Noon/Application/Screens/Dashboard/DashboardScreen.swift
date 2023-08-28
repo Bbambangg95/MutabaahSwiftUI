@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct DashboardScreen: View {
-    @State var isMemoModalPresented: Bool = false
-    @State var isAttendModalPresented: Bool = false
+    @State private var presentMemorizeSheet: Bool = false
+    @State private var presentAttendanceSheet: Bool = false
+    @State private var presentTodaysUpdateSheet: Bool = false
+    @EnvironmentObject var memorizeVM: MemorizeViewModel
+    @EnvironmentObject var userVM: UserViewModel
     var body: some View {
         NavigationStack {
             List {
                 TodaysOverview()
                 SummarySection()
-                TodaysUpdateSection()
+                TodaysUpdateSection(
+                    presentTodaysUpdateSheet: $presentTodaysUpdateSheet,
+                    memorize: memorizeVM.memorize
+                )
             }
             .background(Color(uiColor: .systemGroupedBackground))
             .toolbar {
@@ -25,16 +31,24 @@ struct DashboardScreen: View {
             }
             .toolbar {
                 ToolbarItems.bottomBarItems(
-                    isMemoModalPresented: $isMemoModalPresented,
-                    isAttendModalPresented: $isAttendModalPresented
+                    presentMemorizeSheet: $presentMemorizeSheet,
+                    presentAttendanceSheet: $presentAttendanceSheet
                 )
             }
+            .toolbar {
+                ToolbarItems.topLeadingBarItems(userName: userVM.name.components(separatedBy: " ").first ?? "User")
+            }
         }
-        .sheet(isPresented: $isMemoModalPresented) {
+        .sheet(isPresented: $presentMemorizeSheet) {
             MemorizeListScreen()
         }
-        .sheet(isPresented: $isAttendModalPresented) {
+        .sheet(isPresented: $presentAttendanceSheet) {
             AttendanceEditorScreen()
+        }
+        .sheet(isPresented: $presentTodaysUpdateSheet) {
+            TodaysUpdateListSheet(
+                memorize: memorizeVM.memorize
+            )
         }
     }
 }

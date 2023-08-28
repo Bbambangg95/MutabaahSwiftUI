@@ -48,8 +48,10 @@ class MurojaahViewModel: ObservableObject {
             completion(success ? true : false)
         }
     }
-    static func deleteZiyadah(id: UUID) {
+    static func deleteMurojaah(id: UUID) {
         let murojaahDeleteService = MurojaahService(murojaahRepository: MurojaahCDA())
-        murojaahDeleteService.deleteMurojaah(id: id)
+        murojaahDeleteService.deleteMurojaah(id: id) { result in
+            print(result)
+        }
     }
 }

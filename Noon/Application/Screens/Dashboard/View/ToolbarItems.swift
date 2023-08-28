@@ -22,13 +22,10 @@ struct TopLeadingBarItems: ToolbarContent {
 struct ToolbarItems {
     static func topLeadingBarItems(userName: String) -> some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
-            VStack(alignment: .leading) {
-                Text(Date(), style: .date)
-                    .font(.footnote)
-                Text("Hi, \(userName)")
-                    .font(.title2)
-                    .fontWeight(.bold)
-            }
+            Text("Hi, \(userName)")
+                .font(.headline)
+                .fontWeight(.bold)
+                .lineLimit(1)
         }
     }
     static func topTrailingBarItems(userDetailScreen: UserDetailScreen) -> some ToolbarContent {
@@ -37,20 +34,15 @@ struct ToolbarItems {
                 userDetailScreen
             } label: {
                 Image(systemName: "person.crop.circle.fill")
-                    .foregroundColor(Color.primary)
-//                Image("img")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: 40)
-//                    .clipShape(Circle())
-//                    .clipped()
+                    .foregroundColor(Color.blue)
+                    .font(.headline)
             }
         }
     }
-    static func bottomBarItems(isMemoModalPresented: Binding<Bool>, isAttendModalPresented: Binding<Bool>) -> some ToolbarContent {
+    static func bottomBarItems(presentMemorizeSheet: Binding<Bool>, presentAttendanceSheet: Binding<Bool>) -> some ToolbarContent {
         return ToolbarItemGroup(placement: .bottomBar) {
             Button {
-                isMemoModalPresented.wrappedValue = true
+                presentMemorizeSheet.wrappedValue = true
             } label: {
                 Label("Add Memorize", systemImage: "note.text.badge.plus")
                     .fontWeight(.semibold)
@@ -58,7 +50,7 @@ struct ToolbarItems {
                     .labelStyle(.titleAndIcon)
             }
             Button {
-                isAttendModalPresented.wrappedValue = true
+                presentAttendanceSheet.wrappedValue = true
             } label: {
                 Label("Attend", systemImage: "calendar.badge.plus")
                     .foregroundColor(Color.blue)

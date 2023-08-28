@@ -8,7 +8,15 @@
 import Foundation
 
 protocol ZiyadahRepository {
-    func createZiyadah(studentId: UUID, ziyadah: ZiyadahEntity, completion: @escaping (Bool) -> Void)
+    typealias CompletionHandler = (Result<Bool, Error>) -> Void
+    func createZiyadah(
+        studentId: UUID,
+        ziyadah: ZiyadahEntity,
+        completion: @escaping (Bool) -> Void
+    )
     func getZiyadah() -> [ZiyadahEntity]
-    func deleteZiyadah(id: UUID)
+    func deleteZiyadah(
+        id: UUID,
+        completion: CompletionHandler
+    )
 }

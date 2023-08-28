@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ZiyadahEntity: Identifiable {
+struct ZiyadahEntity: Identifiable, DateCreatableEntity {
     var id: UUID = UUID()
     var juz: Int = 1
     var page: Int = 1
