@@ -229,25 +229,4 @@ struct StudentOverviewScreen: View {
             .font(.subheadline)
         }
     }
-    private var attendanceSection: some View {
-        Section {
-            if studentOverviewVM.attendanceChartData.count > 0 {
-                ChartView(data: studentOverviewVM.attendanceChartData)
-            } else {
-                Text("No Data Available")
-            }
-        } header: {
-            HStack {
-                Image(systemName: "calendar.badge.clock")
-                Text("Attendance")
-                Spacer()
-                Button {
-                    presentAttendanceSheet.toggle()
-                } label: {
-                    Text("See All")
-                }
-            }
-            .font(.subheadline)
-        }
-    }
 }
