@@ -29,13 +29,16 @@ struct AttendanceHistorySheet: View {
                 ForEach(dayAttendance.sorted(by: { $0.createdAt > $1.createdAt })) { item in
                     HStack(alignment: .bottom) {
                         VStack(alignment: .leading) {
-                            Text("\(userScheduleVM.userSchedule.first { $0.id.uuidString == item.timeLabel }?.timeLabel ?? "")")
-                                .font(.subheadline)
-                            HStack {
-                                Text(item.createdAt, style: .time)
+                            // Safely unwrap the optional
+                            if let timeLabel = userScheduleVM.userSchedule.first(where: { $0.id.uuidString == item.timeLabel })?.timeLabel {
+                                Text(timeLabel)
+                                    .font(.subheadline)
+                                HStack {
+                                    Text(item.createdAt, style: .time)
+                                }
+                                .font(.footnote)
+                                .foregroundColor(Color.secondary)
                             }
-                            .font(.footnote)
-                            .foregroundColor(Color.secondary)
                         }
                         Spacer()
                         VStack {
@@ -51,7 +54,6 @@ struct AttendanceHistorySheet: View {
             }
         }
     }
-
     private var groupedAttendanceData: [[AttendanceEntity]] {
         Dictionary(grouping: attendanceData, by: { Calendar.current.startOfDay(for: $0.createdAt) })
             .values
