@@ -10,7 +10,10 @@ import SwiftUI
 struct AttendanceHistorySheet: View {
     @EnvironmentObject var studentVM: StudentViewModel
     @EnvironmentObject var userScheduleVM: UserScheduleViewModel
-    var attendanceData: [AttendanceEntity]
+    private let attendanceData: [AttendanceEntity]?
+    init(attendanceData: [AttendanceEntity]? = nil) {
+        self.attendanceData = attendanceData
+    }
     var body: some View {
         NavigationStack {
             List {
@@ -55,7 +58,7 @@ struct AttendanceHistorySheet: View {
         }
     }
     private var groupedAttendanceData: [[AttendanceEntity]] {
-        Dictionary(grouping: attendanceData, by: { Calendar.current.startOfDay(for: $0.createdAt) })
+        Dictionary(grouping: attendanceData ?? [], by: { Calendar.current.startOfDay(for: $0.createdAt) })
             .values
             .sorted { $0.first?.createdAt ?? Date() > $1.first?.createdAt ?? Date() }
     }

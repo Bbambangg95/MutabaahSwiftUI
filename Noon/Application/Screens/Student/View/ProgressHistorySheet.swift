@@ -12,8 +12,12 @@ struct ProgressHistorySheet: View {
     @State private var selectedCategory: String = MemorizeCategory.ziyadah.rawValue
     @State private var isDelete: Bool = false
     @State private var itemToDelete: ZiyadahEntity?
-    var ziyadahData: [ZiyadahEntity]
-    var murojaahData: [MurojaahEntity]
+    private let ziyadahData: [ZiyadahEntity]?
+    private let murojaahData: [MurojaahEntity]?
+    init(ziyadahData: [ZiyadahEntity]? = nil, murojaahData: [MurojaahEntity]? = nil) {
+        self.ziyadahData = ziyadahData
+        self.murojaahData = murojaahData
+    }
     var body: some View {
         NavigationStack {
             VStack {
@@ -44,7 +48,7 @@ struct ProgressHistorySheet: View {
                     withAnimation {
                         ZiyadahViewModel.deleteZiyadah(
                             id: itemToDelete?.id ?? UUID(),
-                            ziyadahData: ziyadahData
+                            ziyadahData: ziyadahData ?? []
                         )
                     }
                     studentVM.fetchStudents()
@@ -58,7 +62,7 @@ struct ProgressHistorySheet: View {
         .background(Color(UIColor.systemGray6))
     }
     private var ziyadahRowView: some View {
-        ForEach(ziyadahData.sorted(by: { $0.createdAt > $1.createdAt })) { item in
+        ForEach(ziyadahData?.sorted(by: { $0.createdAt > $1.createdAt }) ?? []) { item in
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
                     Text("Juz \(item.juz) Page \(item.page)")
@@ -96,7 +100,7 @@ struct ProgressHistorySheet: View {
         }
     }
     private var murojaahRowView: some View {
-        ForEach(murojaahData.sorted(by: { $0.createdAt > $1.createdAt })) { item in
+        ForEach(murojaahData?.sorted(by: { $0.createdAt > $1.createdAt }) ?? []) { item in
             switch item.category {
             case MurojaahAmountOptions.perPage.rawValue:
                 HStack(alignment: .bottom) {

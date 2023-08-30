@@ -28,9 +28,9 @@ struct ZiyadahEditorView: View {
                 memorizeValue: $ziyadahVM.memorizeValue,
                 recitationValue: $ziyadahVM.recitationValue
             )
-            ZiyadahEditorDateSection(
-                createdAt: $ziyadahVM.createdAt
-            )
+//            ZiyadahEditorDateSection(
+//                createdAt: $ziyadahVM.createdAt
+//            )
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
