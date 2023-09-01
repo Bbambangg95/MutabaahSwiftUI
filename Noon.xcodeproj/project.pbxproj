@@ -201,6 +201,7 @@
 		C97DC49F2A94F0D3006D756F /* ZiyadahEditorValueSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiyadahEditorValueSection.swift; sourceTree = "<group>"; };
 		C97DC4A12A94F19A006D756F /* ZiyadahEditorDateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiyadahEditorDateSection.swift; sourceTree = "<group>"; };
 		C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		C98F2D362AA180A300DAD96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9904FC82A591B29009C7AD8 /* UserEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditorScreen.swift; sourceTree = "<group>"; };
 		C9B067612A555AB500E87449 /* MemorizeEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeEditorScreen.swift; sourceTree = "<group>"; };
 		C9B13ADF2A4FB9930062EC30 /* Noon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -745,6 +746,7 @@
 		C9B13AE12A4FB9930062EC30 /* Noon */ = {
 			isa = PBXGroup;
 			children = (
+				C98F2D362AA180A300DAD96C /* Info.plist */,
 				C9B13AE22A4FB9930062EC30 /* NoonApp.swift */,
 				C953B3F42A8A1B6A0042296F /* Shared */,
 				C954FE222A7E85CF008CB77F /* Application */,
@@ -1125,6 +1127,7 @@
 				DEVELOPMENT_TEAM = 42BZUPKLGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Noon/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Mutabaah;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1133,6 +1136,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1158,6 +1162,7 @@
 				DEVELOPMENT_TEAM = 42BZUPKLGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Noon/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Mutabaah;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1166,6 +1171,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
