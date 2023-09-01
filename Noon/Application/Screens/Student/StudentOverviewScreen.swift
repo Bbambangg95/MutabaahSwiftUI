@@ -55,16 +55,28 @@ struct StudentOverviewScreen: View {
                     .font(.headline)
             }
         }
-        .sheet(isPresented: $studentOverviewVM.presentEditStudentSheet) {
+        .sheet(
+            isPresented: $studentOverviewVM.presentEditStudentSheet,
+            onDismiss: {
+                studentOverviewVM.presentEditStudentSheet = false
+        }) {
             StudentEditorScreen(student: student)
         }
-        .sheet(isPresented: $presentProgressSheet) {
+        .sheet(
+            isPresented: $presentProgressSheet, onDismiss: {
+            presentProgressSheet = false
+        }) {
             ProgressHistorySheet(
                 ziyadahData: student.ziyadahData,
                 murojaahData: student.murojaahData
             )
         }
-        .sheet(isPresented: $presentAttendanceSheet) {
+        .sheet(
+            isPresented: $presentAttendanceSheet,
+            onDismiss: {
+                presentAttendanceSheet = false
+            }
+        ) {
             AttendanceHistorySheet(
                 attendanceData: student.attendanceData
             )
