@@ -49,6 +49,7 @@
 		C943D85A2A624AEA00FF75F0 /* juzData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C943D8592A624AEA00FF75F0 /* juzData.swift */; };
 		C946506B2A66FCDF00BEAC7A /* MemorizeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946506A2A66FCDF00BEAC7A /* MemorizeCategory.swift */; };
 		C94650742A682F8F00BEAC7A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94650722A682F8F00BEAC7A /* Model.xcdatamodeld */; };
+		C95357BD2AA1C87900E66784 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95357BC2AA1C87900E66784 /* Launch Screen.storyboard */; };
 		C953B3F02A8A14EA0042296F /* TodaysUpdateListSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3EF2A8A14EA0042296F /* TodaysUpdateListSheet.swift */; };
 		C953B3F22A8A150E0042296F /* TodaysUpdateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3F12A8A150E0042296F /* TodaysUpdateRowView.swift */; };
 		C953B3FC2A8A35C50042296F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953B3FB2A8A35C50042296F /* CardView.swift */; };
@@ -164,6 +165,7 @@
 		C943D8592A624AEA00FF75F0 /* juzData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = juzData.swift; sourceTree = "<group>"; };
 		C946506A2A66FCDF00BEAC7A /* MemorizeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeCategory.swift; sourceTree = "<group>"; };
 		C94650732A682F8F00BEAC7A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C95357BC2AA1C87900E66784 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C953B3EF2A8A14EA0042296F /* TodaysUpdateListSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysUpdateListSheet.swift; sourceTree = "<group>"; };
 		C953B3F12A8A150E0042296F /* TodaysUpdateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysUpdateRowView.swift; sourceTree = "<group>"; };
 		C953B3FB2A8A35C50042296F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -754,6 +756,7 @@
 				C954FE232A7E85FA008CB77F /* Infrastructure */,
 				C9DC1D482A5AC68A003D3BA1 /* Resource */,
 				C9B13AE62A4FB9940062EC30 /* Assets.xcassets */,
+				C95357BC2AA1C87900E66784 /* Launch Screen.storyboard */,
 				C9B13AE82A4FB9940062EC30 /* Preview Content */,
 			);
 			path = Noon;
@@ -874,6 +877,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95357BD2AA1C87900E66784 /* Launch Screen.storyboard in Resources */,
 				C9B13AEA2A4FB9940062EC30 /* Preview Assets.xcassets in Resources */,
 				C9B13AE72A4FB9940062EC30 /* Assets.xcassets in Resources */,
 			);
@@ -1133,6 +1137,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1168,6 +1173,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
