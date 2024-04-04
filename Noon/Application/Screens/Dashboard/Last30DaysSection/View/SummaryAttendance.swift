@@ -42,48 +42,51 @@ struct SummaryAttendance: View {
     }
     
     var body: some View {
-        VStack {
-            Picker("", selection: $selectedCategory) {
-                ForEach(category, id: \.self) { item in
-                    Text(item)
+        NavigationView {
+            VStack {
+                Picker("", selection: $selectedCategory) {
+                    ForEach(category, id: \.self) { item in
+                        Text(item)
+                    }
                 }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
-            List {
-                Section {
-                    ForEach(studentByAttendance.sorted(by: { $0.value > $1.value }), id: \.key) { id, count in
-                        VStack(alignment: .leading) {
-                            Text(students.first(where: { $0.id == id })?.name ?? "Unknown")
-                                .font(.headline)
-                                .lineLimit(1)
-                            HStack {
-                                Text("\(count.trueCount + count.falseCount) sessions")
-                                    .foregroundColor(.secondary)
-                                Spacer()
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+                List {
+                    Section {
+                        ForEach(studentByAttendance.sorted(by: { $0.value > $1.value }), id: \.key) { id, count in
+                            VStack(alignment: .leading) {
+                                Text(students.first(where: { $0.id == id })?.name ?? "Unknown")
+                                    .font(.headline)
+                                    .lineLimit(1)
                                 HStack {
-                                    Image(systemName: AttendanceIconSign.present.rawValue)
-                                        .foregroundColor(Color.green)
-                                    Text("\(count.trueCount)")
+                                    Text("\(count.trueCount + count.falseCount) sessions")
                                         .foregroundColor(.secondary)
+                                    Spacer()
+                                    HStack {
+                                        Image(systemName: AttendanceIconSign.present.rawValue)
+                                            .foregroundColor(Color.green)
+                                        Text("\(count.trueCount)")
+                                            .foregroundColor(.secondary)
+                                    }
+                                    HStack {
+                                        Image(systemName: AttendanceIconSign.absent.rawValue)
+                                            .foregroundColor(Color.red)
+                                        Text("\(count.falseCount)")
+                                            .foregroundColor(.secondary)
+                                    }
                                 }
-                                HStack {
-                                    Image(systemName: AttendanceIconSign.absent.rawValue)
-                                        .foregroundColor(Color.red)
-                                    Text("\(count.falseCount)")
-                                        .foregroundColor(.secondary)
-                                }
+                                .font(.subheadline)
                             }
-                            .font(.subheadline)
                         }
                     }
                 }
             }
+            .background(Color(UIColor.systemGray6))
+            .onAppear {
+                print(DateUtils.getDateFromMonth(month: 1, year: 1000))
+            }
+            .navigationTitle("Attendance")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .background(Color(UIColor.systemGray6))
-        .onAppear {
-            print(DateUtils.getDateFromMonth(month: 1, year: 1000))
-        }
-        .navigationTitle("Attendance")
     }
 }

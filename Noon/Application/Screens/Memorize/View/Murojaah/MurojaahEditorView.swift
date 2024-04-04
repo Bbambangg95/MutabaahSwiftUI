@@ -12,14 +12,13 @@ struct MurojaahEditorView: View {
     @EnvironmentObject var memorizeVM: MemorizeViewModel
     @Environment(\.dismiss) var dismiss
     @StateObject private var murojaahVM = MurojaahViewModel()
-    @State private var selectedJuzs: Set<String> = []
     let juzData = JuzData()
     var student: StudentEntity
     var disableSaveButton: Bool {
         murojaahVM.key.isEmpty || murojaahVM.value.isEmpty
     }
     var body: some View {
-        Form {
+        List {
             MurojaahCategoryPicker(category: $murojaahVM.category)
                 .onChange(of: murojaahVM.category) { newValue in
                     murojaahVM.key = ""

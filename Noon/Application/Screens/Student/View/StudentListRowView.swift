@@ -23,20 +23,12 @@ struct StudentListRowView: View {
                     Text(student.name )
                         .font(.headline)
                         .lineLimit(1)
-                    HStack {
-                        if let status = student.studentPreference?.memorizeStatus {
-                            if status == MemorizeCategory.ziyadah.rawValue {
-                                Image(systemName: "z.square.fill")
-                                    .foregroundColor(Color.green)
-                                Text(status)
-                                    .font(.subheadline)
-                            } else if status == MemorizeCategory.murojaah.rawValue  {
-                                Image(systemName: "m.square.fill")
-                                    .foregroundColor(Color.blue)
-                                Text(status)
-                                    .font(.subheadline)
-                            }
-                        }
+                    HStack(alignment: .bottom) {
+                        Image(systemName: "books.vertical.fill")
+                            .foregroundColor(Color.blue)
+                            .font(.subheadline)
+                        Text("\(student.completedZiyadah.count) Juz")
+                            .font(.subheadline)
                     }
                 }
             }

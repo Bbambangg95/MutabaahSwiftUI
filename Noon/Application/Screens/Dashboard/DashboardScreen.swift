@@ -11,6 +11,8 @@ struct DashboardScreen: View {
     @State private var presentMemorizeSheet: Bool = false
     @State private var presentAttendanceSheet: Bool = false
     @State private var presentTodaysUpdateSheet: Bool = false
+    @State private var testState: String = "Label"
+    @State private var isExpand: Bool = false
     @EnvironmentObject var memorizeVM: MemorizeViewModel
     @EnvironmentObject var userVM: UserViewModel
     var body: some View {
@@ -23,27 +25,8 @@ struct DashboardScreen: View {
                     memorize: memorizeVM.memorize
                 )
             }
-            .background(Color(uiColor: .systemGroupedBackground))
-            .toolbar {
-                ToolbarItems.topTrailingBarItems(
-                    userDetailScreen: UserDetailScreen()
-                )
-            }
-            .toolbar {
-                ToolbarItems.bottomBarItems(
-                    presentMemorizeSheet: $presentMemorizeSheet,
-                    presentAttendanceSheet: $presentAttendanceSheet
-                )
-            }
-            .toolbar {
-                ToolbarItems.topLeadingBarItems(userName: userVM.name.components(separatedBy: " ").first ?? "User")
-            }
-        }
-        .sheet(isPresented: $presentMemorizeSheet) {
-            MemorizeListScreen()
-        }
-        .sheet(isPresented: $presentAttendanceSheet) {
-            AttendanceEditorScreen()
+            .background(Color(uiColor: .systemGray6))
+            .navigationTitle("Dashboard")
         }
         .sheet(isPresented: $presentTodaysUpdateSheet) {
             TodaysUpdateListSheet(

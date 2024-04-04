@@ -10,13 +10,16 @@ import SwiftUI
 
 struct UserDetailScreen: View {
     var body: some View {
-        List {
-            UserProfileView()
-            UserPreferenceView()
+        NavigationStack {
+            List {
+//                UserProfileView()
+                UserPreferenceView()
+                
+                SubscriptionView()
+            }
+            .listStyle(.insetGrouped)
+            .navigationTitle("Settings")
         }
-        .listStyle(.insetGrouped)
-        .navigationTitle("Settings")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

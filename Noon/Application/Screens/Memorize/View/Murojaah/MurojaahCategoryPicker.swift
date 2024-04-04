@@ -10,20 +10,16 @@ import SwiftUI
 struct MurojaahCategoryPicker: View {
     @Binding var category: String
     var body: some View {
-        Section {
-            Picker(selection: $category) {
-                ForEach(MurojaahAmountOptions.allCases, id: \.self) { option in
-                    Text(option.rawValue).tag(option.rawValue)
-                }
-            } label: {
-                HStack {
-                    ImageWithRectangleView(imageName: "tray.2.fill", color: Color.orange)
-                    Text("Category")
-                }
+        Picker(selection: $category) {
+            ForEach(MurojaahAmountOptions.allCases, id: \.self) { option in
+                Text(option.rawValue).tag(option.rawValue)
             }
-            .pickerStyle(.navigationLink)
-        } header: {
-            Text("Detail")
+        } label: {
+            HStack {
+                ImageWithRectangleView(imageName: "tray.2.fill", color: Color.orange)
+                Text("Category")
+            }
         }
+        .pickerStyle(.automatic)
     }
 }

@@ -26,9 +26,14 @@ struct MurojaahPerJuzForm: View {
                 }
             }
             .listStyle(.automatic)
-            .pickerStyle(.navigationLink)
-            NavigationLink {
-                List {
+            .pickerStyle(.automatic)
+            HStack {
+                HStack {
+                    ImageWithRectangleView(imageName: "books.vertical.fill", color: Color.green)
+                    Text("Juz")
+                }
+                Spacer()
+                Menu {
                     ForEach(juzData.juzData, id: \.self) { juz in
                         Button {
                             if self.selectedJuzs.contains("\(juz.juzNumber)") {
@@ -51,17 +56,20 @@ struct MurojaahPerJuzForm: View {
                             }
                         }
                     }
+                } label: {
+                    HStack {
+                        if !selectedJuzs.isEmpty {
+                            Text(value)
+                                .opacity(0.5)
+                        } else {
+                            Text("Select")
+                        }
+                        Image(systemName: "chevron.up.chevron.down")
+                            .font(.subheadline)
+                    }
+                    .foregroundStyle(Color.gray)
                 }
-                .disabled(MurojaahPerJuzAmount.moreThanTwenty.maxValue == 0)
-                .listStyle(.automatic)
-            } label: {
-                HStack {
-                    ImageWithRectangleView(imageName: "books.vertical.fill", color: Color.green)
-                    Text("Select Juz")
-                    Spacer()
-                    Text(value)
-                        .opacity(0.5)
-                }
+                .menuActionDismissBehavior(.disabled)
             }
         }
     }
