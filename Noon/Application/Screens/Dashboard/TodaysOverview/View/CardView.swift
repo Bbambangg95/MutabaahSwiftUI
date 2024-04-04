@@ -14,26 +14,20 @@ struct CardView: View {
     var imageName: String
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             Image(systemName: imageName)
                 .font(.title2)
                 .scaledToFill()
                 .foregroundColor(color)
-                .padding(6)
-                .background(
-                    Circle()
-                        .foregroundColor(color.opacity(0.2))
-                )
             VStack(alignment: .leading) {
                 Text("\(number)")
-                    .font(.title2)
+                    .font(.headline)
                     .fontWeight(.bold)
                     .foregroundColor(color)
                 Text(title)
                     .font(.caption)
                     .foregroundColor(.gray)
             }
-            Spacer()
         }
         .frame(maxWidth: .infinity)
     }

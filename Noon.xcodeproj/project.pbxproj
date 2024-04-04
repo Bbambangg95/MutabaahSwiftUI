@@ -85,8 +85,13 @@
 		C97DC49E2A94EF3F006D756F /* ZiyadahEditorDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC49D2A94EF3F006D756F /* ZiyadahEditorDetailSection.swift */; };
 		C97DC4A02A94F0D3006D756F /* ZiyadahEditorValueSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC49F2A94F0D3006D756F /* ZiyadahEditorValueSection.swift */; };
 		C97DC4A22A94F19A006D756F /* ZiyadahEditorDateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC4A12A94F19A006D756F /* ZiyadahEditorDateSection.swift */; };
+		C97EDE042BB28A0A002F4596 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C97EDE032BB28A0A002F4596 /* GoogleMobileAds */; };
 		C98BE2FD2A991BF500500B55 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */; };
 		C9904FC92A591B29009C7AD8 /* UserEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9904FC82A591B29009C7AD8 /* UserEditorScreen.swift */; };
+		C9A568912BBCF22E00A63CAA /* CSVDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A568902BBCF22E00A63CAA /* CSVDocument.swift */; };
+		C9A568952BBD08EF00A63CAA /* ExportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A568942BBD08EF00A63CAA /* ExportUtils.swift */; };
+		C9A568972BBD17C000A63CAA /* FileManagerFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A568962BBD17C000A63CAA /* FileManagerFinder.swift */; };
+		C9A568992BBD1AF600A63CAA /* ExportOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A568982BBD1AF600A63CAA /* ExportOptionView.swift */; };
 		C9B067622A555AB500E87449 /* MemorizeEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B067612A555AB500E87449 /* MemorizeEditorScreen.swift */; };
 		C9B13AE32A4FB9930062EC30 /* NoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B13AE22A4FB9930062EC30 /* NoonApp.swift */; };
 		C9B13AE72A4FB9940062EC30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B13AE62A4FB9940062EC30 /* Assets.xcassets */; };
@@ -203,6 +208,10 @@
 		C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		C98F2D362AA180A300DAD96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9904FC82A591B29009C7AD8 /* UserEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditorScreen.swift; sourceTree = "<group>"; };
+		C9A568902BBCF22E00A63CAA /* CSVDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDocument.swift; sourceTree = "<group>"; };
+		C9A568942BBD08EF00A63CAA /* ExportUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportUtils.swift; sourceTree = "<group>"; };
+		C9A568962BBD17C000A63CAA /* FileManagerFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerFinder.swift; sourceTree = "<group>"; };
+		C9A568982BBD1AF600A63CAA /* ExportOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportOptionView.swift; sourceTree = "<group>"; };
 		C9B067612A555AB500E87449 /* MemorizeEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeEditorScreen.swift; sourceTree = "<group>"; };
 		C9B13ADF2A4FB9930062EC30 /* Noon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B13AE22A4FB9930062EC30 /* NoonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoonApp.swift; sourceTree = "<group>"; };
@@ -242,6 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97EDE042BB28A0A002F4596 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +698,7 @@
 				C9D5F9F92A8FC48A00755CD5 /* ImageWithRectangleView.swift */,
 				C93424412A9B3A8F005B21E3 /* ProgressHistorySheet.swift */,
 				C93424462A9CD1FA005B21E3 /* AttendanceHistorySheet.swift */,
+				C9A568982BBD1AF600A63CAA /* ExportOptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -803,6 +814,9 @@
 			children = (
 				C9FF1F0E2A8914DA00C7D04F /* DateUtils.swift */,
 				C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */,
+				C9A568902BBCF22E00A63CAA /* CSVDocument.swift */,
+				C9A568942BBD08EF00A63CAA /* ExportUtils.swift */,
+				C9A568962BBD17C000A63CAA /* FileManagerFinder.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -832,6 +846,9 @@
 			dependencies = (
 			);
 			name = Noon;
+			packageProductDependencies = (
+				C97EDE032BB28A0A002F4596 /* GoogleMobileAds */,
+			);
 			productName = Noon;
 			productReference = C9B13ADF2A4FB9930062EC30 /* Noon.app */;
 			productType = "com.apple.product-type.application";
@@ -844,7 +861,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					C9B13ADE2A4FB9930062EC30 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -860,6 +877,9 @@
 				Base,
 			);
 			mainGroup = C9B13AD62A4FB9930062EC30;
+			packageReferences = (
+				C97EDE022BB28A0A002F4596 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = C9B13AE02A4FB9930062EC30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -906,6 +926,8 @@
 				C954FE112A7D4D49008CB77F /* StudentListRowView.swift in Sources */,
 				C9B13AE32A4FB9930062EC30 /* NoonApp.swift in Sources */,
 				C9D5FA3A2A9260EA00755CD5 /* Student+CoreDataClass.swift in Sources */,
+				C9A568952BBD08EF00A63CAA /* ExportUtils.swift in Sources */,
+				C9A568972BBD17C000A63CAA /* FileManagerFinder.swift in Sources */,
 				C9D5F9F82A8FBC7E00755CD5 /* StudentOverviewViewModel.swift in Sources */,
 				C953B3FF2A8A372C0042296F /* SummarySection.swift in Sources */,
 				C92CCF132A8677970085681F /* MurojaahRepository.swift in Sources */,
@@ -927,6 +949,7 @@
 				C92CCF0F2A8535B90085681F /* ZiyadahService.swift in Sources */,
 				C90A83982A7F921F00BE477C /* UserScheduleEditorScreen.swift in Sources */,
 				C90053522A6604A400333854 /* MemorizeViewModel.swift in Sources */,
+				C9A568992BBD1AF600A63CAA /* ExportOptionView.swift in Sources */,
 				C9D5FA2F2A9260EA00755CD5 /* StudentPreference+CoreDataProperties.swift in Sources */,
 				C90A839C2A7F96E000BE477C /* UserViewModel.swift in Sources */,
 				C9D5FA312A9260EA00755CD5 /* User+CoreDataProperties.swift in Sources */,
@@ -957,6 +980,7 @@
 				C9FF1F0C2A87EC6200C7D04F /* StudentOverviewScreen.swift in Sources */,
 				C9B067622A555AB500E87449 /* MemorizeEditorScreen.swift in Sources */,
 				C92CCF152A8679070085681F /* MurojaahCDA.swift in Sources */,
+				C9A568912BBCF22E00A63CAA /* CSVDocument.swift in Sources */,
 				C9D5F9FC2A90409600755CD5 /* ChartView.swift in Sources */,
 				C9B13AF72A5064DD0062EC30 /* UserDetailScreen.swift in Sources */,
 				C97DC4A02A94F0D3006D756F /* ZiyadahEditorValueSection.swift in Sources */,
@@ -1037,6 +1061,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1097,6 +1122,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1207,6 +1233,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C97EDE022BB28A0A002F4596 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C97EDE032BB28A0A002F4596 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C97EDE022BB28A0A002F4596 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C94650722A682F8F00BEAC7A /* Model.xcdatamodeld */ = {

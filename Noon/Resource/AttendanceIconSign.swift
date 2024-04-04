@@ -10,6 +10,6 @@ import Foundation
 enum AttendanceIconSign: String {
     case notUpdated = "exclamationmark.octagon"
     case present = "checkmark.circle.fill"
-    case absent = "x.circle.fill"
+    case absent = "xmark.circle.fill"
     case dataset = "info.circle.fill"
 }

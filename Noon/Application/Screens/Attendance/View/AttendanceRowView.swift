@@ -17,9 +17,14 @@ struct AttendanceRowView: View {
     }
     var body: some View {
         HStack {
-            Text(student.name)
-                .font(.headline)
-                .lineLimit(1)
+            VStack(alignment: .leading) {
+                Text(student.name)
+                    .font(.headline)
+                    .lineLimit(1)
+                Text(todayAttendance == true ? "Present" : todayAttendance == false ? "Absent" : "Not Updated" )
+                    .font(.caption)
+                    .italic()
+            }
             Spacer()
             switch todayAttendance {
             case true:

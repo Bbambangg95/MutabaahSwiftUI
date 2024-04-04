@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MemorizeListScreen: View {
     @EnvironmentObject var studentVM: StudentViewModel
-//    var students: [StudentEntity]
+    @State private var presentSummaryZiyadah: Bool = false
     var body: some View {
         NavigationStack {
             List {
@@ -17,9 +17,22 @@ struct MemorizeListScreen: View {
                     MemorizeListRowView(student: student)
                 }
             }
-            .listStyle(.plain)
-            .navigationTitle("Memorize")
-            .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $presentSummaryZiyadah) {
+                SummaryZiyadah(students: studentVM.students)
+            }
+            .listStyle(.insetGrouped)
+            .navigationTitle("Memorization")
+            .navigationBarTitleDisplayMode(.automatic)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        presentSummaryZiyadah.toggle()
+                    } label: {
+                        Image(systemName: "chart.bar.xaxis")
+                    }
+                }
+            }
+            
         }
     }
 }

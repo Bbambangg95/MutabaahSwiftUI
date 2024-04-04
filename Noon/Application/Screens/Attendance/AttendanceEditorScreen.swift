@@ -10,6 +10,7 @@ import SwiftUI
 struct AttendanceEditorScreen: View {
     @EnvironmentObject var studentVM: StudentViewModel
     @EnvironmentObject var userScheduleVM: UserScheduleViewModel
+    @State private var presentAttendanceSummary: Bool = false
     private var disableForm: Bool { userScheduleVM.userSchedule.isEmpty }
     private var unCheckStudent: [StudentEntity] {
         return studentVM.students.filter { student in
@@ -21,20 +22,32 @@ struct AttendanceEditorScreen: View {
     }
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: .zero) {
                 if disableForm {
                     setupScheduleSection
                 } else {
-                    picker
-                    Label("Swipe to the right to update.", systemImage: "info.circle")
-                        .font(.footnote)
-                        .foregroundColor(Color.gray)
-                        .italic()
-                    attendanceList
+                    List {
+                        TodaysOverview()
+                        attendanceList
+                    }
+                    .disabled(disableForm)
+                    .listStyle(.insetGrouped)
                 }
             }
             .navigationTitle("Attendance")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.automatic)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        presentAttendanceSummary.toggle()
+                    } label: {
+                        Image(systemName: "chart.bar.doc.horizontal")
+                    }
+                }
+            }
+            .sheet(isPresented: $presentAttendanceSummary) {
+                SummaryAttendance(students: studentVM.students)
+            }
         }
     }
     private var setupScheduleSection: some View {
@@ -48,41 +61,36 @@ struct AttendanceEditorScreen: View {
         }
     }
     private var picker: some View {
-        Picker("", selection: $userScheduleVM.selectedClassTime) {
-            ForEach(userScheduleVM.userSchedule, id: \.id) { item in
-                Text(item.timeLabel).tag(item.id.uuidString)
+        VStack {
+            Picker("", selection: $userScheduleVM.selectedClassTime) {
+                ForEach(userScheduleVM.userSchedule, id: \.id) { item in
+                    Text(item.timeLabel).tag(item.id.uuidString)
+                }
             }
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
         }
-        .pickerStyle(.segmented)
-        .padding(.horizontal)
+        .background(Color(UIColor.systemGray6))
     }
     private var attendanceList: some View {
-        List {
-            AttendanceSectionView(
-                students: unCheckStudent,
-                title: "Not Updated",
-                imageName: AttendanceIconSign.notUpdated.rawValue
-            )
-            AttendanceSectionView(
-                students: StudentViewModel.getFilteredStudent(
-                    students: studentVM.students,
-                    attendStatus: true,
-                    timeLabel: userScheduleVM.selectedClassTime
-                ),
-                title: "Present",
-                imageName: AttendanceIconSign.present.rawValue
-            )
-            AttendanceSectionView(
-                students: StudentViewModel.getFilteredStudent(
-                    students: studentVM.students,
-                    attendStatus: false,
-                    timeLabel: userScheduleVM.selectedClassTime
-                ),
-                title: "Absent",
-                imageName: AttendanceIconSign.absent.rawValue)
+        Section {
+            ForEach(studentVM.students) { student in
+                AttendanceRowView(student: student)
+            }
+            if studentVM.students.isEmpty {
+                Text("None")
+                    .italic()
+                    .font(.caption)
+            }
+        } header: {
+            HStack {
+                Spacer()
+                Label("Swipe to the left to update.", systemImage: "chevron.left.2")
+                    .font(.caption2)
+                    .foregroundColor(Color.gray)
+                    .italic()
+            }
         }
-        .disabled(disableForm)
-        .listStyle(.insetGrouped)
-        .scrollContentBackground(.hidden)
+        //        .scrollContentBackground(.hidden)
     }
 }
