@@ -18,7 +18,7 @@ struct SubscriptionView: View {
                     .font(.largeTitle)
                     .foregroundStyle(Color.blue)
                     .padding(.top, 25)
-                Text("Subscription Plan")
+                Text(NSLocalizedString("subscriptionPlan", comment: ""))
                     .font(.title)
                     .padding(.vertical, 5)
                     .fontWeight(.semibold)
@@ -28,7 +28,7 @@ struct SubscriptionView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
                         Label {
-                            Text("Remove All Ads")
+                            Text("Record Students Memorization")
                                 .fontWeight(.semibold)
                                 .font(.title3)
                         } icon: {
@@ -38,12 +38,39 @@ struct SubscriptionView: View {
                         
                         Label {
                             VStack(alignment: .leading) {
-                                Text("Full Access to Premium Features")
+                                Text("Record Students Attendance")
                                     .fontWeight(.semibold)
                                     .font(.title3)
-                                Text("Export data to CSV & PDF")
-                                Text("Attendance Recap")
-                                Text("Memorization Recap")
+                            }
+                        } icon: {
+                            Image(systemName: "checkmark.circle")
+                                .foregroundStyle(Color.blue)
+                        }
+                        Label {
+                            VStack(alignment: .leading) {
+                                Text("Track Students Progress History")
+                                    .fontWeight(.semibold)
+                                    .font(.title3)
+                            }
+                        } icon: {
+                            Image(systemName: "checkmark.circle")
+                                .foregroundStyle(Color.blue)
+                        }
+                        Label {
+                            VStack(alignment: .leading) {
+                                Text("Export Report Data")
+                                    .fontWeight(.semibold)
+                                    .font(.title3)
+                            }
+                        } icon: {
+                            Image(systemName: "checkmark.circle")
+                                .foregroundStyle(Color.blue)
+                        }
+                        Label {
+                            VStack(alignment: .leading) {
+                                Text("Insightful Recaps")
+                                    .fontWeight(.semibold)
+                                    .font(.title3)
                             }
                         } icon: {
                             Image(systemName: "checkmark.circle")
@@ -91,7 +118,7 @@ struct SubscriptionView: View {
                             Text(product.localizedTitle)
                                 .font(.headline)
                                 .multilineTextAlignment(.leading)
-                            Text("Get full access for just $\(product.price)")
+                            Text("Get full access for just \(product.priceLocale.currencySymbol ?? "")\(product.price)")
                                 .font(.subheadline)
                                 .multilineTextAlignment(.leading)
                             if let subscriptionPeriod = product.subscriptionPeriod {
@@ -107,7 +134,7 @@ struct SubscriptionView: View {
                     }
                     .padding(.horizontal, 20)
                 }
-                .frame(height: 85, alignment: .center)
+                .frame(height: 90, alignment: .center)
                 .onTapGesture {
                     selectedProduct = product
                 }

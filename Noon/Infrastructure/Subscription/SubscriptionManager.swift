@@ -79,6 +79,7 @@ class SubscriptionManager: NSObject, ObservableObject, SKPaymentTransactionObser
             purchasedProductIDs.insert(transaction.payment.productIdentifier)
             saveSubscriptionStatus()
             SKPaymentQueue.default().finishTransaction(transaction)
+            isSubscribed = true
         }
         
     private func handleRestore(transaction: SKPaymentTransaction) {

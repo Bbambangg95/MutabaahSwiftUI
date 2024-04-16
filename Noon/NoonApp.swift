@@ -19,40 +19,45 @@ struct NoonApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabView {
-//                DashboardScreen()
-//                    .tabItem {
-//                        Image(systemName: "square.grid.2x2.fill")
-//                        Text("Dashboard")
-//                    }
-                StudentListScreen()
-                    .tabItem {
-                        Image(systemName: "person.2.fill")
-                        Text("Students")
-                    }
-                
-                MemorizeListScreen()
-                    .tabItem {
-                        Image(systemName: "book.fill")
-                        Text("Memorization")
-                    }
-                AttendanceEditorScreen()
-                    .tabItem {
-                        Image(systemName: "text.badge.checkmark")
-                        Text("Attendance")
-                    }
-                UserDetailScreen()
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
+            if !subscriptionManager.isSubscribed {
+                SubscriptionView()
+                    .environmentObject(subscriptionManager)
+            } else {
+                TabView {
+                    //                DashboardScreen()
+                    //                    .tabItem {
+                    //                        Image(systemName: "square.grid.2x2.fill")
+                    //                        Text("Dashboard")
+                    //                    }
+                    StudentListScreen()
+                        .tabItem {
+                            Image(systemName: "person.2.fill")
+                            Text("Students")
+                        }
+                    
+                    MemorizeListScreen()
+                        .tabItem {
+                            Image(systemName: "book.fill")
+                            Text("Memorization")
+                        }
+                    AttendanceEditorScreen()
+                        .tabItem {
+                            Image(systemName: "text.badge.checkmark")
+                            Text("Attendance")
+                        }
+                    UserDetailScreen()
+                        .tabItem {
+                            Image(systemName: "gear")
+                            Text("Settings")
+                        }
+                }
+                .environment(\.managedObjectContext, persistanceController.container.viewContext)
+                .environmentObject(studentVM)
+                .environmentObject(userScheduleVM)
+                .environmentObject(userVM)
+                .environmentObject(memorizeVM)
+                .environmentObject(subscriptionManager)
             }
-            .environment(\.managedObjectContext, persistanceController.container.viewContext)
-            .environmentObject(studentVM)
-            .environmentObject(userScheduleVM)
-            .environmentObject(userVM)
-            .environmentObject(memorizeVM)
-            .environmentObject(subscriptionManager)
         }
     }
 }

@@ -1,0 +1,1259 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "%@ | %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ | %2$@"
+          }
+        }
+      }
+    },
+    "%@ to %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ to %2$@"
+          }
+        }
+      }
+    },
+    "%@, Juz : %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, Juz : %2$@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
+    "%lld %@ subscription (auto-renewable)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld %2$@ subscription (auto-renewable)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld %2$@ subscription (auto-renewable)"
+          }
+        }
+      }
+    },
+    "%lld Juz" : {
+
+    },
+    "%lld Juz/Year" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Juz/Tahun"
+          }
+        }
+      }
+    },
+    "%lld Pages/Month" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Halaman/Bulan"
+          }
+        }
+      }
+    },
+    "%lld sessions" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld pertemuan"
+          }
+        }
+      }
+    },
+    "%lld times" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld kali"
+          }
+        }
+      }
+    },
+    "%lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "Absent" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak Hadir"
+          }
+        }
+      }
+    },
+    "Add Memorize" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan Hafalan"
+          }
+        }
+      }
+    },
+    "Add new student" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan Santri"
+          }
+        }
+      }
+    },
+    "Address" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alamat"
+          }
+        }
+      }
+    },
+    "ago" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lalu"
+          }
+        }
+      }
+    },
+    "All data related to %@ will be permanently deleted. Are you sure you want to proceed?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua data yang terkait dengan %@ akan dihapus secara permanen. Apakah Anda yakin ingin melanjutkan?"
+          }
+        }
+      }
+    },
+    "Attend" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attend"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hadir"
+          }
+        }
+      }
+    },
+    "Attendance" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kehadiran"
+          }
+        }
+      }
+    },
+    "Attendance History" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat Kehadiran"
+          }
+        }
+      }
+    },
+    "By deleting this schedule, all associated data will be permanently removed." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dengan menghapus jadwal ini, semua data terkait akan dihapus secara permanen."
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batalkan"
+          }
+        }
+      }
+    },
+    "Category" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategori"
+          }
+        }
+      }
+    },
+    "Current Status" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status Saat Ini"
+          }
+        }
+      }
+    },
+    "CurrentStatus" : {
+
+    },
+    "Custom Date" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal Kuston"
+          }
+        }
+      }
+    },
+    "Dashboard" : {
+
+    },
+    "Date of Birth" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal Lahir"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus"
+          }
+        }
+      }
+    },
+    "Delete Schedule" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus Jadwal"
+          }
+        }
+      }
+    },
+    "Detail" : {
+
+    },
+    "Detail Juz" : {
+
+    },
+    "Done" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
+        }
+      }
+    },
+    "End Sprint" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akhir Sprint"
+          }
+        }
+      }
+    },
+    "End Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu Berakhir"
+          }
+        }
+      }
+    },
+    "Export Data" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekspor Data"
+          }
+        }
+      }
+    },
+    "Export Report Data" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekspor ke PDF"
+          }
+        }
+      }
+    },
+    "Export to CSV" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekspor ke CSV"
+          }
+        }
+      }
+    },
+    "Exported Files" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "File Terekspor"
+          }
+        }
+      }
+    },
+    "Full Name" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama Lengkap"
+          }
+        }
+      }
+    },
+    "Gender" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jenis Kelamin"
+          }
+        }
+      }
+    },
+    "Get full access for just %@%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get full access for just %1$@%2$@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dapatkan akses penuh hanya dengan %1$@%2$@"
+          }
+        }
+      }
+    },
+    "Hi, %@" : {
+
+    },
+    "History" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat"
+          }
+        }
+      }
+    },
+    "Identity" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identitas"
+          }
+        }
+      }
+    },
+    "Insightful Recaps" : {
+
+    },
+    "Juz" : {
+
+    },
+    "Juz %@ Page %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Juz %1$@ Page %2$@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juz %1$@ Halaman %2$@"
+          }
+        }
+      }
+    },
+    "Juz %@, Page %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Juz %1$@, Page %2$@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juz %1$@, Halaman %2$@"
+          }
+        }
+      }
+    },
+    "Juz %lld" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juz %lld"
+          }
+        }
+      }
+    },
+    "Juz %lld Page %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Juz %1$lld Page %2$lld"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juz %1$lld Halaman %2$lld"
+          }
+        }
+      }
+    },
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "Label" : {
+
+    },
+    "Latest Update" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Terakhir"
+          }
+        }
+      }
+    },
+    "Memorization" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hafalan"
+          }
+        }
+      }
+    },
+    "Memorization Value" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memorization Score"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nilai Hafalan"
+          }
+        }
+      }
+    },
+    "Memorize History" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat Hafalan"
+          }
+        }
+      }
+    },
+    "Monthly Target (Pages)" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target Bulanan (Halaman)"
+          }
+        }
+      }
+    },
+    "Murojaah %@ (Juz %@ Page %@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Murojaah %1$@ (Juz %2$@ Page %3$@)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Murojaah %1$@ (Juz %2$@ Halaman %3$@)"
+          }
+        }
+      }
+    },
+    "Murojaah %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Murojaah %1$@ %2$@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Murojaah %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "New Schedule" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan Jadwal"
+          }
+        }
+      }
+    },
+    "New Time Label" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label Waktu Baru"
+          }
+        }
+      }
+    },
+    "No data" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada data"
+          }
+        }
+      }
+    },
+    "No Data Available" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada data tersedia"
+          }
+        }
+      }
+    },
+    "No document" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada document"
+          }
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak Ada"
+          }
+        }
+      }
+    },
+    "Not Updated" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum Diperbarui"
+          }
+        }
+      }
+    },
+    "Or you can access this feature once by watching an advertisement." : {
+
+    },
+    "Overview" : {
+
+    },
+    "Page" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halaman"
+          }
+        }
+      }
+    },
+    "Page %lld (%lld)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Page %1$lld (%2$lld)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halaman %1$lld (%2$lld)"
+          }
+        }
+      }
+    },
+    "Payment will be charged to your iTunes Account at the confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24 hours before the end of the current period. You will be charged for renewal within 24 hours before the end of the current period. The cost of the renewal will be identified. Subscriptions can be managed by the user, and auto-renewal may be turned off in your Account Settings in iTunes after purchase. Any unused portion of a free trial period, if offered, will be forfeited when you purchase a subscription to that publication, where applicable. The subscription will renew at the same price unless otherwise stated. If the subscription renewal fails, Apple will attempt to recover it for up to 60 days. During this time, you may need to pause access to your service or content. If the subscription is recovered within the Billing Grace Period, there won’t be any interruption to the days of paid service or to your revenue. If the price of a subscription increases, you will be notified, and your consent will be required to continue. You are responsible for any uncollected amounts if Apple cannot charge your payment method for any reason, such as expiration or insufficient funds, and you have not cancelled the subscription. Certain subscriptions may offer a free trial prior to charging your payment method. If you decide to unsubscribe from a subscription before it starts charging your payment method, cancel the subscription at least 24 hours before the free trial ends." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembayaran akan dibebankan ke Akun iTunes Anda di konfirmasi pembelian. Langganan diperpanjang secara otomatis kecuali perpanjangan otomatis dimatikan setidaknya 24 jam sebelum akhir periode berjalan. Anda akan dikenakan biaya untuk perpanjangan dalam waktu 24 jam sebelum akhir periode berjalan. Biaya pembaruan akan diidentifikasi. Langganan dapat dikelola oleh pengguna, dan perpanjangan otomatis dapat dimatikan di Pengaturan Akun Anda di iTunes setelah pembelian. Bagian masa uji coba gratis yang tidak terpakai, jika ditawarkan, akan hangus saat Anda membeli langganan publikasi tersebut, jika berlaku. Langganan akan diperpanjang dengan harga yang sama kecuali dinyatakan lain. Jika perpanjangan langganan gagal, Apple akan berupaya memulihkannya hingga 60 hari. Selama waktu ini, Anda mungkin perlu menjeda akses ke layanan atau konten Anda. Jika langganan dipulihkan dalam Masa Tenggang Penagihan, tidak akan ada gangguan apa pun pada hari layanan berbayar atau pendapatan Anda. Jika harga langganan naik, Anda akan diberi tahu dan persetujuan Anda diperlukan untuk melanjutkan. Anda bertanggung jawab atas jumlah yang tidak tertagih jika Apple tidak dapat menagih metode pembayaran Anda karena alasan apa pun, seperti habis masa berlakunya atau dana tidak mencukupi, dan Anda belum membatalkan langganan. Langganan tertentu mungkin menawarkan uji coba gratis sebelum menagih metode pembayaran Anda. Jika Anda memutuskan untuk berhenti berlangganan sebelum langganan mulai menagih metode pembayaran Anda, batalkan langganan setidaknya 24 jam sebelum uji coba gratis berakhir."
+          }
+        }
+      }
+    },
+    "Personal Information" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi Personal"
+          }
+        }
+      }
+    },
+    "Please review our Terms of Use and Privacy Policy for more details on how we handle your personal information and subscription details." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harap tinjau Ketentuan Penggunaan dan Kebijakan Privasi kami untuk detail lebih lanjut tentang cara kami menangani informasi pribadi dan detail langganan Anda."
+          }
+        }
+      }
+    },
+    "Preference" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferensi"
+          }
+        }
+      }
+    },
+    "Present" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hadir"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy Policy"
+          }
+        }
+      }
+    },
+    "Program" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Program"
+          }
+        }
+      }
+    },
+    "Progress" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progres"
+          }
+        }
+      }
+    },
+    "Progress History" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat Perkembangan"
+          }
+        }
+      }
+    },
+    "Purchase" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berlangganan"
+          }
+        }
+      }
+    },
+    "Recitation Value" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recitation Score"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Nilai Bacaan"
+          }
+        }
+      }
+    },
+    "Record Students Attendance" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rekam Kehadiran Siswa"
+          }
+        }
+      }
+    },
+    "Record Students Memorization" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rekam Hafalan Siswa"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan"
+          }
+        }
+      }
+    },
+    "Schedule" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jadwal"
+          }
+        }
+      }
+    },
+    "See All" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lihat Semua"
+          }
+        }
+      }
+    },
+    "Select" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih"
+          }
+        }
+      }
+    },
+    "Select Juz..." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Juz"
+          }
+        }
+      }
+    },
+    "Select Page..." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Halaman"
+          }
+        }
+      }
+    },
+    "Select Period" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Periode"
+          }
+        }
+      }
+    },
+    "Select Total Juz..." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Jumlah Juz..."
+          }
+        }
+      }
+    },
+    "Set up schedule" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atur Jadwal"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
+          }
+        }
+      }
+    },
+    "Share" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagikan"
+          }
+        }
+      }
+    },
+    "Start From" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai Dari"
+          }
+        }
+      }
+    },
+    "Start Program" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai Program"
+          }
+        }
+      }
+    },
+    "Start Sprint" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai Sprint"
+          }
+        }
+      }
+    },
+    "Start Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu Mulai"
+          }
+        }
+      }
+    },
+    "Students" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Santri"
+          }
+        }
+      }
+    },
+    "Subscribe now for exclusive feature access. Please review our subscription details before purchasing." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langganan sekarang untuk akses fitur eksklusif. Harap tinjau detail langganan kami sebelum membeli."
+          }
+        }
+      }
+    },
+    "Subscription" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langganan"
+          }
+        }
+      }
+    },
+    "subscriptionPlan" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subscription Plan"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paket Berlangganan"
+          }
+        }
+      }
+    },
+    "Subscriptions details" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detail Langganan"
+          }
+        }
+      }
+    },
+    "Summary" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ringkasan"
+          }
+        }
+      }
+    },
+    "Swipe to the left to update." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geser ke kiri untuk memperbarui."
+          }
+        }
+      }
+    },
+    "Target Achievement" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target Capaian"
+          }
+        }
+      }
+    },
+    "Terms of Use" : {
+
+    },
+    "Time" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu"
+          }
+        }
+      }
+    },
+    "Total Juz" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Juz"
+          }
+        }
+      }
+    },
+    "Total Pages" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Halaman"
+          }
+        }
+      }
+    },
+    "Track Students Progress History" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lacak Riwayat Kemajuan Siswa"
+          }
+        }
+      }
+    },
+    "Until" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sampai"
+          }
+        }
+      }
+    },
+    "Updated" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updated"
+          }
+        }
+      }
+    },
+    "User Identity" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identitas Pengguna"
+          }
+        }
+      }
+    },
+    "Value" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nilai"
+          }
+        }
+      }
+    },
+    "Warning: The Juz selection is based on the last ziyadah. Pages must be entered in sequential order." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peringatan: Pemilihan Juz didasarkan pada ziyadah terakhir. Halaman harus dimasukkan secara berurutan."
+          }
+        }
+      }
+    },
+    "Watch Ad" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tonton Iklan"
+          }
+        }
+      }
+    },
+    "X Data" : {
+
+    },
+    "Y Data" : {
+
+    },
+    "Yearly Target (Juz)" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target Tahunan (Juz)"
+          }
+        }
+      }
+    },
+    "You are about to delete Page %lld and all pages after it in the same Juz. Are you sure you want to proceed?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda akan menghapus Halaman %lld dan semua halaman setelahnya di Juz yang sama. Apakah Anda yakin ingin melanjutkan?"
+          }
+        }
+      }
+    },
+    "You currently don't have any schedule set up. Please set up your schedule to ensure the attendance data is updated accurately." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda saat ini tidak memiliki jadwal yang ditetapkan. Harap atur jadwal Anda untuk memastikan data kehadiran diperbarui dengan akurat."
+          }
+        }
+      }
+    },
+    "You currently haven't added any students yet. Please add students to enjoy the mutabaah feature." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda saat ini belum menambahkan siswa apa pun. Silakan tambahkan siswa untuk menikmati fitur mutabaah."
+          }
+        }
+      }
+    },
+    "Ziyadah Summary" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rekapitulasi Ziyadah"
+          }
+        }
+      }
+    },
+    "Ziyadah Target" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target Ziyadah"
+          }
+        }
+      }
+    },
+    "Ziyadah, Juz %lld Page %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Ziyadah, Juz %1$lld Page %2$lld"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziyadah, Juz %1$lld Halaman %2$lld"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
