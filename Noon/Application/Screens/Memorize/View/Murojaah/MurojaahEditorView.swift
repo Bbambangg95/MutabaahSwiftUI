@@ -11,9 +11,15 @@ struct MurojaahEditorView: View {
     @EnvironmentObject var studentVM: StudentViewModel
     @EnvironmentObject var memorizeVM: MemorizeViewModel
     @Environment(\.dismiss) var dismiss
-    @StateObject private var murojaahVM = MurojaahViewModel()
+    @StateObject private var murojaahVM: MurojaahViewModel
     let juzData = JuzData()
     var student: StudentEntity
+    var interstitialAd: InterstitialAd?
+    init(student: StudentEntity) {
+        self.student = student
+        self.interstitialAd = InterstitialAd()
+        _murojaahVM = StateObject(wrappedValue: MurojaahViewModel())
+    }
     var disableSaveButton: Bool {
         murojaahVM.key.isEmpty || murojaahVM.value.isEmpty
     }

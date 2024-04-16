@@ -87,9 +87,14 @@
 		C97DC49E2A94EF3F006D756F /* ZiyadahEditorDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC49D2A94EF3F006D756F /* ZiyadahEditorDetailSection.swift */; };
 		C97DC4A02A94F0D3006D756F /* ZiyadahEditorValueSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC49F2A94F0D3006D756F /* ZiyadahEditorValueSection.swift */; };
 		C97DC4A22A94F19A006D756F /* ZiyadahEditorDateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DC4A12A94F19A006D756F /* ZiyadahEditorDateSection.swift */; };
-		C97EDE042BB28A0A002F4596 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C97EDE032BB28A0A002F4596 /* GoogleMobileAds */; };
 		C98BE2FD2A991BF500500B55 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */; };
 		C9904FC92A591B29009C7AD8 /* UserEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9904FC82A591B29009C7AD8 /* UserEditorScreen.swift */; };
+		C9A44BC52BC3D63300ED3FF4 /* SubscriptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BC42BC3D63300ED3FF4 /* SubscriptionId.swift */; };
+		C9A44BC72BC3DAB500ED3FF4 /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BC62BC3DAB500ED3FF4 /* EntitlementManager.swift */; };
+		C9A44BCA2BC3E30D00ED3FF4 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BC92BC3E30D00ED3FF4 /* AdBannerView.swift */; };
+		C9A44BCD2BC3E45E00ED3FF4 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C9A44BCC2BC3E45E00ED3FF4 /* GoogleMobileAds */; };
+		C9A44BCF2BC3E5B800ED3FF4 /* AdsId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BCE2BC3E5B800ED3FF4 /* AdsId.swift */; };
+		C9A44BD12BC3E78F00ED3FF4 /* InterstitialAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BD02BC3E78F00ED3FF4 /* InterstitialAds.swift */; };
 		C9A568912BBCF22E00A63CAA /* CSVDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A568902BBCF22E00A63CAA /* CSVDocument.swift */; };
 		C9A568952BBD08EF00A63CAA /* ExportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A568942BBD08EF00A63CAA /* ExportUtils.swift */; };
 		C9A568972BBD17C000A63CAA /* FileManagerFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A568962BBD17C000A63CAA /* FileManagerFinder.swift */; };
@@ -121,6 +126,7 @@
 		C9D5FA3A2A9260EA00755CD5 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D5FA2A2A9260EA00755CD5 /* Student+CoreDataClass.swift */; };
 		C9D5FA3B2A9260EA00755CD5 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D5FA2B2A9260EA00755CD5 /* Student+CoreDataProperties.swift */; };
 		C9DC1D562A5C479C003D3BA1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC1D552A5C479C003D3BA1 /* PersistenceController.swift */; };
+		C9E7A7F02BC515620059615F /* AdsOrSubsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7A7EF2BC515620059615F /* AdsOrSubsView.swift */; };
 		C9E97A232A8142A9008D4B5D /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E97A222A8142A9008D4B5D /* UserProfileView.swift */; };
 		C9E97A252A8146F6008D4B5D /* UserPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E97A242A8146F6008D4B5D /* UserPreferenceView.swift */; };
 		C9FF1F0C2A87EC6200C7D04F /* StudentOverviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF1F0B2A87EC6200C7D04F /* StudentOverviewScreen.swift */; };
@@ -163,6 +169,7 @@
 		C92CCF182A86820D0085681F /* MurojaahViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurojaahViewModel.swift; sourceTree = "<group>"; };
 		C92D83B02BC303FE004501F4 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		C92D83B32BC3043D004501F4 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		C92D83B52BC35438004501F4 /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreKitConfiguration.storekit; sourceTree = "<group>"; };
 		C93241B72A8B49100025C0E0 /* StudentViewModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudentViewModel+Extension.swift"; sourceTree = "<group>"; };
 		C93241BB2A8BCAAB0025C0E0 /* SummaryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRowView.swift; sourceTree = "<group>"; };
 		C934243F2A9A224E005B21E3 /* SummaryAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryAttendance.swift; sourceTree = "<group>"; };
@@ -212,6 +219,11 @@
 		C98BE2FC2A991BF500500B55 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		C98F2D362AA180A300DAD96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9904FC82A591B29009C7AD8 /* UserEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditorScreen.swift; sourceTree = "<group>"; };
+		C9A44BC42BC3D63300ED3FF4 /* SubscriptionId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionId.swift; sourceTree = "<group>"; };
+		C9A44BC62BC3DAB500ED3FF4 /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
+		C9A44BC92BC3E30D00ED3FF4 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
+		C9A44BCE2BC3E5B800ED3FF4 /* AdsId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsId.swift; sourceTree = "<group>"; };
+		C9A44BD02BC3E78F00ED3FF4 /* InterstitialAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAds.swift; sourceTree = "<group>"; };
 		C9A568902BBCF22E00A63CAA /* CSVDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDocument.swift; sourceTree = "<group>"; };
 		C9A568942BBD08EF00A63CAA /* ExportUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportUtils.swift; sourceTree = "<group>"; };
 		C9A568962BBD17C000A63CAA /* FileManagerFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerFinder.swift; sourceTree = "<group>"; };
@@ -244,6 +256,7 @@
 		C9D5FA2A2A9260EA00755CD5 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9D5FA2B2A9260EA00755CD5 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9DC1D552A5C479C003D3BA1 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		C9E7A7EF2BC515620059615F /* AdsOrSubsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsOrSubsView.swift; sourceTree = "<group>"; };
 		C9E97A222A8142A9008D4B5D /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		C9E97A242A8146F6008D4B5D /* UserPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferenceView.swift; sourceTree = "<group>"; };
 		C9FF1F0B2A87EC6200C7D04F /* StudentOverviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentOverviewScreen.swift; sourceTree = "<group>"; };
@@ -255,7 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C97EDE042BB28A0A002F4596 /* GoogleMobileAds in Frameworks */,
+				C9A44BCD2BC3E45E00ED3FF4 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				C92D83B02BC303FE004501F4 /* SubscriptionManager.swift */,
+				C92D83B52BC35438004501F4 /* StoreKitConfiguration.storekit */,
+				C9A44BC62BC3DAB500ED3FF4 /* EntitlementManager.swift */,
 			);
 			path = Subscription;
 			sourceTree = "<group>";
@@ -299,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				C92D83B32BC3043D004501F4 /* SubscriptionView.swift */,
+				C9E7A7EF2BC515620059615F /* AdsOrSubsView.swift */,
 			);
 			path = Subscription;
 			sourceTree = "<group>";
@@ -472,6 +488,7 @@
 		C954FE232A7E85FA008CB77F /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				C9A44BC82BC3E2FC00ED3FF4 /* AdsManager */,
 				C92D83AF2BC303EE004501F4 /* Subscription */,
 				C9C0C2A12A61567A00EF5017 /* CoreData */,
 			);
@@ -735,6 +752,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C9A44BC82BC3E2FC00ED3FF4 /* AdsManager */ = {
+			isa = PBXGroup;
+			children = (
+				C9A44BC92BC3E30D00ED3FF4 /* AdBannerView.swift */,
+				C9A44BCE2BC3E5B800ED3FF4 /* AdsId.swift */,
+				C9A44BD02BC3E78F00ED3FF4 /* InterstitialAds.swift */,
+			);
+			path = AdsManager;
+			sourceTree = "<group>";
+		};
 		C9B0676A2A565EE100E87449 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +846,7 @@
 				C954FE1E2A7E678F008CB77F /* MurojaahAmountOptions.swift */,
 				C90A83932A7F579D00BE477C /* GenderOption.swift */,
 				C92CCEC22A834C4A0085681F /* AttendanceIconSign.swift */,
+				C9A44BC42BC3D63300ED3FF4 /* SubscriptionId.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -869,7 +897,7 @@
 			);
 			name = Noon;
 			packageProductDependencies = (
-				C97EDE032BB28A0A002F4596 /* GoogleMobileAds */,
+				C9A44BCC2BC3E45E00ED3FF4 /* GoogleMobileAds */,
 			);
 			productName = Noon;
 			productReference = C9B13ADF2A4FB9930062EC30 /* Noon.app */;
@@ -900,7 +928,7 @@
 			);
 			mainGroup = C9B13AD62A4FB9930062EC30;
 			packageReferences = (
-				C97EDE022BB28A0A002F4596 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				C9A44BCB2BC3E45E00ED3FF4 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = C9B13AE02A4FB9930062EC30 /* Products */;
 			projectDirPath = "";
@@ -933,6 +961,7 @@
 				C92CCF172A867BDD0085681F /* MurojaahService.swift in Sources */,
 				C93241BC2A8BCAAB0025C0E0 /* SummaryRowView.swift in Sources */,
 				C92CCF112A8676A90085681F /* MemorizeEntity.swift in Sources */,
+				C9A44BC52BC3D63300ED3FF4 /* SubscriptionId.swift in Sources */,
 				C9D5FA372A9260EA00755CD5 /* Attendance+CoreDataProperties.swift in Sources */,
 				C97DC47F2A926290006D756F /* CompletedZiyadah+CoreDataProperties.swift in Sources */,
 				C9D5FA3B2A9260EA00755CD5 /* Student+CoreDataProperties.swift in Sources */,
@@ -948,6 +977,8 @@
 				C954FE112A7D4D49008CB77F /* StudentListRowView.swift in Sources */,
 				C9B13AE32A4FB9930062EC30 /* NoonApp.swift in Sources */,
 				C9D5FA3A2A9260EA00755CD5 /* Student+CoreDataClass.swift in Sources */,
+				C9A44BC72BC3DAB500ED3FF4 /* EntitlementManager.swift in Sources */,
+				C9E7A7F02BC515620059615F /* AdsOrSubsView.swift in Sources */,
 				C92D83B12BC303FE004501F4 /* SubscriptionManager.swift in Sources */,
 				C9A568952BBD08EF00A63CAA /* ExportUtils.swift in Sources */,
 				C9A568972BBD17C000A63CAA /* FileManagerFinder.swift in Sources */,
@@ -965,10 +996,12 @@
 				C90A83C22A80A6BB00BE477C /* UserExtension.swift in Sources */,
 				C92CCF192A86820D0085681F /* MurojaahViewModel.swift in Sources */,
 				C93424422A9B3A8F005B21E3 /* ProgressHistorySheet.swift in Sources */,
+				C9A44BCA2BC3E30D00ED3FF4 /* AdBannerView.swift in Sources */,
 				C9D5FA322A9260EA00755CD5 /* Ziyadah+CoreDataClass.swift in Sources */,
 				C96355EE2A6D77DD00FA260D /* DashboardScreen.swift in Sources */,
 				C954FE172A7E2B90008CB77F /* ZiyadahEditorView.swift in Sources */,
 				C943D85A2A624AEA00FF75F0 /* juzData.swift in Sources */,
+				C9A44BD12BC3E78F00ED3FF4 /* InterstitialAds.swift in Sources */,
 				C92CCF0F2A8535B90085681F /* ZiyadahService.swift in Sources */,
 				C90A83982A7F921F00BE477C /* UserScheduleEditorScreen.swift in Sources */,
 				C90053522A6604A400333854 /* MemorizeViewModel.swift in Sources */,
@@ -987,6 +1020,7 @@
 				C954FE522A7E8CBD008CB77F /* StudentEntity.swift in Sources */,
 				C954FE542A7E9017008CB77F /* StudentPreferenceEntity.swift in Sources */,
 				C9D5FA2D2A9260EA00755CD5 /* Murojaah+CoreDataProperties.swift in Sources */,
+				C9A44BCF2BC3E5B800ED3FF4 /* AdsId.swift in Sources */,
 				C91B88EF2A7C0F62008D4260 /* StudentExtension.swift in Sources */,
 				C92CCEBD2A8343FD0085681F /* AttendanceCDA.swift in Sources */,
 				C954FE4D2A7E8B13008CB77F /* UserScheduleEntity.swift in Sources */,
@@ -1172,7 +1206,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Noon/Preview Content\"";
 				DEVELOPMENT_TEAM = 42BZUPKLGZ;
 				ENABLE_PREVIEWS = YES;
@@ -1191,7 +1225,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noon.mutabaah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1207,7 +1241,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Noon/Preview Content\"";
 				DEVELOPMENT_TEAM = 42BZUPKLGZ;
 				ENABLE_PREVIEWS = YES;
@@ -1226,7 +1260,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noon.mutabaah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1259,7 +1293,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C97EDE022BB28A0A002F4596 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+		C9A44BCB2BC3E45E00ED3FF4 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
@@ -1270,9 +1304,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C97EDE032BB28A0A002F4596 /* GoogleMobileAds */ = {
+		C9A44BCC2BC3E45E00ED3FF4 /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C97EDE022BB28A0A002F4596 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			package = C9A44BCB2BC3E45E00ED3FF4 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */

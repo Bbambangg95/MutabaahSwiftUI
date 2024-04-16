@@ -11,6 +11,9 @@ struct AttendanceEditorScreen: View {
     @EnvironmentObject var studentVM: StudentViewModel
     @EnvironmentObject var userScheduleVM: UserScheduleViewModel
     @State private var presentAttendanceSummary: Bool = false
+    @State private var adsOrSubscribe: Bool = false
+    @State private var watchAds: Bool = false
+    var interstitialAds = InterstitialAd()
     private var disableForm: Bool { userScheduleVM.userSchedule.isEmpty }
     private var unCheckStudent: [StudentEntity] {
         return studentVM.students.filter { student in
@@ -39,7 +42,11 @@ struct AttendanceEditorScreen: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        presentAttendanceSummary.toggle()
+                        if !SubscriptionManager.shared.isSubscribed {
+                            adsOrSubscribe.toggle()
+                        } else {
+                            presentAttendanceSummary.toggle()
+                        }
                     } label: {
                         Image(systemName: "chart.bar.doc.horizontal")
                     }
@@ -47,6 +54,23 @@ struct AttendanceEditorScreen: View {
             }
             .sheet(isPresented: $presentAttendanceSummary) {
                 SummaryAttendance(students: studentVM.students)
+            }
+            .sheet(
+                isPresented: $adsOrSubscribe,
+                onDismiss: {
+                    if watchAds {
+                        interstitialAds.showAd()
+                        interstitialAds.setOnAdDismissed {
+                            watchAds = false
+                            presentAttendanceSummary.toggle()
+                        }
+                    }
+                }
+            ) {
+                AdsOrSubsView {
+                    adsOrSubscribe.toggle()
+                    watchAds = true
+                }
             }
         }
     }
@@ -74,7 +98,10 @@ struct AttendanceEditorScreen: View {
     }
     private var attendanceList: some View {
         Section {
-            ForEach(studentVM.students) { student in
+            if !SubscriptionManager.shared.isSubscribed {
+                AdBannerView()
+            }
+            ForEach(studentVM.students.sorted { $0.name < $1.name}) { student in
                 AttendanceRowView(student: student)
             }
             if studentVM.students.isEmpty {

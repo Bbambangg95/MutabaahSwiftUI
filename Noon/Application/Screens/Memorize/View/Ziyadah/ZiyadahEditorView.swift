@@ -15,8 +15,10 @@ struct ZiyadahEditorView: View {
     @State private var isLoading: Bool = false
     let juzData = JuzData()
     var student: StudentEntity
+    var interstitialAd: InterstitialAd?
     init(student: StudentEntity) {
         self.student = student
+        self.interstitialAd = InterstitialAd()
         _ziyadahVM = StateObject(wrappedValue: ZiyadahViewModel(student: student))
     }
     var body: some View {
@@ -64,7 +66,6 @@ struct ZiyadahEditorView: View {
     private func saveZiyadah() {
         isLoading = true
         ziyadahVM.createZiyadah(studentId: student.id) { success in
-            print(success)
             if success {
                 studentVM.fetchStudents()
                 memorizeVM.fetchMemorize()

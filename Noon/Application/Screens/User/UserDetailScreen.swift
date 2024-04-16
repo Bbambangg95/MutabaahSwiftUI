@@ -14,8 +14,28 @@ struct UserDetailScreen: View {
             List {
 //                UserProfileView()
                 UserPreferenceView()
-                
-                SubscriptionView()
+                if !SubscriptionManager.shared.isSubscribed {
+                    NavigationLink {
+                        SubscriptionView()
+                    } label: {
+                        HStack {
+                            Image(systemName: "graduationcap.fill")
+                                .foregroundColor(.white)
+                                .padding(5)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(.blue)
+                                )
+                            Text("Subscription")
+                                .foregroundStyle(.white)
+                        }
+                        .background(
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(.blue)
+                        )
+                    }
+                    .listRowBackground(Color.blue)
+                }
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Settings")

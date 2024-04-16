@@ -19,7 +19,7 @@ struct TodaysOverview: View {
     }
     var body: some View {
         Section {
-            attendanceCard
+                attendanceCard
         } header: {
                 headerView
         }
