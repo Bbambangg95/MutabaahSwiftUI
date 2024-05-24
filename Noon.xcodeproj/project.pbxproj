@@ -92,7 +92,6 @@
 		C9A44BC52BC3D63300ED3FF4 /* SubscriptionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BC42BC3D63300ED3FF4 /* SubscriptionId.swift */; };
 		C9A44BC72BC3DAB500ED3FF4 /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BC62BC3DAB500ED3FF4 /* EntitlementManager.swift */; };
 		C9A44BCA2BC3E30D00ED3FF4 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BC92BC3E30D00ED3FF4 /* AdBannerView.swift */; };
-		C9A44BCD2BC3E45E00ED3FF4 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C9A44BCC2BC3E45E00ED3FF4 /* GoogleMobileAds */; };
 		C9A44BCF2BC3E5B800ED3FF4 /* AdsId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BCE2BC3E5B800ED3FF4 /* AdsId.swift */; };
 		C9A44BD12BC3E78F00ED3FF4 /* InterstitialAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A44BD02BC3E78F00ED3FF4 /* InterstitialAds.swift */; };
 		C9A568912BBCF22E00A63CAA /* CSVDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A568902BBCF22E00A63CAA /* CSVDocument.swift */; };
@@ -126,6 +125,8 @@
 		C9D5FA3A2A9260EA00755CD5 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D5FA2A2A9260EA00755CD5 /* Student+CoreDataClass.swift */; };
 		C9D5FA3B2A9260EA00755CD5 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D5FA2B2A9260EA00755CD5 /* Student+CoreDataProperties.swift */; };
 		C9DC1D562A5C479C003D3BA1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC1D552A5C479C003D3BA1 /* PersistenceController.swift */; };
+		C9DC3C9A2C002D3B00DCC4E3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C9DC3C992C002D3B00DCC4E3 /* Localizable.xcstrings */; };
+		C9DC3C9D2C002FA600DCC4E3 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C9DC3C9C2C002FA600DCC4E3 /* GoogleMobileAds */; };
 		C9E7A7F02BC515620059615F /* AdsOrSubsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7A7EF2BC515620059615F /* AdsOrSubsView.swift */; };
 		C9E97A232A8142A9008D4B5D /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E97A222A8142A9008D4B5D /* UserProfileView.swift */; };
 		C9E97A252A8146F6008D4B5D /* UserPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E97A242A8146F6008D4B5D /* UserPreferenceView.swift */; };
@@ -256,6 +257,7 @@
 		C9D5FA2A2A9260EA00755CD5 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9D5FA2B2A9260EA00755CD5 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9DC1D552A5C479C003D3BA1 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		C9DC3C992C002D3B00DCC4E3 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		C9E7A7EF2BC515620059615F /* AdsOrSubsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsOrSubsView.swift; sourceTree = "<group>"; };
 		C9E97A222A8142A9008D4B5D /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		C9E97A242A8146F6008D4B5D /* UserPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferenceView.swift; sourceTree = "<group>"; };
@@ -268,7 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9A44BCD2BC3E45E00ED3FF4 /* GoogleMobileAds in Frameworks */,
+				C9DC3C9D2C002FA600DCC4E3 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +359,7 @@
 		C953B3F42A8A1B6A0042296F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C9DC3C992C002D3B00DCC4E3 /* Localizable.xcstrings */,
 				C953B3F52A8A1B7C0042296F /* Extensions */,
 				C9FF1F0D2A8914BB00C7D04F /* Utils */,
 			);
@@ -897,7 +900,7 @@
 			);
 			name = Noon;
 			packageProductDependencies = (
-				C9A44BCC2BC3E45E00ED3FF4 /* GoogleMobileAds */,
+				C9DC3C9C2C002FA600DCC4E3 /* GoogleMobileAds */,
 			);
 			productName = Noon;
 			productReference = C9B13ADF2A4FB9930062EC30 /* Noon.app */;
@@ -928,7 +931,7 @@
 			);
 			mainGroup = C9B13AD62A4FB9930062EC30;
 			packageReferences = (
-				C9A44BCB2BC3E45E00ED3FF4 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				C9DC3C9B2C002FA600DCC4E3 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = C9B13AE02A4FB9930062EC30 /* Products */;
 			projectDirPath = "";
@@ -946,6 +949,7 @@
 			files = (
 				C9B13AEA2A4FB9940062EC30 /* Preview Assets.xcassets in Resources */,
 				C9B13AE72A4FB9940062EC30 /* Assets.xcassets in Resources */,
+				C9DC3C9A2C002D3B00DCC4E3 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1293,20 +1297,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C9A44BCB2BC3E45E00ED3FF4 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+		C9DC3C9B2C002FA600DCC4E3 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 11.2.0;
+				minimumVersion = 11.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9A44BCC2BC3E45E00ED3FF4 /* GoogleMobileAds */ = {
+		C9DC3C9C2C002FA600DCC4E3 /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9A44BCB2BC3E45E00ED3FF4 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			package = C9DC3C9B2C002FA600DCC4E3 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
