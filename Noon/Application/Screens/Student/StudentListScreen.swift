@@ -11,12 +11,8 @@ struct StudentListScreen: View {
     @EnvironmentObject var studentVM: StudentViewModel
     @State private var alertDeleteStudent: Bool = false
     @State private var displayExportOption: Bool = false
-    @State private var adsOrSubscribe: Bool = false
-    @State private var watchAds: Bool = false
     @State private var studentToDelete: StudentEntity?
     @State private var fileURL: URL? = nil
-    
-    var interstitialAds = InterstitialAd()
     
     var body: some View {
         NavigationView {
@@ -25,9 +21,6 @@ struct StudentListScreen: View {
                     setupStudentSection
                 } else {
                     List {
-                        if !SubscriptionManager.shared.isSubscribed {
-                            AdBannerView()
-                        }
                         ForEach(studentVM.students.sorted { $0.name < $1.name}) { student in
                             StudentListRowView(student: student) {
                                 studentToDelete = student
@@ -51,11 +44,7 @@ struct StudentListScreen: View {
                         Image(systemName: "person.crop.circle.badge.plus")
                     }
                     Button {
-                            if !SubscriptionManager.shared.isSubscribed {
-                                adsOrSubscribe.toggle()
-                            } else {
-                                displayExportOption.toggle()
-                            }
+                        displayExportOption.toggle()
                     } label: {
                         Image(systemName: "square.and.arrow.up")
                     }
@@ -63,23 +52,6 @@ struct StudentListScreen: View {
             }
             .sheet(isPresented: $studentVM.presentNewStudentSheet) {
                 StudentEditorScreen()
-            }
-            .sheet(
-                isPresented: $adsOrSubscribe,
-                onDismiss: {
-                    if watchAds {
-                        interstitialAds.showAd()
-                        interstitialAds.setOnAdDismissed {
-                            watchAds = false
-                            displayExportOption.toggle()
-                        }
-                    }
-                }
-            ) {
-                AdsOrSubsView {
-                    adsOrSubscribe.toggle()
-                    watchAds = true
-                }
             }
             .sheet(
                 isPresented: $displayExportOption,

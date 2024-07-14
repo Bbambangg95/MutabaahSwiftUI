@@ -14,10 +14,8 @@ struct MurojaahEditorView: View {
     @StateObject private var murojaahVM: MurojaahViewModel
     let juzData = JuzData()
     var student: StudentEntity
-    var interstitialAd: InterstitialAd?
     init(student: StudentEntity) {
         self.student = student
-        self.interstitialAd = InterstitialAd()
         _murojaahVM = StateObject(wrappedValue: MurojaahViewModel())
     }
     var disableSaveButton: Bool {
