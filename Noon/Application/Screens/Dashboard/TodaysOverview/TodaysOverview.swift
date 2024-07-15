@@ -19,25 +19,17 @@ struct TodaysOverview: View {
     }
     var body: some View {
         Section {
-            attendanceCard
+                attendanceCard
         } header: {
-            headerView
+                headerView
         }
     }
+    var progressColor: Color {
+        checkedInStudent.count == studentVM.students.count ? Color.blue : Color.orange
+    }
     private var headerView: some View {
-        HStack {
-            NavigationLink {
-                StudentListScreen()
-            } label: {
-                HStack {
-                    Image(systemName: "shippingbox.fill")
-                    Text("Students")
-                        .fontWeight(.semibold)
-                        .textCase(nil)
-                    Image(systemName: "chevron.right")
-                        .font(.footnote)
-                }
-            }
+        HStack(alignment: .center) {
+            Text(Date(), style: .date)
             Spacer()
             Picker("", selection: $userScheduleVM.selectedClassTime) {
                 ForEach(userScheduleVM.userSchedule) { schedule in
@@ -45,26 +37,33 @@ struct TodaysOverview: View {
                         .textCase(nil)
                 }
             }
-            .pickerStyle(.automatic)
+            .pickerStyle(.menu)
         }
     }
     private var attendanceCard: some View {
-        HStack {
-            VStack {
-                CardView(
-                    number: studentVM.students.count,
-                    title: "Students",
-                    color: Color.blue,
-                    imageName: "person.2.circle.fill"
-                )
-                CardView(
-                    number: checkedInStudent.count,
-                    title: "Checked In",
-                    color: Color.orange,
-                    imageName: "checkmark.seal.fill"
-                )
-            }
-            VStack {
+            HStack {
+                HStack {
+                    Image(systemName: checkedInStudent.count == studentVM.students.count ? AttendanceIconSign.present.rawValue : "circle.inset.filled")
+                        .font(.title2)
+                        .scaledToFill()
+                        .foregroundColor(progressColor)
+                        .padding(6)
+                        .background(
+                            Circle()
+                                .foregroundColor(progressColor.opacity(0.2))
+                        )
+                    VStack(alignment: .leading) {
+                        Text("\(checkedInStudent.count)/\(studentVM.students.count)")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(progressColor)
+                        Text("Updated")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                Spacer()
                 CardView(
                     number: StudentViewModel.getFilteredStudent(students: studentVM.students, attendStatus: true, timeLabel: userScheduleVM.selectedClassTime).count,
                     title: "Present",
@@ -77,6 +76,6 @@ struct TodaysOverview: View {
                     color: Color.red,
                     imageName: "person.crop.circle.fill.badge.xmark")
             }
-        }
+        
     }
 }

@@ -11,15 +11,18 @@ struct MurojaahEditorView: View {
     @EnvironmentObject var studentVM: StudentViewModel
     @EnvironmentObject var memorizeVM: MemorizeViewModel
     @Environment(\.dismiss) var dismiss
-    @StateObject private var murojaahVM = MurojaahViewModel()
-    @State private var selectedJuzs: Set<String> = []
+    @StateObject private var murojaahVM: MurojaahViewModel
     let juzData = JuzData()
     var student: StudentEntity
+    init(student: StudentEntity) {
+        self.student = student
+        _murojaahVM = StateObject(wrappedValue: MurojaahViewModel())
+    }
     var disableSaveButton: Bool {
         murojaahVM.key.isEmpty || murojaahVM.value.isEmpty
     }
     var body: some View {
-        Form {
+        List {
             MurojaahCategoryPicker(category: $murojaahVM.category)
                 .onChange(of: murojaahVM.category) { newValue in
                     murojaahVM.key = ""

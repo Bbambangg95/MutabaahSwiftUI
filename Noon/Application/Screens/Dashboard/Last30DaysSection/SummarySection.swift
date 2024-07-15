@@ -10,20 +10,22 @@ import SwiftUI
 struct SummarySection: View {
     @EnvironmentObject var studentVM: StudentViewModel
     var body: some View {
-        Section {
-            SummaryRowView(
-                destination: SummaryZiyadah(students: studentVM.students),
-                imageName: "z.square.fill",
-                title: "Ziyadah",
-                color: Color.green)
-            SummaryRowView(
-                destination: SummaryAttendance(students: studentVM.students),
-                imageName: "text.badge.checkmark",
-                title: "Attendance",
-                color: Color.orange)
-        } header: {
-            headerView
-        }
+            Section {
+                SummaryRowView(
+                    destination: SummaryZiyadah(students: studentVM.students),
+                    imageName: "z.square.fill",
+                    title: "Ziyadah",
+                    color: Color.green
+                )
+                SummaryRowView(
+                    destination: SummaryAttendance(students: studentVM.students),
+                    imageName: "text.badge.checkmark",
+                    title: "Attendance",
+                    color: Color.orange
+                )
+            } header: {
+                headerView
+            }
     }
     private var headerView: some View {
         HStack {

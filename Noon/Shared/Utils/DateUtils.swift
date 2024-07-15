@@ -13,6 +13,11 @@ class DateUtils {
         dateFormatter.dateFormat = "MMMM"
         return dateFormatter.string(from: date)
     }
+    static func getDateString(date: Date, calendar: Calendar = .current) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM, yyyy HH:mm:ss"
+        return dateFormatter.string(from: date)
+    }
     static func calculateIntervalInDays(startDate: Date, endDate: Date, calendar: Calendar = .current) -> Int {
         let components = calendar.dateComponents([.day], from: startDate, to: endDate)
         let days = components.day ?? 0

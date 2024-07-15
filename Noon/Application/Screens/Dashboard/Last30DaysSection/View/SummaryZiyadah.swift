@@ -47,36 +47,36 @@ struct SummaryZiyadah: View {
     }
 
     var body: some View {
-        VStack {
-            Picker("", selection: $selectedCategory) {
-                ForEach(category, id: \.self) { item in
-                    Text(item)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
-            List {
-                Section {
-                    ForEach(studentByZiyadah.sorted(by: { $0.value > $1.value }), id: \.key) { id, count in
-                        HStack {
-                            Text(students.first(where: { $0.id == id })?.name ?? "Unknown")
-                                .font(.headline)
-                            Spacer()
-                            Image(systemName: "checkmark.icloud.fill")
-                                .foregroundColor(Color.green)
-                            Text("\(count) times")
-                                .font(.subheadline)
-                                .foregroundColor(Color.gray)
-                        }
+        NavigationView {
+            VStack {
+                Picker("", selection: $selectedCategory) {
+                    ForEach(category, id: \.self) { item in
+                        Text(item)
                     }
-
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+                List {
+                    Section {
+                        ForEach(studentByZiyadah.sorted(by: { $0.value > $1.value }), id: \.key) { id, count in
+                            HStack {
+                                Text(students.first(where: { $0.id == id })?.name ?? "Unknown")
+                                    .font(.headline)
+                                Spacer()
+                                Image(systemName: "checkmark.icloud.fill")
+                                    .foregroundColor(Color.green)
+                                Text("\(count) times")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color.gray)
+                            }
+                        }
+                        
+                    }
                 }
             }
+            .background(Color(UIColor.systemGray6))
+            .navigationTitle("Ziyadah Summary")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .background(Color(UIColor.systemGray6))
-        .onAppear {
-            print(DateUtils.getDateFromMonth(month: 1, year: 1000))
-        }
-        .navigationTitle("Ziyadah")
     }
 }

@@ -13,13 +13,17 @@ struct StudentOverviewScreen: View {
     @StateObject private var studentOverviewVM: StudentOverviewViewModel
     @State private var presentProgressSheet: Bool = false
     @State private var presentAttendanceSheet: Bool = false
+    @State private var watchAds: Bool = false
+    
     var student: StudentEntity
     let (dayLeftMessage, color): (String, Color)
+    
     init(student: StudentEntity) {
         self.student = student
         (dayLeftMessage, color) = DateUtils.daysLeftMessage(endSprint: student.studentPreference?.endSprint ?? Date())
         _studentOverviewVM = StateObject(wrappedValue: StudentOverviewViewModel(student: student))
     }
+    
     var sprintDaysLeft: Int {
         DateUtils.calculateIntervalInDays(
             startDate: student.studentPreference?.startSprint ?? Date(),
@@ -43,16 +47,27 @@ struct StudentOverviewScreen: View {
             overviewSection
             currentStatusSection
             ziyadahSection
-            attendanceSection
+//            attendanceSection
         }
         .listStyle(.insetGrouped)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            Button {
-                studentOverviewVM.presentEditStudentSheet = true
-            } label: {
-                Text("Edit")
-                    .font(.headline)
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Button {
+                    studentOverviewVM.presentEditStudentSheet = true
+                } label: {
+                    Image(systemName: "square.and.pencil")
+                }
+                Button {
+                        presentProgressSheet.toggle()
+                } label: {
+                    Image(systemName: "book.fill")
+                }
+                Button {
+                        presentAttendanceSheet.toggle()
+                } label: {
+                    Image(systemName: "text.badge.checkmark")
+                }
             }
         }
         .sheet(
@@ -66,10 +81,10 @@ struct StudentOverviewScreen: View {
             isPresented: $presentProgressSheet, onDismiss: {
             presentProgressSheet = false
         }) {
-            ProgressHistorySheet(
-                ziyadahData: student.ziyadahData,
-                murojaahData: student.murojaahData
-            )
+                ProgressHistorySheet(
+                    ziyadahData: student.ziyadahData,
+                    murojaahData: student.murojaahData
+                )
         }
         .sheet(
             isPresented: $presentAttendanceSheet,

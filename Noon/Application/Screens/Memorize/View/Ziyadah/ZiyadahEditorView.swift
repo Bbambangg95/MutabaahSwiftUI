@@ -64,7 +64,6 @@ struct ZiyadahEditorView: View {
     private func saveZiyadah() {
         isLoading = true
         ziyadahVM.createZiyadah(studentId: student.id) { success in
-            print(success)
             if success {
                 studentVM.fetchStudents()
                 memorizeVM.fetchMemorize()
