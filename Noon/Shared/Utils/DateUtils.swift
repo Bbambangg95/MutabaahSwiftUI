@@ -15,7 +15,12 @@ class DateUtils {
     }
     static func getDateString(date: Date, calendar: Calendar = .current) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMM, yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "d MMMM yyyy HH:mm:ss"
+        return dateFormatter.string(from: date)
+    }
+    static func getDateOnlyString(date: Date, calendar: Calendar = .current) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMMM yyyy"
         return dateFormatter.string(from: date)
     }
     static func calculateIntervalInDays(startDate: Date, endDate: Date, calendar: Calendar = .current) -> Int {

@@ -45,10 +45,11 @@ struct ZiyadahMurojaahView: View {
         HStack(alignment: .center) {
             Image(systemName: "clock.arrow.circlepath")
                 .foregroundStyle(Color.blue)
+                .font(.headline)
             content
         }
         .lineLimit(1)
-        .font(.subheadline)
+        .font(.caption)
     }
 
     @ViewBuilder
@@ -69,26 +70,26 @@ struct ZiyadahMurojaahView: View {
     }
 
     private func ziyadahContent(_ ziyadah: ZiyadahEntity) -> some View {
-        HStack(alignment: .center) {
+        VStack(alignment: .leading) {
             Text("Ziyadah, Juz \(ziyadah.juz) Page \(ziyadah.page)")
-            Spacer()
             HStack(spacing: 2) {
                 Text(ziyadah.createdAt, style: .relative)
                 Text("ago")
             }
             .font(.caption2)
+            .italic()
         }
     }
 
     private func murojaahContent(_ murojaah: MurojaahEntity) -> some View {
-        HStack(alignment: .center) {
+        VStack(alignment: .leading) {
             Text(murojaah.category == MurojaahAmountOptions.perJuz.rawValue ? "Murojaah \(murojaah.category) \(murojaah.key)" : "Murojaah \(murojaah.category) (Juz \(murojaah.key) Page \(murojaah.value))")
-            Spacer()
             HStack(spacing: 2) {
                 Text(murojaah.createdAt, style: .relative)
                 Text("ago")
             }
                 .font(.caption2)
+                .italic()
         }
     }
 }

@@ -11,6 +11,7 @@
 		C90053522A6604A400333854 /* MemorizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90053512A6604A400333854 /* MemorizeViewModel.swift */; };
 		C90053542A669E6D00333854 /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90053532A669E6D00333854 /* AttendanceViewModel.swift */; };
 		C90053562A669EE700333854 /* UserScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90053552A669EE700333854 /* UserScheduleViewModel.swift */; };
+		C908C5702C4AB2F90047476D /* CompletedZiyadahEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908C56F2C4AB2F90047476D /* CompletedZiyadahEditorSheet.swift */; };
 		C90A83942A7F579D00BE477C /* GenderOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A83932A7F579D00BE477C /* GenderOption.swift */; };
 		C90A83962A7F583500BE477C /* StudentEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A83952A7F583500BE477C /* StudentEditorViewModel.swift */; };
 		C90A83982A7F921F00BE477C /* UserScheduleEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A83972A7F921F00BE477C /* UserScheduleEditorScreen.swift */; };
@@ -132,6 +133,7 @@
 		C90053512A6604A400333854 /* MemorizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeViewModel.swift; sourceTree = "<group>"; };
 		C90053532A669E6D00333854 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
 		C90053552A669EE700333854 /* UserScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScheduleViewModel.swift; sourceTree = "<group>"; };
+		C908C56F2C4AB2F90047476D /* CompletedZiyadahEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedZiyadahEditorSheet.swift; sourceTree = "<group>"; };
 		C90A83932A7F579D00BE477C /* GenderOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderOption.swift; sourceTree = "<group>"; };
 		C90A83952A7F583500BE477C /* StudentEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditorViewModel.swift; sourceTree = "<group>"; };
 		C90A83972A7F921F00BE477C /* UserScheduleEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScheduleEditorScreen.swift; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 				C93424412A9B3A8F005B21E3 /* ProgressHistorySheet.swift */,
 				C93424462A9CD1FA005B21E3 /* AttendanceHistorySheet.swift */,
 				C9A568982BBD1AF600A63CAA /* ExportOptionView.swift */,
+				C908C56F2C4AB2F90047476D /* CompletedZiyadahEditorSheet.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -974,6 +977,7 @@
 				C9D5FA2D2A9260EA00755CD5 /* Murojaah+CoreDataProperties.swift in Sources */,
 				C91B88EF2A7C0F62008D4260 /* StudentExtension.swift in Sources */,
 				C92CCEBD2A8343FD0085681F /* AttendanceCDA.swift in Sources */,
+				C908C5702C4AB2F90047476D /* CompletedZiyadahEditorSheet.swift in Sources */,
 				C954FE4D2A7E8B13008CB77F /* UserScheduleEntity.swift in Sources */,
 				C90A83962A7F583500BE477C /* StudentEditorViewModel.swift in Sources */,
 				C9E97A232A8142A9008D4B5D /* UserProfileView.swift in Sources */,

@@ -246,6 +246,16 @@
         }
       }
     },
+    "Complete at" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai pada"
+          }
+        }
+      }
+    },
     "Current Status" : {
       "localizations" : {
         "id" : {
@@ -314,6 +324,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selesai"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubah"
           }
         }
       }
@@ -440,6 +460,9 @@
       }
     },
     "Juz" : {
+
+    },
+    "Juz %@" : {
 
     },
     "Juz %@ Page %@" : {
@@ -650,6 +673,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tidak Ada"
+          }
+        }
+      }
+    },
+    "Not Completed" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum Selesai"
           }
         }
       }
@@ -1091,6 +1124,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Total Juz"
+          }
+        }
+      }
+    },
+    "Total Memorization %lld Juz" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Hafalan %lld Juz"
           }
         }
       }

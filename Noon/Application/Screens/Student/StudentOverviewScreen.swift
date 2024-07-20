@@ -13,6 +13,7 @@ struct StudentOverviewScreen: View {
     @StateObject private var studentOverviewVM: StudentOverviewViewModel
     @State private var presentProgressSheet: Bool = false
     @State private var presentAttendanceSheet: Bool = false
+    @State private var presentCompletedJuzSheet: Bool = false
     @State private var watchAds: Bool = false
     
     var student: StudentEntity
@@ -96,6 +97,14 @@ struct StudentOverviewScreen: View {
                 attendanceData: student.attendanceData
             )
         }
+        .sheet(
+            isPresented: $presentCompletedJuzSheet
+        ) {
+            CompletedZiyadahEditorSheet(
+                studentId: student.id, 
+                completedZiyadah: student.completedZiyadah
+            )
+        }
     }
     private var profileSection: some View {
         Section {
@@ -122,24 +131,31 @@ struct StudentOverviewScreen: View {
     }
     private var overviewSection: some View {
         Section {
-            VStack {
-                StudentOverviewRowView(
-                    label: "Total Memorization",
-                    value: "\(student.completedZiyadah.count) Juz"
-                )
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        Text("Detail Juz")
+                VStack {
+                    StudentOverviewRowView(
+                        label: "Total Memorization",
+                        value: "\(student.completedZiyadah.count) Juz"
+                    )
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading) {
+                            Text("Detail Juz")
+                        }
+                        Spacer()
+                        VStack(alignment: .trailing) {
+                            Text(completedZiyadah)
+                                .multilineTextAlignment(.trailing)
+                        }
                     }
-                    Spacer()
-                    VStack(alignment: .trailing) {
-                        Text(completedZiyadah)
-                            .multilineTextAlignment(.trailing)
+                    .foregroundColor(Color.secondary)
+                    .font(.footnote)
+                    Button {
+                        presentCompletedJuzSheet.toggle()
+                    } label: {
+                        Text("Edit")
+                            .frame(maxWidth: .infinity)
                     }
+                    .buttonStyle(BorderedButtonStyle())
                 }
-                .foregroundColor(Color.secondary)
-                .font(.footnote)
-            }
             VStack {
                 StudentOverviewRowView(
                     label: "Program Duration",
