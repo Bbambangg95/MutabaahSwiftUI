@@ -77,6 +77,23 @@ class StudentViewModel: ObservableObject {
             self.responseHandler(result, completion: completion)
         }
     }
+    func updateCompletedZiyadah(
+        id: UUID,
+        juz: Int,
+        completion: @escaping CompletionHandler
+    ) {
+        studentService.updateCompletedZiyadah(id: id, juz: juz) { result in
+            self.responseHandler(result, completion: completion)
+        }
+    }
+    func deleteCompletedZiyadah(
+        id: UUID,
+        completion: @escaping CompletionHandler
+    ) {
+        studentService.deleteCompletedZiyadah(id: id) { result in
+            self.responseHandler(result, completion: completion)
+        }
+    }
     private func responseHandler(_ result: Result<Bool, Error>, completion: @escaping CompletionHandler) {
         switch result {
         case .success:

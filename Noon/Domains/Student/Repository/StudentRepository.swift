@@ -31,4 +31,8 @@ protocol StudentRepository {
         juz: Int,
         completion: @escaping CompletionHandler
     )
+    func deleteCompletedZiyadah(
+        id: UUID,
+        completion: @escaping CompletionHandler
+    )
 }

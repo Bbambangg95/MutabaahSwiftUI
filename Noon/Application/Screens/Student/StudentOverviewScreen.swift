@@ -10,21 +10,17 @@ import Charts
 import Foundation
 
 struct StudentOverviewScreen: View {
-    @EnvironmentObject var subscriptionManager: SubscriptionManager
     @StateObject private var studentOverviewVM: StudentOverviewViewModel
     @State private var presentProgressSheet: Bool = false
     @State private var presentAttendanceSheet: Bool = false
-    @State private var adsOrSubscribeProgressSheet: Bool = false
-    @State private var adsOrSubscribeAttendSheet: Bool = false
+    @State private var presentCompletedJuzSheet: Bool = false
     @State private var watchAds: Bool = false
     
     var student: StudentEntity
-    var interstitialAds: InterstitialAd?
     let (dayLeftMessage, color): (String, Color)
     
     init(student: StudentEntity) {
         self.student = student
-        self.interstitialAds = InterstitialAd()
         (dayLeftMessage, color) = DateUtils.daysLeftMessage(endSprint: student.studentPreference?.endSprint ?? Date())
         _studentOverviewVM = StateObject(wrappedValue: StudentOverviewViewModel(student: student))
     }
@@ -64,20 +60,12 @@ struct StudentOverviewScreen: View {
                     Image(systemName: "square.and.pencil")
                 }
                 Button {
-                    if !SubscriptionManager.shared.isSubscribed {
-                        adsOrSubscribeProgressSheet.toggle()
-                    } else {
                         presentProgressSheet.toggle()
-                    }
                 } label: {
                     Image(systemName: "book.fill")
                 }
                 Button {
-                    if !SubscriptionManager.shared.isSubscribed {
-                        adsOrSubscribeAttendSheet.toggle()
-                    } else {
                         presentAttendanceSheet.toggle()
-                    }
                 } label: {
                     Image(systemName: "text.badge.checkmark")
                 }
@@ -89,40 +77,6 @@ struct StudentOverviewScreen: View {
                 studentOverviewVM.presentEditStudentSheet = false
         }) {
             StudentEditorScreen(student: student)
-        }
-        .sheet(
-            isPresented: $adsOrSubscribeProgressSheet,
-            onDismiss: {
-                if watchAds {
-                    interstitialAds?.showAd()
-                    interstitialAds?.setOnAdDismissed {
-                        watchAds = false
-                        presentProgressSheet.toggle()
-                    }
-                }
-            }
-        ) {
-            AdsOrSubsView {
-                adsOrSubscribeProgressSheet.toggle()
-                watchAds = true
-            }
-        }
-        .sheet(
-            isPresented: $adsOrSubscribeAttendSheet,
-            onDismiss: {
-                if watchAds {
-                    interstitialAds?.showAd()
-                    interstitialAds?.setOnAdDismissed {
-                        presentAttendanceSheet.toggle()
-                        watchAds = false
-                    }
-                }
-            }
-        ) {
-            AdsOrSubsView {
-                adsOrSubscribeAttendSheet.toggle()
-                watchAds = true
-            }
         }
         .sheet(
             isPresented: $presentProgressSheet, onDismiss: {
@@ -141,6 +95,14 @@ struct StudentOverviewScreen: View {
         ) {
             AttendanceHistorySheet(
                 attendanceData: student.attendanceData
+            )
+        }
+        .sheet(
+            isPresented: $presentCompletedJuzSheet
+        ) {
+            CompletedZiyadahEditorSheet(
+                studentId: student.id, 
+                completedZiyadah: student.completedZiyadah
             )
         }
     }
@@ -169,24 +131,31 @@ struct StudentOverviewScreen: View {
     }
     private var overviewSection: some View {
         Section {
-            VStack {
-                StudentOverviewRowView(
-                    label: "Total Memorization",
-                    value: "\(student.completedZiyadah.count) Juz"
-                )
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        Text("Detail Juz")
+                VStack {
+                    StudentOverviewRowView(
+                        label: "Total Memorization",
+                        value: "\(student.completedZiyadah.count) Juz"
+                    )
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading) {
+                            Text("Detail Juz")
+                        }
+                        Spacer()
+                        VStack(alignment: .trailing) {
+                            Text(completedZiyadah)
+                                .multilineTextAlignment(.trailing)
+                        }
                     }
-                    Spacer()
-                    VStack(alignment: .trailing) {
-                        Text(completedZiyadah)
-                            .multilineTextAlignment(.trailing)
+                    .foregroundColor(Color.secondary)
+                    .font(.footnote)
+                    Button {
+                        presentCompletedJuzSheet.toggle()
+                    } label: {
+                        Text("Edit")
+                            .frame(maxWidth: .infinity)
                     }
+                    .buttonStyle(BorderedButtonStyle())
                 }
-                .foregroundColor(Color.secondary)
-                .font(.footnote)
-            }
             VStack {
                 StudentOverviewRowView(
                     label: "Program Duration",

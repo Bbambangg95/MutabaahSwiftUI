@@ -154,6 +154,27 @@ class StudentCoreDataAdapter: StudentRepository {
             completion(.failure(error))
         }
     }
+    
+    func deleteCompletedZiyadah(
+        id: UUID,
+        completion: @escaping CompletionHandler
+    ) {
+        let fetchRequest: NSFetchRequest<CompletedZiyadah> = CompletedZiyadah.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        do {
+            let fetchedPreferences = try viewContext.fetch(fetchRequest)
+            if let fetchedPreference = fetchedPreferences.first {
+                viewContext.delete(fetchedPreference)
+                try viewContext.save()
+                print("Completed Juz deleted successfully")
+                completion(.success(true))
+            } else {
+                print("Completed Juz not found")
+            }
+        } catch let error {
+            print("Error deleting completed ziyadah: \(error)")
+        }
+    }
 }
 
 extension StudentCoreDataAdapter {

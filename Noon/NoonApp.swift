@@ -13,7 +13,6 @@ struct NoonApp: App {
     @StateObject private var userScheduleVM = UserScheduleViewModel()
     @StateObject private var userVM = UserViewModel()
     @StateObject var memorizeVM = MemorizeViewModel()
-    @StateObject private var subscriptionManager = SubscriptionManager.shared
     
     let persistanceController = PersistenceController.shared
     
@@ -52,7 +51,6 @@ struct NoonApp: App {
             .environmentObject(userScheduleVM)
             .environmentObject(userVM)
             .environmentObject(memorizeVM)
-            .environmentObject(subscriptionManager)
         }
     }
 }

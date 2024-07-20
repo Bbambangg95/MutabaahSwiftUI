@@ -68,4 +68,13 @@ class StudentService {
             completion: completion
         )
     }
+    func deleteCompletedZiyadah(
+        id: UUID,
+        completion: @escaping CompletionHandler
+    ) {
+        return studentRepository.deleteCompletedZiyadah(
+            id: id, 
+            completion: completion
+        )
+    }
 }
