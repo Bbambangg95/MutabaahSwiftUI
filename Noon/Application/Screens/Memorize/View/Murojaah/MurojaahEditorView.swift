@@ -36,6 +36,11 @@ struct MurojaahEditorView: View {
             default:
                 EmptyView()
             }
+            Section {
+                MurojaahHistoryItemView(murojaahData: student.murojaahData)
+            } header: {
+                Text("Murojaah History")
+            }
         }
         .scrollContentBackground(.hidden)
         .toolbar {

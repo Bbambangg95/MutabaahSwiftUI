@@ -41,6 +41,7 @@ struct ZiyadahEditorDetailSection: View {
             Text("Detail")
         } footer: {
             Text("Warning: The Juz selection is based on the last ziyadah. Pages must be entered in sequential order.")
+                .font(.caption2)
         }
     }
 }

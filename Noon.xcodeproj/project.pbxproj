@@ -12,6 +12,7 @@
 		C90053542A669E6D00333854 /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90053532A669E6D00333854 /* AttendanceViewModel.swift */; };
 		C90053562A669EE700333854 /* UserScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90053552A669EE700333854 /* UserScheduleViewModel.swift */; };
 		C908C5702C4AB2F90047476D /* CompletedZiyadahEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908C56F2C4AB2F90047476D /* CompletedZiyadahEditorSheet.swift */; };
+		C908C5722C4BB92A0047476D /* MemorizationHistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908C5712C4BB92A0047476D /* MemorizationHistoryListView.swift */; };
 		C90A83942A7F579D00BE477C /* GenderOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A83932A7F579D00BE477C /* GenderOption.swift */; };
 		C90A83962A7F583500BE477C /* StudentEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A83952A7F583500BE477C /* StudentEditorViewModel.swift */; };
 		C90A83982A7F921F00BE477C /* UserScheduleEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A83972A7F921F00BE477C /* UserScheduleEditorScreen.swift */; };
@@ -134,6 +135,7 @@
 		C90053532A669E6D00333854 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
 		C90053552A669EE700333854 /* UserScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScheduleViewModel.swift; sourceTree = "<group>"; };
 		C908C56F2C4AB2F90047476D /* CompletedZiyadahEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedZiyadahEditorSheet.swift; sourceTree = "<group>"; };
+		C908C5712C4BB92A0047476D /* MemorizationHistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizationHistoryListView.swift; sourceTree = "<group>"; };
 		C90A83932A7F579D00BE477C /* GenderOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderOption.swift; sourceTree = "<group>"; };
 		C90A83952A7F583500BE477C /* StudentEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditorViewModel.swift; sourceTree = "<group>"; };
 		C90A83972A7F921F00BE477C /* UserScheduleEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScheduleEditorScreen.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				C97A06532A96178500797B15 /* Murojaah */,
 				C97A06522A96177A00797B15 /* Ziyadah */,
 				C954FE142A7E235E008CB77F /* MemorizeListRowView.swift */,
+				C908C5712C4BB92A0047476D /* MemorizationHistoryListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -953,6 +956,7 @@
 				C90A83C22A80A6BB00BE477C /* UserExtension.swift in Sources */,
 				C92CCF192A86820D0085681F /* MurojaahViewModel.swift in Sources */,
 				C93424422A9B3A8F005B21E3 /* ProgressHistorySheet.swift in Sources */,
+				C908C5722C4BB92A0047476D /* MemorizationHistoryListView.swift in Sources */,
 				C9D5FA322A9260EA00755CD5 /* Ziyadah+CoreDataClass.swift in Sources */,
 				C96355EE2A6D77DD00FA260D /* DashboardScreen.swift in Sources */,
 				C954FE172A7E2B90008CB77F /* ZiyadahEditorView.swift in Sources */,
@@ -1160,14 +1164,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Noon/Preview Content\"";
 				DEVELOPMENT_TEAM = 42BZUPKLGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Noon/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Mutabaah;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1180,7 +1184,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noon.mutabaah.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1196,14 +1200,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Noon/Preview Content\"";
 				DEVELOPMENT_TEAM = 42BZUPKLGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Noon/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Mutabaah;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1216,7 +1220,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noon.mutabaah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
