@@ -10,11 +10,13 @@ import Charts
 import Foundation
 
 struct StudentOverviewScreen: View {
+    @EnvironmentObject var studentVM: StudentViewModel
+    @Environment(\.dismiss) var dismiss
     @StateObject private var studentOverviewVM: StudentOverviewViewModel
     @State private var presentProgressSheet: Bool = false
     @State private var presentAttendanceSheet: Bool = false
     @State private var presentCompletedJuzSheet: Bool = false
-    @State private var watchAds: Bool = false
+    @State private var alertDeleteStudent: Bool = false
     
     var student: StudentEntity
     let (dayLeftMessage, color): (String, Color)
@@ -48,7 +50,19 @@ struct StudentOverviewScreen: View {
             overviewSection
             currentStatusSection
             ziyadahSection
-//            attendanceSection
+            Button {
+                alertDeleteStudent.toggle()
+            } label: {
+                Label("Delete Student", systemImage: "trash.fill")
+                    .foregroundStyle(Color.red)
+                    .frame(maxWidth: .infinity, maxHeight: 50)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .tint(Color.red.opacity(0.1))
+                    )
+            }
+            .listRowInsets(EdgeInsets())
+            .listRowBackground(Color.clear)
         }
         .listStyle(.insetGrouped)
         .navigationBarTitleDisplayMode(.inline)
@@ -70,6 +84,22 @@ struct StudentOverviewScreen: View {
                     Image(systemName: "text.badge.checkmark")
                 }
             }
+        }
+        .alert("Delete", isPresented: $alertDeleteStudent) {
+            Button(role: .destructive) {
+                    studentVM.deleteStudent(id: student.id) { result in
+                        dismiss()
+                    }
+            } label: {
+                Text("Delete")
+            }
+            Button(role: .cancel) {
+                alertDeleteStudent.toggle()
+            } label: {
+                Text("Cancel")
+            }
+        } message: {
+                Text("All data related to \(student.name ) will be permanently deleted. Are you sure you want to proceed?")
         }
         .sheet(
             isPresented: $studentOverviewVM.presentEditStudentSheet,
@@ -236,37 +266,6 @@ struct StudentOverviewScreen: View {
             HStack {
                 Image(systemName: "chart.line.uptrend.xyaxis")
                 Text("Progress")
-                Spacer()
-            }
-            .font(.subheadline)
-        }
-    }
-    private var attendanceSection: some View {
-        Section {
-            Button {
-                presentAttendanceSheet.toggle()
-            } label: {
-                HStack {
-                    Text("Attendance History")
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                }
-            }
-            .tint(Color.black)
-            Button {
-                presentProgressSheet.toggle()
-            } label: {
-                HStack {
-                    Text("Memorize History")
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                }
-            }
-            .tint(Color.black)
-        } header: {
-            HStack {
-                Image(systemName: "calendar.badge.clock")
-                Text("History")
                 Spacer()
             }
             .font(.subheadline)

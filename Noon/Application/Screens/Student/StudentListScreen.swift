@@ -9,9 +9,7 @@ import UIKit
 
 struct StudentListScreen: View {
     @EnvironmentObject var studentVM: StudentViewModel
-    @State private var alertDeleteStudent: Bool = false
     @State private var displayExportOption: Bool = false
-    @State private var studentToDelete: StudentEntity?
     @State private var fileURL: URL? = nil
     
     var body: some View {
@@ -22,10 +20,7 @@ struct StudentListScreen: View {
                 } else {
                     List {
                         ForEach(studentVM.students.sorted { $0.name < $1.name}) { student in
-                            StudentListRowView(student: student) {
-                                studentToDelete = student
-                                alertDeleteStudent.toggle()
-                            }
+                            StudentListRowView(student: student)
                         }
                     }
                     .listStyle(.insetGrouped)
@@ -67,25 +62,6 @@ struct StudentListScreen: View {
                         fileUrl: $fileURL,
                         students: studentVM.students
                     )
-            }
-            .alert("Delete", isPresented: $alertDeleteStudent) {
-                Button(role: .destructive) {
-                    if let student = studentToDelete {
-                        studentVM.deleteStudent(id: student.id) { result in
-                            // Handle delete completion if needed
-                        }
-                    }
-                    studentToDelete = nil
-                } label: {
-                    Text("Delete")
-                }
-                Button(role: .cancel) {
-                    studentToDelete = nil
-                } label: {
-                    Text("Cancel")
-                }
-            } message: {
-                    Text("All data related to \(studentToDelete?.name ?? "") will be permanently deleted. Are you sure you want to proceed?")
             }
         }
     }

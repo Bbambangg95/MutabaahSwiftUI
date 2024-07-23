@@ -49,3 +49,11 @@ class DateUtils {
         }
     }
 }
+
+extension Date {
+    func toMonthYearString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM yyyy"
+        return dateFormatter.string(from: self)
+    }
+}

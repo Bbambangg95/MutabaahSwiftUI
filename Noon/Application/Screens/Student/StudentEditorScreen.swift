@@ -38,7 +38,7 @@ struct StudentEditorScreen: View {
                     DatePicker("Start Program", selection: $studentEditorVM.startProgram, displayedComponents: .date)
                         .pickerStyle(.automatic)
                 }
-                Section ("CurrentStatus") {
+                Section ("Current Status") {
                     Picker(selection: $studentEditorVM.memorizeStatus, content: {
                         ForEach(MemorizeCategory.allCases, id: \.self) { item in
                             Text(item.rawValue).tag(item.rawValue)

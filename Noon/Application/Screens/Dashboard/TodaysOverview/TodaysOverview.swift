@@ -66,13 +66,13 @@ struct TodaysOverview: View {
                 Spacer()
                 CardView(
                     number: StudentViewModel.getFilteredStudent(students: studentVM.students, attendStatus: true, timeLabel: userScheduleVM.selectedClassTime).count,
-                    title: "Present",
+                    title: NSLocalizedString("Present", comment: ""),
                     color: Color.green,
                     imageName: "person.crop.circle.fill.badge.checkmark"
                 )
                 CardView(
                     number: StudentViewModel.getFilteredStudent(students: studentVM.students, attendStatus: false, timeLabel: userScheduleVM.selectedClassTime).count,
-                    title: "Absent",
+                    title: NSLocalizedString("Absent", comment: ""),
                     color: Color.red,
                     imageName: "person.crop.circle.fill.badge.xmark")
             }

@@ -41,7 +41,7 @@ struct ProgressHistorySheet: View {
                 .listStyle(.plain)
             }
             .padding(.horizontal)
-            .navigationTitle("Progress History")
+            .navigationTitle("Memorization History")
             .navigationBarTitleDisplayMode(.inline)
             .alert("Delete", isPresented: $isDelete) {
                 Button(role: .destructive) {
@@ -61,109 +61,131 @@ struct ProgressHistorySheet: View {
         }
         .background(Color(UIColor.systemGray6))
     }
+    func groupZiyadahByMonth(ziyadahData: [ZiyadahEntity]) -> [(String, [ZiyadahEntity])] {
+        let grouped = Dictionary(grouping: ziyadahData) { $0.createdAt.toMonthYearString() }
+        return grouped.map { (key, value) in (key, value) }
+            .sorted { $0.0 > $1.0 }
+    }
     private var ziyadahRowView: some View {
-        ForEach(ziyadahData?.sorted(by: { $0.createdAt > $1.createdAt }) ?? []) { item in
-            HStack(alignment: .bottom) {
-                VStack(alignment: .leading) {
-                    Text("Juz \(item.juz) Page \(item.page)")
+        let groupedData = groupZiyadahByMonth(ziyadahData: ziyadahData ?? [])
+
+        return ForEach(groupedData, id: \.0) { (month, items) in
+            Section(header: Text("\(month) - \(items.count) times")) {
+                ForEach(items) { item in
+                    HStack(alignment: .bottom) {
+                        VStack(alignment: .leading) {
+                            Text("Juz \(item.juz) Page \(item.page)")
+                                .font(.subheadline)
+                            HStack {
+                                Text(item.createdAt, style: .date)
+                                Text(item.createdAt, style: .time)
+                            }
+                            .font(.footnote)
+                            .foregroundColor(Color.secondary)
+                        }
+                        Spacer()
+                        HStack(alignment: .top) {
+                            HStack {
+                                Image(systemName: "hearingdevice.ear")
+                                Text("\(item.memorizeValue)")
+                            }
+                            .padding(.trailing, 4)
+                            HStack {
+                                Image(systemName: "mic")
+                                Text("\(item.recitationValue)")
+                            }
+                        }
                         .font(.subheadline)
-                    HStack {
-                        Text(item.createdAt , style: .date)
-                        Text(item.createdAt , style: .time)
                     }
-                    .font(.footnote)
-                    .foregroundColor(Color.secondary)
-                }
-                Spacer()
-                HStack(alignment: .top) {
-                    HStack {
-                        Image(systemName: "hearingdevice.ear")
-                        Text("\(item.memorizeValue)")
-                    }
-                    .padding(.trailing, 4)
-                    HStack {
-                        Image(systemName: "mic")
-                        Text("\(item.recitationValue)")
+                    .swipeActions(edge: .trailing) {
+                        Button {
+                            isDelete.toggle()
+                            itemToDelete = item
+                        } label: {
+                            Image(systemName: "trash")
+                        }
+                        .tint(Color.red)
                     }
                 }
-                .font(.subheadline)
-            }
-            .swipeActions(edge: .trailing) {
-                Button {
-                    isDelete.toggle()
-                    itemToDelete = item
-                } label: {
-                    Image(systemName: "trash")
-                }
-                .tint(Color.red)
             }
         }
     }
+    func groupMurojaahByMonth(murojaahData: [MurojaahEntity]) -> [(String, [MurojaahEntity])] {
+        let grouped = Dictionary(grouping: murojaahData) { $0.createdAt.toMonthYearString() }
+        return grouped.map { (key, value) in (key, value) }
+            .sorted { $0.0 > $1.0 }
+    }
     private var murojaahRowView: some View {
-        ForEach(murojaahData?.sorted(by: { $0.createdAt > $1.createdAt }) ?? []) { item in
-            switch item.category {
-            case MurojaahAmountOptions.perPage.rawValue:
-                HStack(alignment: .bottom) {
-                    VStack(alignment: .leading) {
-                        Text("Juz \(item.key) Page \(item.value)")
+        let groupedData = groupMurojaahByMonth(murojaahData: murojaahData ?? [])
+
+        return ForEach(groupedData, id: \.0) { (month, items) in
+            Section(header: Text("\(month) - \(items.count) times")) {
+                ForEach(items) { item in
+                    switch item.category {
+                    case MurojaahAmountOptions.perPage.rawValue:
+                        HStack(alignment: .bottom) {
+                            VStack(alignment: .leading) {
+                                Text("Juz \(item.key) Page \(item.value)")
+                                    .font(.subheadline)
+                                HStack {
+                                    Text(item.createdAt, style: .date)
+                                    Text(item.createdAt, style: .time)
+                                }
+                                .font(.footnote)
+                                .foregroundColor(Color.secondary)
+                            }
+                            Spacer()
+                            HStack(alignment: .top) {
+                                Image(systemName: "book")
+                                Text("\(item.category)")
+                            }
                             .font(.subheadline)
-                        HStack {
-                            Text(item.createdAt , style: .date)
-                            Text(item.createdAt , style: .time)
                         }
-                        .font(.footnote)
-                        .foregroundColor(Color.secondary)
-                    }
-                    Spacer()
-                    HStack(alignment: .top) {
-                            Image(systemName: "book")
-                            Text("\(item.category)")
-                    }
-                    .font(.subheadline)
-                }
-                .swipeActions(edge: .trailing) {
-                    Button(role: .destructive) {
-                        withAnimation {
-                            MurojaahViewModel.deleteMurojaah(id: item.id)
-                            studentVM.fetchStudents()
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                withAnimation {
+                                    MurojaahViewModel.deleteMurojaah(id: item.id)
+                                    studentVM.fetchStudents()
+                                }
+                            } label: {
+                                Image(systemName: "trash")
+                            }
+                            .tint(Color.red)
                         }
-                    } label: {
-                        Image(systemName: "trash")
-                    }
-                    .tint(Color.red)
-                }
-            case MurojaahAmountOptions.perJuz.rawValue:
-                HStack(alignment: .bottom) {
-                    VStack(alignment: .leading) {
-                        Text("\(item.key) (\(item.value))")
+                    case MurojaahAmountOptions.perJuz.rawValue:
+                        HStack(alignment: .bottom) {
+                            VStack(alignment: .leading) {
+                                Text("\(item.key) (\(item.value))")
+                                    .font(.subheadline)
+                                HStack {
+                                    Text(item.createdAt, style: .date)
+                                    Text(item.createdAt, style: .time)
+                                }
+                                .font(.footnote)
+                                .foregroundColor(Color.secondary)
+                            }
+                            Spacer()
+                            HStack {
+                                Image(systemName: "books.vertical")
+                                Text("\(item.category)")
+                            }
                             .font(.subheadline)
-                        HStack {
-                            Text(item.createdAt , style: .date)
-                            Text(item.createdAt , style: .time)
                         }
-                        .font(.footnote)
-                        .foregroundColor(Color.secondary)
-                    }
-                    Spacer()
-                    HStack {
-                            Image(systemName: "books.vertical")
-                            Text("\(item.category)")
-                    }
-                    .font(.subheadline)
-                }
-                .swipeActions(edge: .trailing) {
-                    Button(role: .destructive) {
-                        withAnimation {
-                            MurojaahViewModel.deleteMurojaah(id: item.id)
-                            studentVM.fetchStudents()
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                withAnimation {
+                                    MurojaahViewModel.deleteMurojaah(id: item.id)
+                                    studentVM.fetchStudents()
+                                }
+                            } label: {
+                                Image(systemName: "trash")
+                            }
+                            .tint(Color.red)
                         }
-                    } label: {
-                        Image(systemName: "trash")
+                    default:
+                        EmptyView()
                     }
-                    .tint(Color.red)
                 }
-            default:
-                EmptyView()
             }
         }
     }

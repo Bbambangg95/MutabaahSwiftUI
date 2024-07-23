@@ -4,8 +4,34 @@
     "" : {
 
     },
+    "(%lld Ziyadah | %lld Murojaah)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "(%1$lld Ziyadah | %2$lld Murojaah)"
+          }
+        }
+      }
+    },
     "%@" : {
 
+    },
+    "%@ - %lld times" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$lld times"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ - %2$lld kali"
+          }
+        }
+      }
     },
     "%@ (%@)" : {
       "localizations" : {
@@ -266,9 +292,6 @@
         }
       }
     },
-    "CurrentStatus" : {
-
-    },
     "Custom Date" : {
       "localizations" : {
         "id" : {
@@ -308,6 +331,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hapus Jadwal"
+          }
+        }
+      }
+    },
+    "Delete Student" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus Santri"
           }
         }
       }
@@ -440,6 +473,7 @@
 
     },
     "History" : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -529,6 +563,16 @@
     "Label" : {
 
     },
+    "Latest Status" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status Terakhir"
+          }
+        }
+      }
+    },
     "Latest Update" : {
       "localizations" : {
         "id" : {
@@ -545,6 +589,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hafalan"
+          }
+        }
+      }
+    },
+    "Memorization History" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat Hafalan"
           }
         }
       }
@@ -566,6 +620,7 @@
       }
     },
     "Memorize History" : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -618,7 +673,24 @@
       }
     },
     "Murojaah History" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat Murojaah"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama"
+          }
+        }
+      }
     },
     "New Schedule" : {
       "localizations" : {
@@ -666,6 +738,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tidak ada document"
+          }
+        }
+      }
+    },
+    "No,Name,Address,Memorization,Latest Ziyadah,Ziyadah,Latest Murojaah,Murojaah,Present,Absent\n" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No,Nama,Asal,Hafalan,Ziyadah Terakhir,Ziyadah,Murojaah Terakhir,Murojaah,Hadir,Absen"
           }
         }
       }
@@ -725,6 +808,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Halaman %1$lld (%2$lld)"
+          }
+        }
+      }
+    },
+    "pages" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "halaman"
           }
         }
       }
@@ -813,6 +906,7 @@
       }
     },
     "Progress History" : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1121,6 +1215,16 @@
         }
       }
     },
+    "times" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kali"
+          }
+        }
+      }
+    },
     "Total Juz" : {
       "localizations" : {
         "id" : {
@@ -1249,6 +1353,16 @@
         }
       }
     },
+    "You are about to delete Page %lld. Are you sure you want to proceed?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda akan menghapus Halaman %lld. Apakah Anda yakin ingin melanjutkan?"
+          }
+        }
+      }
+    },
     "You currently don't have any schedule set up. Please set up your schedule to ensure the attendance data is updated accurately." : {
       "localizations" : {
         "id" : {
@@ -1270,7 +1384,14 @@
       }
     },
     "Ziyadah History" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat Ziyadah"
+          }
+        }
+      }
     },
     "Ziyadah Summary" : {
       "localizations" : {

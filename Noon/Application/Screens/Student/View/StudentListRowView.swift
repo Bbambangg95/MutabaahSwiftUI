@@ -9,10 +9,8 @@ import SwiftUI
 
 struct StudentListRowView: View {
     private let student: StudentEntity
-    private let deleteStudent: () -> Void
-    init(student: StudentEntity, deleteStudent: @escaping () -> Void) {
+    init(student: StudentEntity) {
         self.student = student
-        self.deleteStudent = deleteStudent
     }
     var body: some View {
         HStack{
@@ -33,14 +31,5 @@ struct StudentListRowView: View {
                 }
             }
         }
-        .swipeActions(edge: .trailing, content: {
-            Button(role: .destructive) {
-                withAnimation {
-                    deleteStudent()
-                }
-            } label: {
-                Image(systemName: "trash")
-            }
-        })
     }
 }
