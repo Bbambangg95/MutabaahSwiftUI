@@ -79,5 +79,6 @@ struct CompletedZiyadahItem: View {
                 action()
             }
         }
+        .padding(.vertical, 5)
     }
 }

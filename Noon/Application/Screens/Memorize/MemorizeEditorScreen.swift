@@ -31,5 +31,6 @@ struct MemorizeEditorScreen: View {
             .background(.gray.opacity(0.2))
             .toolbarRole(.editor)
             .navigationTitle(student.name)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -116,21 +116,25 @@ class ZiyadahViewModel: ObservableObject {
 
 extension ZiyadahViewModel {
     static func deleteZiyadah(id: UUID, ziyadahData: [ZiyadahEntity]) {
-        guard let indexToDelete = ziyadahData.firstIndex(where: { $0.id == id }) else {
-            return
-        }
-        
-        let pageToDelete = ziyadahData[indexToDelete].page
-        let juzToDelete = ziyadahData[indexToDelete].juz
-        
-        let dataToDelete = ziyadahData.filter { $0.page >= pageToDelete && $0.juz == juzToDelete }
-        
         let ziyadahService = ZiyadahService(ziyadahRepository: ZiyadahCDA())
-        for ziyadah in dataToDelete {
-            ziyadahService.deleteZiyadah(id: ziyadah.id) { result in
-                print(result)
-            }
+        ziyadahService.deleteZiyadah(id: id) { result in
+            print(result)
         }
+//        guard let indexToDelete = ziyadahData.firstIndex(where: { $0.id == id }) else {
+//            return
+//        }
+//        
+//        let pageToDelete = ziyadahData[indexToDelete].page
+//        let juzToDelete = ziyadahData[indexToDelete].juz
+//        
+//        let dataToDelete = ziyadahData.filter { $0.page >= pageToDelete && $0.juz == juzToDelete }
+//        
+//        let ziyadahService = ZiyadahService(ziyadahRepository: ZiyadahCDA())
+//        for ziyadah in dataToDelete {
+//            ziyadahService.deleteZiyadah(id: ziyadah.id) { result in
+//                print(result)
+//            }
+//        }
     }
 }
 

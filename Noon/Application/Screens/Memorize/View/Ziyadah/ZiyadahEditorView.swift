@@ -59,6 +59,7 @@ struct ZiyadahEditorView: View {
         .alert(ziyadahVM.alertContent?.title ?? "", isPresented: $isLoading) {
             Button("Done") {
                 dismiss()
+                ziyadahVM.setLatestPage()
             }
         } message: {
             Text(ziyadahVM.alertContent?.message ?? "")

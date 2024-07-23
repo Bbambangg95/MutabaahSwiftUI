@@ -67,7 +67,7 @@ struct ZiyadahHistoryItemView: View {
                     Text("Delete")
                 }
             } message: {
-                Text("You are about to delete Page \(itemToDelete?.page ?? 0) and all pages after it in the same Juz. Are you sure you want to proceed?")
+                Text("You are about to delete Page \(itemToDelete?.page ?? 0). Are you sure you want to proceed?")
             }
         }
         .listRowSeparatorTint(Color.gray)

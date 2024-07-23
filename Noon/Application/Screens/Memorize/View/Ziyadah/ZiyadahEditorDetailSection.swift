@@ -34,7 +34,6 @@ struct ZiyadahEditorDetailSection: View {
                     Text("Page")
                 }
             }
-            .disabled(true)
             .listStyle(.automatic)
             .pickerStyle(.navigationLink)
         } header: {
